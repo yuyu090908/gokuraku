@@ -1,0 +1,933 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GOKURAKU 極楽</title>
+<meta name="description" content="土と水だけで育った、自然の恵み。日本人の技術と愛情が生んだ、最高品質の一品を。バンコクのLiving Soilクラフト・ディスペンサリー。">
+<meta name="theme-color" content="#F3EEE4">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GOKURAKU 極楽 | Living Soil Craft Cannabis, Bangkok">
+<meta property="og:description" content="土と水だけで育った、自然の恵み。日本人の技術と愛情が生んだ、最高品質の一品を。">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Shippori+Mincho+B1:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --washi:#F3EEE4; --washi-2:#EAE3D6; --washi-3:#E2D9C8;
+  --sumi:#1A1814; --sumi-2:#24211C; --sumi-3:#2E2A23;
+  --usuzumi:#6B655A; --line:rgba(26,24,20,.14); --line-d:rgba(243,238,228,.14);
+  --shu:#B8432F; --shu-d:#9E3726; --koke:#4F6B3A; --kin:#A8874A; --kin-l:#C9AB72;
+  --line-green:#06C755;
+  --indica:#5B4B8A; --hybrid:#2F6B5E; --sativa:#B9772E; --preroll:#8A6A3B;
+  --f-mincho:"Shippori Mincho B1",serif; --f-goth:"Zen Kaku Gothic New",system-ui,sans-serif; --f-en:"Cormorant Garamond",serif;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  --max:1240px; --gut:48px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--washi);color:var(--sumi);font-family:var(--f-goth);font-size:15px;line-height:1.9;letter-spacing:.04em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+/* subtle washi fibre texture */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .35 0 0 0 0 .28 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+main,header,footer,section{position:relative;z-index:1}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--shu);outline-offset:3px}
+.wrap{max-width:calc(var(--max) + var(--gut)*2);margin:0 auto;padding:0 var(--gut)}
+
+/* type */
+.eyebrow{font-family:var(--f-en);font-weight:600;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--usuzumi);display:inline-flex;align-items:center;gap:14px}
+.eyebrow i{font-style:normal;color:var(--shu)}
+.h1{font-family:var(--f-en);font-weight:400;font-size:clamp(36px,4.6vw,56px);line-height:1.1;letter-spacing:-.005em}
+.h1 em{font-style:italic;color:var(--shu)}
+.jp-sub{font-family:var(--f-mincho);font-size:15px;letter-spacing:.24em;color:var(--usuzumi)}
+.lead{font-family:var(--f-mincho);font-size:clamp(16px,1.4vw,18px);line-height:2.1;letter-spacing:.08em}
+.muted{color:var(--usuzumi)}
+.vert{writing-mode:vertical-rl;text-orientation:upright}
+.sec{padding:140px 0}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:end;margin-bottom:64px}
+.sec-head .vlabel{font-family:var(--f-mincho);font-size:15px;letter-spacing:.5em;color:var(--shu);border-right:1px solid var(--line);padding-right:22px;height:132px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 30px;border-radius:999px;font-weight:700;font-size:15px;letter-spacing:.06em;transition:transform .3s var(--ease),background .3s,color .3s,border-color .3s;white-space:nowrap}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-line{background:var(--line-green);color:#fff}
+.btn-line:hover{transform:translateY(-2px);background:#05b14b}
+.btn-sec{border:1px solid var(--sumi);color:var(--sumi)}
+.btn-sec:hover{background:var(--sumi);color:var(--washi)}
+.btn-sm{height:44px;padding:0 20px;font-size:13px}
+.tlink{border-bottom:1px solid currentColor;padding-bottom:2px;font-weight:500;transition:color .2s}
+.tlink:hover{color:var(--shu)}
+
+/* seal */
+.seal{display:inline-grid;place-items:center;background:var(--shu);color:#fff;border-radius:4px;font-family:var(--f-mincho);font-weight:700;line-height:1;box-shadow:inset 0 0 0 2px rgba(255,255,255,.18)}
+.seal-logo{width:42px;height:42px;font-size:15px;writing-mode:vertical-rl;letter-spacing:.05em}
+
+/* ===== Age gate (noren) ===== */
+#gate{position:fixed;inset:0;z-index:200;background:var(--washi);display:flex;flex-direction:column;align-items:center;overflow:auto;transition:opacity .7s var(--ease),visibility .7s}
+#gate.hide{opacity:0;visibility:hidden}
+.noren{display:flex;gap:6px;width:min(560px,92vw);margin-top:0}
+.noren div{flex:1;height:min(300px,38vh);background:linear-gradient(180deg,#1f2a3c,#18212f);color:var(--washi);display:flex;align-items:center;justify-content:center;font-family:var(--f-mincho);font-size:clamp(44px,8vw,72px);position:relative;border-radius:0 0 3px 3px;transform-origin:top center;animation:sway 5s ease-in-out infinite}
+.noren div:nth-child(2){animation-delay:.3s}
+.noren div:nth-child(3){animation-delay:.6s}
+.noren div::before{content:"";position:absolute;top:0;left:0;right:0;height:14px;background:rgba(0,0,0,.25)}
+@keyframes sway{0%,100%{transform:skewX(0)}50%{transform:skewX(.6deg)}}
+.noren .seal{width:64px;height:64px;font-size:22px;writing-mode:vertical-rl}
+.gate-body{text-align:center;padding:48px 24px 60px;max-width:520px}
+.gate-body h1{font-family:var(--f-en);font-weight:500;letter-spacing:.42em;font-size:22px;margin-bottom:24px}
+.gate-q{font-family:var(--f-mincho);font-size:20px;letter-spacing:.1em;margin-bottom:6px}
+.gate-q-en{font-family:var(--f-en);font-style:italic;font-size:18px;color:var(--usuzumi);margin-bottom:32px}
+.gate-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.gate-actions .btn-yes{background:var(--sumi);color:var(--washi)}
+.gate-actions .btn-yes:hover{background:var(--shu)}
+.gate-note{font-size:12px;color:var(--usuzumi);margin-top:28px;line-height:1.8}
+
+/* ===== Header ===== */
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,box-shadow .4s}
+header.scrolled{background:rgba(243,238,228,.86);backdrop-filter:saturate(1.2) blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px;gap:24px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-txt{font-family:var(--f-en);font-weight:600;letter-spacing:.34em;font-size:17px;line-height:1.15}
+.brand-txt small{display:block;font-size:9.5px;letter-spacing:.32em;color:var(--usuzumi);font-weight:500}
+.menu{display:flex;gap:36px;font-size:13px;letter-spacing:.14em}
+.menu a{position:relative;padding:6px 0}
+.menu a span{display:block;font-family:var(--f-en);font-size:10px;letter-spacing:.24em;color:var(--usuzumi);line-height:1}
+.menu a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--shu);transition:right .35s var(--ease)}
+.menu a:hover::after{right:0}
+.nav-r{display:flex;align-items:center;gap:20px}
+.lang{font-family:var(--f-en);font-size:13px;letter-spacing:.16em;color:var(--usuzumi)}
+.lang b{color:var(--sumi);font-weight:600;border-bottom:1px solid var(--shu)}
+.burger{display:none;width:44px;height:44px;place-items:center}
+.burger svg{width:26px;height:26px}
+.drawer{display:none}
+
+/* ===== Hero ===== */
+.hero{padding:150px 0 0;min-height:100svh;overflow-x:clip}
+.hero-grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:32px;align-items:center}
+.hero-copy{grid-column:1/7;padding-bottom:40px}
+.status{display:inline-flex;align-items:center;gap:10px;font-size:13px;padding:8px 16px 8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.35);margin-bottom:36px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--koke);box-shadow:0 0 0 4px rgba(79,107,58,.18)}
+.status.closed .dot{background:var(--usuzumi);box-shadow:none}
+.display{font-family:var(--f-en);font-weight:400;font-size:clamp(48px,6.6vw,88px);line-height:1;letter-spacing:-.015em;margin-bottom:36px}
+.display em{font-style:italic;color:var(--shu)}
+.hero .lead{margin-bottom:12px}
+.hero .lead-en{font-family:var(--f-en);font-style:italic;font-size:19px;color:var(--usuzumi);margin-bottom:44px;letter-spacing:.01em;line-height:1.5}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.trust{display:flex;gap:28px;margin-top:40px;font-size:13px;color:var(--usuzumi);flex-wrap:wrap}
+.trust span{display:inline-flex;align-items:center;gap:8px}
+.trust svg{width:16px;height:16px;color:var(--koke)}
+.hero-art{grid-column:8/13;position:relative;display:flex;justify-content:flex-end}
+.arch{width:100%;max-width:440px;aspect-ratio:4/5.4;border-radius:220px 220px 4px 4px;overflow:hidden;position:relative;box-shadow:0 40px 80px -40px rgba(26,24,20,.35)}
+.arch svg{width:100%;height:100%;display:block}
+.hero-vert{position:absolute;left:-12px;top:6%;font-family:var(--f-mincho);font-size:15px;letter-spacing:.42em;color:var(--usuzumi);writing-mode:vertical-rl}
+.hero-kanji{position:absolute;right:-30px;bottom:-34px;white-space:nowrap;font-family:var(--f-mincho);font-weight:700;font-size:118px;line-height:.95;writing-mode:vertical-rl;color:var(--sumi);mix-blend-mode:multiply}
+.hero-kanji .seal{writing-mode:vertical-rl;width:46px;height:46px;font-size:15px;margin-top:14px}
+@keyframes rise{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+.sun{animation:rise 1.8s var(--ease) .3s both}
+@keyframes drift{from{transform:translateX(-30px)}to{transform:translateX(30px)}}
+.mist{animation:drift 14s ease-in-out infinite alternate}
+
+/* numbers */
+.numbers{margin-top:110px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.numbers .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.num{padding:40px 32px;display:flex;align-items:baseline;gap:22px;border-left:1px solid var(--line)}
+.num:first-child{border-left:0;padding-left:0}
+.num b{font-family:var(--f-en);font-weight:400;font-size:64px;line-height:1;letter-spacing:-.02em}
+.num b small{font-size:28px}
+.num div{font-size:14px;line-height:1.6}
+.num div span{display:block;font-family:var(--f-en);font-size:12px;letter-spacing:.22em;color:var(--usuzumi);text-transform:uppercase}
+
+/* ===== Menu ===== */
+.filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.chip{height:44px;padding:0 20px;border:1px solid var(--line);border-radius:999px;font-family:var(--f-en);font-weight:600;font-size:13px;letter-spacing:.18em;transition:.25s}
+.chip:hover{border-color:var(--sumi)}
+.chip[aria-pressed="true"]{background:var(--sumi);color:var(--washi);border-color:var(--sumi)}
+.labels{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.label{background:var(--washi-2);border:1px solid var(--line);border-radius:2px;display:flex;flex-direction:column;position:relative;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.label:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(26,24,20,.35)}
+.label[hidden]{display:none}
+.label::before{content:"";height:6px;background:var(--c)}
+.label-top{position:relative;height:330px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);overflow:hidden}
+.enso{position:absolute;width:250px;height:250px;color:var(--c);opacity:.22}
+.label-name{position:relative;font-family:var(--f-mincho);font-weight:700;font-size:68px;line-height:1.05;writing-mode:vertical-rl;letter-spacing:.12em;color:var(--sumi)}
+.label-type{position:absolute;top:22px;left:22px;font-family:var(--f-en);font-weight:600;font-size:11px;letter-spacing:.24em;color:var(--c);writing-mode:vertical-rl;border-left:1px solid var(--c);padding-left:8px}
+.label-no{position:absolute;top:22px;right:22px;font-family:var(--f-en);font-size:13px;letter-spacing:.2em;color:var(--usuzumi)}
+.label-seal{position:absolute;right:22px;bottom:22px;width:40px;height:40px;font-size:11px;writing-mode:vertical-rl}
+.label-photo{position:absolute;left:22px;bottom:18px;font-size:10px;color:var(--usuzumi);letter-spacing:.1em;opacity:.7}
+.label-body{padding:28px 28px 30px;display:flex;flex-direction:column;flex:1}
+.label-body h3{font-family:var(--f-en);font-weight:500;font-size:30px;line-height:1.1;letter-spacing:.01em}
+.label-body .scene{font-family:var(--f-mincho);font-size:14px;color:var(--usuzumi);margin:6px 0 16px;letter-spacing:.1em}
+.notes{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--f-en);font-style:italic;font-size:16px;color:var(--sumi);margin-bottom:22px}
+.notes span::before{content:"— ";color:var(--c)}
+.pl{list-style:none;margin-top:auto;margin-bottom:24px}
+.pl li{display:flex;align-items:baseline;gap:10px;padding:7px 0;font-size:14px}
+.pl li::after{content:"";order:2;flex:1;border-bottom:1px dotted rgba(26,24,20,.35);transform:translateY(-4px)}
+.pl li span{order:1}
+.pl li b{order:3;font-family:var(--f-en);font-weight:500;font-size:22px;letter-spacing:.02em}
+.pl li b small{font-size:14px;margin-left:2px;color:var(--usuzumi)}
+.label .btn{width:100%}
+
+/* pre-roll oshinagaki */
+.preroll{margin-top:32px;display:grid;grid-template-columns:5fr 7fr;border:1px solid var(--line);background:var(--washi-2);position:relative}
+.preroll[hidden]{display:none}
+.preroll::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--preroll)}
+.pr-l{padding:44px 48px;border-right:1px solid var(--line)}
+.pr-l h3{font-family:var(--f-en);font-weight:500;font-size:34px;line-height:1.1;margin:12px 0 10px}
+.pr-l p{color:var(--usuzumi);font-size:14px}
+.pr-r{padding:36px 48px;display:flex;flex-direction:column;justify-content:center}
+.pr-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.pr-row:last-child{border-bottom:0}
+.pr-row h4{font-family:var(--f-mincho);font-size:18px;font-weight:500;letter-spacing:.08em}
+.pr-row h4 small{display:block;font-family:var(--f-goth);font-size:12px;color:var(--usuzumi);letter-spacing:.06em}
+.pr-price{text-align:right}
+.pr-price b{font-family:var(--f-en);font-size:32px;font-weight:500;line-height:1}
+.pr-price s{display:block;font-size:12px;color:var(--usuzumi)}
+.save{display:inline-block;background:var(--shu);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;padding:3px 10px;border-radius:2px;margin-left:10px;vertical-align:middle}
+.menu-note{font-size:12px;color:var(--usuzumi);margin-top:28px;line-height:1.8}
+
+/* ===== Guide ===== */
+.guide{background:var(--washi-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.g-tile{padding:48px 40px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:14px;transition:background .3s}
+.g-tile:first-child{border-left:0}
+.g-tile:hover{background:var(--washi)}
+.g-tile svg{width:56px;height:56px;color:var(--c)}
+.g-tile h3{font-family:var(--f-mincho);font-size:24px;font-weight:500;letter-spacing:.12em;line-height:1.5}
+.g-tile p{font-size:14px;color:var(--usuzumi)}
+.g-tile .tlink{align-self:flex-start;margin-top:8px;font-family:var(--f-en);font-size:17px;letter-spacing:.04em}
+
+/* ===== Living Soil (dark) ===== */
+.soil{background:var(--sumi);color:var(--washi)}
+.soil .eyebrow,.soil .muted,.soil .jp-sub{color:#A79F90}
+.soil .sec-head .vlabel{border-color:var(--line-d);color:var(--kin-l)}
+.soil .h1 em{color:var(--kin-l)}
+.soil-grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:32px;align-items:center}
+.cycle{grid-column:1/6;position:relative;aspect-ratio:1}
+.cycle svg{width:100%;height:100%}
+.soil-copy{grid-column:7/13}
+.soil-copy .lead{margin-bottom:40px;color:#E6DFD2}
+.cmp{width:100%;border-collapse:collapse;font-size:14px}
+.cmp th,.cmp td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--line-d);vertical-align:top}
+.cmp thead th{font-family:var(--f-en);font-weight:600;letter-spacing:.2em;font-size:12px;color:#A79F90}
+.cmp thead th:nth-child(2){color:var(--kin-l)}
+.cmp td:first-child{color:#A79F90;width:28%}
+.cmp td:nth-child(2){background:rgba(168,135,74,.12);color:var(--washi);font-weight:500}
+.cmp td:nth-child(3){color:#8C8577}
+
+/* ===== Promises ===== */
+.promises{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line)}
+.pr{padding:44px 28px 8px;border-left:1px solid var(--line);position:relative}
+.pr:first-child{border-left:0;padding-left:0}
+.pr .n{font-family:var(--f-en);font-size:13px;letter-spacing:.2em;color:var(--shu)}
+.pr .k{font-family:var(--f-mincho);font-weight:700;font-size:104px;line-height:1;margin:22px 0 26px;letter-spacing:0}
+.pr h3{font-family:var(--f-en);font-weight:500;font-size:22px;line-height:1.2;margin-bottom:10px}
+.pr p{font-size:14px;color:var(--usuzumi);line-height:1.8}
+
+/* ===== Goods ===== */
+.goods-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:32px}
+.gd{background:var(--washi-2);border:1px solid var(--line);display:flex;flex-direction:column}
+.gd:nth-child(1){grid-column:span 6}
+.gd:nth-child(2),.gd:nth-child(3){grid-column:span 3}
+.gd-img{aspect-ratio:4/3;display:grid;place-items:center;border-bottom:1px solid var(--line);position:relative;background:radial-gradient(circle at 50% 55%,rgba(255,255,255,.55),transparent 60%)}
+.gd:nth-child(1) .gd-img{aspect-ratio:16/9.2}
+.gd-img svg{width:52%;max-height:78%}
+.gd:nth-child(n+2) .gd-img{aspect-ratio:auto;flex:1;min-height:240px}
+.gd:nth-child(n+2) .gd-b{flex:none}
+.gd:nth-child(n+2) .gd-img svg{width:38%}
+.gd:nth-child(1) .gd-img svg{width:34%}
+.gd-tag{position:absolute;top:18px;left:18px;font-family:var(--f-en);font-weight:600;font-size:11px;letter-spacing:.22em;padding:4px 10px;border:1px solid var(--line)}
+.gd-tag.soon{border-color:var(--shu);color:var(--shu)}
+.gd-b{padding:24px 26px 28px;display:flex;flex-direction:column;gap:8px;flex:1}
+.gd-b h3{font-family:var(--f-en);font-weight:500;font-size:24px;line-height:1.2}
+.gd-b p{font-size:13px;color:var(--usuzumi)}
+.sizes{display:flex;gap:6px;margin:6px 0 10px}
+.sizes span{min-width:40px;height:32px;display:grid;place-items:center;border:1px solid var(--line);font-family:var(--f-en);font-weight:600;font-size:13px}
+.gd-b .tlink{align-self:flex-start;margin-top:auto;padding-top:8px;font-size:13px}
+
+/* ===== FAQ ===== */
+.faq-grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:32px}
+.faq-l{grid-column:1/5}
+.faq-r{grid-column:6/13}
+.faq-l p{margin-top:24px;color:var(--usuzumi);font-size:14px}
+.faq-l .btn{margin-top:28px}
+details{border-top:1px solid var(--line)}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:40px 1fr 24px;align-items:center;gap:12px;min-height:76px;padding:16px 0;font-family:var(--f-mincho);font-size:17px;font-weight:500;letter-spacing:.06em}
+summary::-webkit-details-marker{display:none}
+summary .q{font-family:var(--f-en);font-size:15px;color:var(--shu);letter-spacing:.1em}
+summary .pm{position:relative;width:16px;height:16px;justify-self:end}
+summary .pm::before,summary .pm::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--sumi);transition:transform .35s var(--ease)}
+summary .pm::after{transform:rotate(90deg)}
+details[open] summary .pm::after{transform:rotate(0)}
+details .a{padding:0 36px 26px 52px;color:var(--usuzumi);font-size:14px}
+
+/* ===== Visit ===== */
+.visit-grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:32px;row-gap:48px}
+.visit-l{grid-column:1/6}
+.visit-r{grid-column:7/13}
+.chs{display:grid;gap:12px;margin-top:36px}
+.ch{display:grid;grid-template-columns:48px 1fr auto;gap:18px;align-items:center;padding:18px 22px;background:var(--washi-2);border:1px solid var(--line);transition:border-color .25s,transform .35s var(--ease)}
+.ch:hover{border-color:var(--sumi);transform:translateX(4px)}
+.ch-ic{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;color:#fff}
+.ch-ic svg{width:24px;height:24px}
+.ch b{display:block;font-size:15px}
+.ch small{font-size:12px;color:var(--usuzumi)}
+.ch .rec{display:inline-block;font-size:10px;background:var(--line-green);color:#fff;padding:1px 8px;border-radius:999px;margin-left:8px;vertical-align:2px;letter-spacing:.06em}
+.ch .ar{font-family:var(--f-en);font-size:22px}
+.map{aspect-ratio:16/9;border:1px solid var(--line);background:var(--washi-2);position:relative;overflow:hidden}
+.map svg{width:100%;height:100%}
+.map-pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center;gap:6px}
+.map-pin .seal{width:44px;height:44px;font-size:14px;writing-mode:vertical-rl}
+.map-pin span:not(.seal){font-size:11px;background:var(--sumi);color:var(--washi);padding:3px 10px;letter-spacing:.08em;white-space:nowrap}
+.info{margin-top:28px;display:grid;grid-template-columns:110px 1fr;font-size:14px}
+.info dt,.info dd{padding:14px 0;border-bottom:1px solid var(--line)}
+.info dt{font-family:var(--f-en);font-weight:600;font-size:12px;letter-spacing:.22em;color:var(--usuzumi);padding-top:17px}
+.todo{color:var(--shu);font-size:12px}
+
+/* ===== Footer ===== */
+footer{background:var(--sumi);color:var(--washi);padding:110px 0 130px;overflow:hidden}
+.f-grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:32px;position:relative}
+.f-brand{grid-column:1/6}
+.f-brand .brand-txt small{color:#A79F90}
+.f-brand p{font-family:var(--f-mincho);margin-top:28px;color:#D9D1C2;line-height:2.1;letter-spacing:.1em}
+.f-col{grid-column:span 2}
+.f-col:first-of-type{grid-column:7/9}
+.f-col h4{font-family:var(--f-en);font-weight:600;font-size:12px;letter-spacing:.26em;color:var(--kin-l);margin-bottom:18px}
+.f-col ul{list-style:none;display:grid;gap:10px;font-size:14px;color:#CFC7B8}
+.f-col a:hover{color:var(--washi)}
+.f-big{position:absolute;right:-20px;top:-40px;font-family:var(--f-mincho);font-weight:700;font-size:220px;line-height:.9;writing-mode:vertical-rl;color:rgba(243,238,228,.04);white-space:nowrap;pointer-events:none}
+.legal{margin-top:80px;padding-top:28px;border-top:1px solid var(--line-d);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:12px;color:#968E80;line-height:1.9}
+
+/* sticky (SP) */
+.sticky{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:var(--d,0ms)}
+.rv.in{opacity:1;transform:none}
+
+/* ===== Responsive ===== */
+@media (max-width:1100px){
+  :root{--gut:32px}
+  .menu{gap:24px}
+  .lang{display:none}
+  .promises{grid-template-columns:repeat(3,1fr)}
+  .pr:nth-child(4){border-left:0;padding-left:0}
+  .pr{padding-bottom:36px}
+  .labels{gap:20px}
+  .label-name{font-size:56px}
+}
+@media (max-width:900px){
+  .sec{padding:96px 0}
+  .menu,.nav-r .btn{display:none}
+  .burger{display:grid}
+  .drawer{display:block;position:fixed;inset:84px 0 0;background:var(--washi);z-index:49;padding:16px var(--gut) 40px;transform:translateY(-8px);opacity:0;visibility:hidden;transition:.35s var(--ease)}
+  .drawer.open{opacity:1;visibility:visible;transform:none}
+  .drawer a.dl{display:flex;justify-content:space-between;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line);font-family:var(--f-mincho);font-size:20px;letter-spacing:.1em}
+  .drawer a.dl span{font-family:var(--f-en);font-size:12px;letter-spacing:.22em;color:var(--usuzumi)}
+  .drawer .btn{width:100%;margin-top:28px}
+  .hero{padding-top:120px}
+  .hero-copy{grid-column:1/-1;order:2;padding-top:40px}
+  .hero-art{grid-column:1/-1;order:1;justify-content:center}
+  .arch{max-width:340px}
+  .hero-kanji{font-size:84px;right:0}
+  .hero-vert{left:0}
+  .numbers{margin-top:72px}
+  .sec-head{grid-template-columns:1fr;gap:20px}
+  .sec-head .vlabel{writing-mode:horizontal-tb;height:auto;border-right:0;padding:0}
+  .filters{justify-content:flex-start}
+  .labels{grid-template-columns:1fr 1fr}
+  .preroll{grid-template-columns:1fr}
+  .pr-l{border-right:0;border-bottom:1px solid var(--line)}
+  .guide-grid{grid-template-columns:1fr}
+  .g-tile{border-left:0;border-top:1px solid var(--line);padding:36px 0}
+  .g-tile:first-child{border-top:0}
+  .cycle{grid-column:1/-1;max-width:420px;width:100%;margin:0 auto 48px}
+  .soil-copy{grid-column:1/-1}
+  .goods-grid{grid-template-columns:1fr 1fr;gap:20px}
+  .gd:nth-child(1){grid-column:1/-1}
+  .gd:nth-child(2),.gd:nth-child(3){grid-column:span 1}
+  .faq-l,.faq-r,.visit-l,.visit-r{grid-column:1/-1}
+  .faq-r{margin-top:40px}
+  .f-brand{grid-column:1/-1;margin-bottom:48px}
+  .f-col,.f-col:first-of-type{grid-column:span 6}
+  .sticky{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;gap:8px;padding:6px;background:rgba(26,24,20,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:999px;transform:translateY(140%);transition:transform .45s var(--ease)}
+  .sticky.show{transform:none}
+  .sticky a{flex:1;height:50px}
+  .sticky .btn-sec{border-color:rgba(243,238,228,.3);color:var(--washi)}
+}
+@media (max-width:600px){
+  :root{--gut:20px}
+  body{font-size:15px}
+  .sec{padding:80px 0}
+  .nav{height:68px}
+  .drawer{inset:68px 0 0}
+  .seal-logo{width:38px;height:38px;font-size:13px}
+  .brand-txt{font-size:15px}
+  .brand-txt small{font-size:8px}
+  .hero{padding-top:96px}
+  .arch{max-width:270px}
+  .hero-kanji{font-size:64px;right:0;bottom:-24px}
+  .hero-kanji .seal{width:36px;height:36px;font-size:12px}
+  .hero-vert{font-size:12px;left:-2px}
+  .display{margin-bottom:28px}
+  .hero .lead-en{font-size:17px;margin-bottom:32px}
+  .cta-row{flex-direction:column}
+  .cta-row .btn{width:100%}
+  .trust{gap:10px 20px;margin-top:28px}
+  .numbers .wrap{grid-template-columns:1fr}
+  .num{border-left:0;border-top:1px solid var(--line);padding:24px 0}
+  .num:first-child{border-top:0}
+  .num b{font-size:52px;min-width:120px}
+  .labels{grid-template-columns:1fr}
+  .label-top{height:280px}
+  .pr-l,.pr-r{padding:30px 24px}
+  .pr-price b{font-size:26px}
+  .save{display:block;margin:6px 0 0 auto;width:max-content}
+  .promises{grid-template-columns:1fr 1fr}
+  .pr,.pr:nth-child(4){padding:32px 16px 28px;border-left:1px solid var(--line)}
+  .pr:nth-child(odd){border-left:0;padding-left:0}
+  .pr:nth-child(5){grid-column:1/-1;border-top:1px solid var(--line)}
+  .pr .k{font-size:72px;margin:14px 0 16px}
+  .pr{border-top:1px solid var(--line)}
+  .promises{border-top:0}
+  .goods-grid{grid-template-columns:1fr}
+  .gd:nth-child(2),.gd:nth-child(3){grid-column:1/-1}
+  summary{grid-template-columns:32px 1fr 20px;font-size:16px}
+  details .a{padding:0 8px 24px 44px}
+  .ch{grid-template-columns:44px 1fr auto;padding:16px}
+  .ch-ic{width:44px;height:44px}
+  .info{grid-template-columns:96px 1fr}
+  .cmp th,.cmp td{padding:12px 8px;font-size:13px}
+  .f-big{font-size:140px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ AGE GATE ============ -->
+<div id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+  <div class="noren" aria-hidden="true">
+    <div>極</div>
+    <div><span class="seal">極楽</span></div>
+    <div>楽</div>
+  </div>
+  <div class="gate-body">
+    <h1 id="gate-title">GOKURAKU</h1>
+    <p class="gate-q">あなたは20歳以上ですか？</p>
+    <p class="gate-q-en">Are you 20 years of age or older?</p>
+    <div class="gate-actions">
+      <button class="btn btn-yes" id="gate-yes">はい、20歳以上です</button>
+      <a class="btn btn-sec" href="https://www.google.com" rel="noopener">いいえ</a>
+    </div>
+    <p class="gate-note">タイの法令に基づき、20歳未満・妊娠中・授乳中の方はご利用いただけません。<br>Not for persons under 20, pregnant or breastfeeding.</p>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="GOKURAKU トップへ">
+      <span class="seal seal-logo" aria-hidden="true">極楽</span>
+      <span class="brand-txt">GOKURAKU<small>LIVING SOIL CRAFT · BANGKOK</small></span>
+    </a>
+    <nav class="menu" aria-label="メイン">
+      <a href="#menu">お品書き<span>MENU</span></a>
+      <a href="#soil">土の話<span>LIVING SOIL</span></a>
+      <a href="#goods">グッズ<span>GOODS</span></a>
+      <a href="#faq">よくある質問<span>FAQ</span></a>
+      <a href="#visit">アクセス<span>ACCESS</span></a>
+    </nav>
+    <div class="nav-r">
+      <span class="lang" aria-label="言語"><b>JP</b> &nbsp;EN&nbsp; TH</span>
+      <a class="btn btn-line btn-sm" href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.5-1.6 2-3.2 2-4.8C22 6.6 17.5 3 12 3z"/></svg>LINEで取り置き</a>
+      <button class="burger" id="burger" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8h18M3 16h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<nav class="drawer" id="drawer" aria-label="モバイル">
+  <a class="dl" href="#menu">お品書き<span>MENU</span></a>
+  <a class="dl" href="#soil">土の話<span>LIVING SOIL</span></a>
+  <a class="dl" href="#goods">グッズ<span>GOODS</span></a>
+  <a class="dl" href="#faq">よくある質問<span>FAQ</span></a>
+  <a class="dl" href="#visit">アクセス<span>ACCESS</span></a>
+  <a class="btn btn-line" href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener">LINEで取り置き</a>
+</nav>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="status" id="status"><span class="dot"></span><span id="status-txt">本日営業中 · 12:00–24:00</span></div>
+      <h1 class="display">With every inhale, ascend to <em>Gokuraku.</em></h1>
+      <p class="lead">土と水だけで育った、自然の恵み。<br>日本人の技術と愛情が生んだ、最高品質の一品を。</p>
+      <p class="lead-en">Living soil cannabis, hand-finished with Japanese care.</p>
+      <div class="cta-row">
+        <a class="btn btn-line" href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.5-1.6 2-3.2 2-4.8C22 6.6 17.5 3 12 3z"/></svg>LINEで取り置き</a>
+        <a class="btn btn-sec" href="#menu">お品書きを見る</a>
+      </div>
+      <div class="trust">
+        <span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8.5l3 3 7-7"/></svg>日本人スタッフ常駐</span>
+        <span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8.5l3 3 7-7"/></svg>日本語・English・ไทย</span>
+        <span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8.5l3 3 7-7"/></svg>取り置き無料</span>
+      </div>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <div class="arch">
+        <!-- Sumi-e landscape: mist, mountains, vermilion sun -->
+        <svg viewBox="0 0 440 594" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EDE5D5"/><stop offset=".6" stop-color="#E4D9C4"/><stop offset="1" stop-color="#D9CDB5"/></linearGradient>
+            <linearGradient id="mistg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3EEE4" stop-opacity="0"/><stop offset=".5" stop-color="#F3EEE4" stop-opacity=".85"/><stop offset="1" stop-color="#F3EEE4" stop-opacity="0"/></linearGradient>
+            <radialGradient id="sung" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#C24A34"/><stop offset=".85" stop-color="#B8432F"/><stop offset="1" stop-color="#B8432F" stop-opacity="0"/></radialGradient>
+            <filter id="ink" x="-10%" y="-10%" width="120%" height="130%"><feTurbulence type="fractalNoise" baseFrequency=".02 .06" numOctaves="3" seed="4"/><feDisplacementMap in="SourceGraphic" scale="10"/></filter>
+          </defs>
+          <rect width="440" height="594" fill="url(#sky)"/>
+          <circle class="sun" cx="282" cy="196" r="78" fill="url(#sung)"/>
+          <g filter="url(#ink)">
+            <path d="M-20 330 C40 300 70 250 120 262 C160 272 170 300 210 292 C260 282 290 236 340 246 C390 256 420 300 470 296 L470 594 L-20 594Z" fill="#1A1814" opacity=".18"/>
+            <path class="mist" d="M-60 318 H520 V370 H-60Z" fill="url(#mistg)"/>
+            <path d="M-20 392 C30 360 60 300 112 316 C150 328 160 368 196 360 C236 352 254 312 300 322 C350 334 372 380 470 372 L470 594 L-20 594Z" fill="#1A1814" opacity=".38"/>
+            <path class="mist" d="M-60 400 H520 V452 H-60Z" fill="url(#mistg)" style="animation-duration:18s"/>
+            <path d="M-20 470 C40 440 80 396 140 414 C186 428 200 470 250 462 C300 454 330 420 380 430 C420 438 440 460 470 456 L470 594 L-20 594Z" fill="#1A1814" opacity=".72"/>
+            <path d="M-20 540 C60 520 120 500 190 512 C250 522 300 548 360 536 C410 526 440 516 470 520 L470 594 L-20 594Z" fill="#1A1814" opacity=".92"/>
+          </g>
+          <rect x="0" y="560" width="440" height="40" fill="#1A1814"/>
+          <!-- pagoda silhouette -->
+          <g fill="#1A1814" opacity=".78" transform="translate(96 372)">
+            <rect x="12" y="-6" width="2" height="16"/>
+            <path d="M0 12 h26 l-4 5 h-18z"/><rect x="7" y="17" width="12" height="7"/>
+            <path d="M-3 24 h32 l-4 5 h-24z"/><rect x="6" y="29" width="14" height="8"/>
+            <path d="M-6 37 h38 l-5 6 h-28z"/><rect x="5" y="43" width="16" height="12"/>
+          </g>
+          <!-- birds -->
+          <g fill="none" stroke="#1A1814" stroke-width="1.4" opacity=".55" stroke-linecap="round">
+            <path d="M150 150 q6 -6 12 0 q6 -6 12 0"/><path d="M182 132 q4 -4 8 0 q4 -4 8 0"/>
+          </g>
+        </svg>
+      </div>
+      <span class="hero-vert">土と水だけで育った、自然の恵み</span>
+      <div class="hero-kanji">極楽<span class="seal">極楽</span></div>
+    </div>
+  </div>
+
+  <div class="numbers">
+    <div class="wrap">
+      <div class="num rv"><b>100<small>%</small></b><div>生きた土で栽培<span>Living Soil</span></div></div>
+      <div class="num rv" style="--d:80ms"><b>0</b><div>化学肥料・農薬<span>Soil &amp; Water Only</span></div></div>
+      <div class="num rv" style="--d:160ms"><b>100<small>%</small></b><div>手作業トリミング<span>Hand Trimmed</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section class="sec" id="menu">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="vlabel vert">お品書き</div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap">
+        <div>
+          <span class="eyebrow"><i>01</i> The Menu</span>
+          <h2 class="h1" style="margin:14px 0 10px">Three strains,<br><em>one</em> philosophy.</h2>
+          <p class="jp-sub">本日のラインナップ</p>
+        </div>
+        <div class="filters" role="group" aria-label="タイプで絞り込み">
+          <button class="chip" aria-pressed="true" data-f="all">ALL</button>
+          <button class="chip" aria-pressed="false" data-f="indica">INDICA</button>
+          <button class="chip" aria-pressed="false" data-f="hybrid">HYBRID</button>
+          <button class="chip" aria-pressed="false" data-f="sativa">SATIVA</button>
+          <button class="chip" aria-pressed="false" data-f="preroll">PRE-ROLL</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="labels">
+      <article class="label rv" data-t="indica" style="--c:var(--indica)">
+        <div class="label-top">
+          <svg class="enso" viewBox="0 0 100 100" aria-hidden="true"><path d="M78 22 A38 38 0 1 0 86 48" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg>
+          <span class="label-type">INDICA</span>
+          <span class="label-no">No.01</span>
+          <span class="label-name">神魔</span>
+          <span class="seal label-seal">人気</span>
+          <span class="label-photo">※写真差し替え予定</span>
+        </div>
+        <div class="label-body">
+          <h3>Shinma</h3>
+          <p class="scene">夜、深くくつろぐ時間に</p>
+          <div class="notes"><span>Earthy</span><span>Sweet</span><span>Calm</span></div>
+          <ul class="pl">
+            <li><span>1 g</span><b>300<small>฿</small></b></li>
+            <li><span>3.5 g</span><b>900<small>฿</small></b></li>
+            <li><span>Joint 1 g</span><b>350<small>฿</small></b></li>
+          </ul>
+          <a class="btn btn-sec" href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener">Shinma を取り置き</a>
+        </div>
+      </article>
+
+      <article class="label rv" data-t="hybrid" style="--c:var(--hybrid);--d:80ms">
+        <div class="label-top">
+          <svg class="enso" viewBox="0 0 100 100" aria-hidden="true"><path d="M78 22 A38 38 0 1 0 86 48" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg>
+          <span class="label-type">INDICA HYBRID</span>
+          <span class="label-no">No.02</span>
+          <span class="label-name">禅</span>
+          <span class="label-photo">※写真差し替え予定</span>
+        </div>
+        <div class="label-body">
+          <h3>ZK</h3>
+          <p class="scene">いつでも、心地よいバランスで</p>
+          <div class="notes"><span>Fruity</span><span>Candy</span><span>Balanced</span></div>
+          <ul class="pl">
+            <li><span>1 g</span><b>300<small>฿</small></b></li>
+            <li><span>3.5 g</span><b>900<small>฿</small></b></li>
+            <li><span>Joint 1 g</span><b>350<small>฿</small></b></li>
+          </ul>
+          <a class="btn btn-sec" href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener">ZK を取り置き</a>
+        </div>
+      </article>
+
+      <article class="label rv" data-t="sativa" style="--c:var(--sativa);--d:160ms">
+        <div class="label-top">
+          <svg class="enso" viewBox="0 0 100 100" aria-hidden="true"><path d="M78 22 A38 38 0 1 0 86 48" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg>
+          <span class="label-type">SATIVA</span>
+          <span class="label-no">No.03</span>
+          <span class="label-name">閃</span>
+          <span class="label-photo">※写真差し替え予定</span>
+        </div>
+        <div class="label-body">
+          <h3>Isaac Newton</h3>
+          <p class="scene">昼、軽やかに冴える時間に</p>
+          <div class="notes"><span>Citrus</span><span>Fresh</span><span>Clear</span></div>
+          <ul class="pl">
+            <li><span>1 g</span><b>300<small>฿</small></b></li>
+            <li><span>3.5 g</span><b>900<small>฿</small></b></li>
+            <li><span>Joint 1 g</span><b>350<small>฿</small></b></li>
+          </ul>
+          <a class="btn btn-sec" href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener">Isaac Newton を取り置き</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="preroll rv" data-t="preroll">
+      <div class="pr-l">
+        <span class="eyebrow"><i>—</i> Pre-Roll</span>
+        <h3>1 g Joint,<br>with Case &amp; Tip.</h3>
+        <p>ケース・フィルター付きの1gプレロール。すぐに楽しめる、手巻きの一本。</p>
+      </div>
+      <div class="pr-r">
+        <div class="pr-row">
+          <h4>1g ジョイント<small>単品 · Case &amp; Tip 付き</small></h4>
+          <div class="pr-price"><b>350<small style="font-size:16px"> ฿</small></b></div>
+        </div>
+        <div class="pr-row">
+          <h4>20本セット<small>まとめ買いで 1本あたり 300฿</small></h4>
+          <div class="pr-price"><s>7,000 ฿</s><b>6,000<small style="font-size:16px"> ฿</small></b><span class="save">1,000฿ OFF</span></div>
+        </div>
+        <a class="btn btn-line" style="margin-top:22px" href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.5-1.6 2-3.2 2-4.8C22 6.6 17.5 3 12 3z"/></svg>セットを取り置き</a>
+      </div>
+    </div>
+
+    <p class="menu-note">価格はタイバーツ（THB）・税込です。在庫は日々変わるため、最新情報はLINEでお問い合わせください。<br>漢字名・テイスティングノートはデザイン上の仮表記です。</p>
+  </div>
+</section>
+
+<!-- ============ GUIDE ============ -->
+<section class="guide" aria-labelledby="guide-t">
+  <div class="wrap">
+    <div class="guide-grid">
+      <div class="g-tile rv" style="--c:var(--indica)">
+        <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M36 10a18 18 0 1 0 10 28A16 16 0 0 1 36 10z"/></svg>
+        <span class="eyebrow" id="guide-t">How to choose</span>
+        <h3>夜、ゆっくり<br>くつろぎたい</h3>
+        <p>一日の終わりに、深く落ち着いた時間を。</p>
+        <a class="tlink" href="#menu" data-jump="indica">→ Shinma</a>
+      </div>
+      <div class="g-tile rv" style="--c:var(--hybrid);--d:80ms">
+        <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M42 16a18 18 0 1 0 4 14" stroke-linecap="round"/></svg>
+        <span class="eyebrow">How to choose</span>
+        <h3>いつでも<br>バランスよく</h3>
+        <p>初めての方にもおすすめの、穏やかな一本。</p>
+        <a class="tlink" href="#menu" data-jump="hybrid">→ ZK</a>
+      </div>
+      <div class="g-tile rv" style="--c:var(--sativa);--d:160ms">
+        <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="28" cy="28" r="9"/><path d="M28 6v7M28 43v7M6 28h7M43 28h7M12 12l5 5M39 39l5 5M12 44l5-5M39 17l5-5"/></svg>
+        <span class="eyebrow">How to choose</span>
+        <h3>昼、軽やかに<br>過ごしたい</h3>
+        <p>すっきりと冴える、柑橘の香り。</p>
+        <a class="tlink" href="#menu" data-jump="sativa">→ Isaac Newton</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIVING SOIL ============ -->
+<section class="sec soil" id="soil">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="vlabel vert">土の話</div>
+      <div>
+        <span class="eyebrow"><i>02</i> Living Soil</span>
+        <h2 class="h1" style="margin:14px 0 10px">Living soil<br>changes <em>everything.</em></h2>
+        <p class="jp-sub">生きた土が、すべてを変える</p>
+      </div>
+    </div>
+    <div class="soil-grid">
+      <div class="cycle rv" aria-label="生きた土の循環：有機物、小さな生き物、微生物と菌類、植物の吸収">
+        <svg viewBox="0 0 400 400" role="img">
+          <defs><marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1 L8 5 L0 9" fill="none" stroke="#C9AB72" stroke-width="1.4"/></marker></defs>
+          <circle cx="200" cy="200" r="138" fill="none" stroke="rgba(243,238,228,.12)"/>
+          <g fill="none" stroke="#C9AB72" stroke-width="1.3" marker-end="url(#arr)">
+            <path d="M232 64 A138 138 0 0 1 334 168"/>
+            <path d="M336 232 A138 138 0 0 1 232 336"/>
+            <path d="M168 336 A138 138 0 0 1 64 232"/>
+            <path d="M64 168 A138 138 0 0 1 168 64"/>
+          </g>
+          <circle cx="200" cy="200" r="64" fill="rgba(79,107,58,.35)"/>
+          <text x="200" y="196" text-anchor="middle" font-family="Shippori Mincho B1" font-size="30" fill="#F3EEE4" font-weight="700">土</text>
+          <text x="200" y="222" text-anchor="middle" font-family="Cormorant Garamond" font-size="12" letter-spacing="3" fill="#C9AB72">LIVING SOIL</text>
+          <g font-family="Zen Kaku Gothic New" font-size="14" fill="#F3EEE4" text-anchor="middle">
+            <circle cx="200" cy="62" r="30" fill="#24211C" stroke="#C9AB72"/><text x="200" y="58" font-family="Cormorant Garamond" font-size="11" fill="#C9AB72">01</text><text x="200" y="74" font-size="12">有機物</text>
+            <circle cx="338" cy="200" r="30" fill="#24211C" stroke="#C9AB72"/><text x="338" y="196" font-family="Cormorant Garamond" font-size="11" fill="#C9AB72">02</text><text x="338" y="212" font-size="11">生き物</text>
+            <circle cx="200" cy="338" r="30" fill="#24211C" stroke="#C9AB72"/><text x="200" y="334" font-family="Cormorant Garamond" font-size="11" fill="#C9AB72">03</text><text x="200" y="350" font-size="11">微生物</text>
+            <circle cx="62" cy="200" r="30" fill="#24211C" stroke="#C9AB72"/><text x="62" y="196" font-family="Cormorant Garamond" font-size="11" fill="#C9AB72">04</text><text x="62" y="212" font-size="12">植物</text>
+          </g>
+        </svg>
+      </div>
+      <div class="soil-copy rv" style="--d:120ms">
+        <p class="lead">落ち葉は小さな生き物に分解され、微生物と菌類が植物の栄養へと変える。<br>植物は必要なものだけを自ら選び、吸い上げる。<br>この循環が、濃厚な香りとまろやかな吸い心地を生みます。</p>
+        <table class="cmp">
+          <thead><tr><th scope="col"><span class="sr" style="position:absolute;left:-9999px">項目</span></th><th scope="col">GOKURAKU</th><th scope="col">一般的な栽培</th></tr></thead>
+          <tbody>
+            <tr><td>栽培方法</td><td>Living Soil（生きた土）</td><td>液体肥料・水耕</td></tr>
+            <tr><td>与えるもの</td><td>土と水のみ</td><td>化学肥料・添加剤</td></tr>
+            <tr><td>香り</td><td>圧倒的に濃厚</td><td>控えめ</td></tr>
+            <tr><td>吸い心地</td><td>まろやか・スムース</td><td>刺激が出やすい</td></tr>
+            <tr><td>仕上げ</td><td>すべて手作業</td><td>機械トリミング</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROMISES ============ -->
+<section class="sec" id="quality">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="vlabel vert">五つの約束</div>
+      <div>
+        <span class="eyebrow"><i>03</i> Gokuraku Quality</span>
+        <h2 class="h1" style="margin:14px 0 10px">Five promises,<br>kept by <em>hand.</em></h2>
+        <p class="jp-sub">極楽が守り続ける、五つのこと</p>
+      </div>
+    </div>
+    <div class="promises">
+      <div class="pr rv"><div class="n">01</div><div class="k">土</div><h3>Living Soil</h3><p>微生物が息づく、生きた土でじっくりと育てます。</p></div>
+      <div class="pr rv" style="--d:80ms"><div class="n">02</div><div class="k">水</div><h3>Soil &amp; Water Only</h3><p>肥料も化学物質も使わない。与えるのは土と水だけ。</p></div>
+      <div class="pr rv" style="--d:160ms"><div class="n">03</div><div class="k">手</div><h3>Handcrafted</h3><p>トリミングはすべて、熟練の手作業で。</p></div>
+      <div class="pr rv" style="--d:240ms"><div class="n">04</div><div class="k">愛</div><h3>Made with Love</h3><p>一つひとつを、作品として扱います。</p></div>
+      <div class="pr rv" style="--d:320ms"><div class="n">05</div><div class="k">匠</div><h3>Japanese Craft</h3><p>日本の技術と、妥協のない品質管理。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GOODS ============ -->
+<section class="sec" id="goods" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="vlabel vert">品々</div>
+      <div>
+        <span class="eyebrow"><i>04</i> Goods</span>
+        <h2 class="h1" style="margin:14px 0 10px">Take a piece<br>of <em>Gokuraku</em> home.</h2>
+        <p class="jp-sub">オリジナルグッズ</p>
+      </div>
+    </div>
+    <div class="goods-grid">
+      <article class="gd rv">
+        <div class="gd-img">
+          <span class="gd-tag">APPAREL</span>
+          <svg viewBox="0 0 120 110" aria-label="GOKURAKU Tシャツのイラスト" role="img">
+            <path d="M40 8 L22 14 L4 32 L18 46 L28 38 L28 104 L92 104 L92 38 L102 46 L116 32 L98 14 L80 8 C76 16 68 20 60 20 C52 20 44 16 40 8Z" fill="#1A1814"/>
+            <path d="M40 8 C44 16 52 20 60 20 C68 20 76 16 80 8" fill="none" stroke="#3a352d" stroke-width="2"/>
+            <rect x="51" y="44" width="18" height="18" rx="2" fill="#B8432F"/>
+            <text x="60" y="57" text-anchor="middle" font-family="Shippori Mincho B1" font-size="8" fill="#fff" font-weight="700">極楽</text>
+          </svg>
+        </div>
+        <div class="gd-b">
+          <h3>GOKURAKU T-Shirt</h3>
+          <p>Black / White · 背面に「SU」シンボル</p>
+          <div class="sizes"><span>M</span><span>L</span><span>XL</span><span>2XL</span></div>
+          <a class="tlink" href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener">店頭・LINEで購入 →</a>
+        </div>
+      </article>
+      <article class="gd rv" style="--d:80ms">
+        <div class="gd-img">
+          <span class="gd-tag soon">COMING SOON</span>
+          <svg viewBox="0 0 80 80" aria-hidden="true"><path d="M40 10 C40 10 60 34 60 48 A20 20 0 0 1 20 48 C20 34 40 10 40 10Z" fill="#A8874A"/><path d="M32 46 a8 8 0 0 0 8 10" fill="none" stroke="#F3EEE4" stroke-width="2" stroke-linecap="round" opacity=".7"/></svg>
+        </div>
+        <div class="gd-b">
+          <h3>Resin</h3>
+          <p>詳細・価格は近日公開。</p>
+          <a class="tlink" href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener">入荷をLINEで受け取る →</a>
+        </div>
+      </article>
+      <article class="gd rv" style="--d:160ms">
+        <div class="gd-img">
+          <span class="gd-tag soon">COMING SOON</span>
+          <svg viewBox="0 0 80 80" aria-hidden="true"><ellipse cx="40" cy="18" rx="20" ry="6" fill="#2E2A23"/><path d="M20 18 V62 A20 6 0 0 0 60 62 V18 A20 6 0 0 1 20 18Z" fill="#1A1814"/><rect x="34" y="32" width="12" height="12" rx="1" fill="#B8432F"/></svg>
+        </div>
+        <div class="gd-b">
+          <h3>Premium 7g Box</h3>
+          <p>7g専用の円筒ボックス。贈り物にも。</p>
+          <a class="tlink" href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener">入荷をLINEで受け取る →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec" id="faq" style="background:var(--washi-2);border-top:1px solid var(--line)">
+  <div class="wrap faq-grid">
+    <div class="faq-l rv">
+      <span class="eyebrow"><i>05</i> FAQ</span>
+      <h2 class="h1" style="margin:14px 0 10px">Before<br>you <em>visit.</em></h2>
+      <p class="jp-sub">よくあるご質問</p>
+      <p>ここにない質問も、日本語でお気軽にどうぞ。</p>
+      <a class="btn btn-sec btn-sm" href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener">LINEで質問する</a>
+    </div>
+    <div class="faq-r rv" style="--d:100ms">
+      <details open><summary><span class="q">Q.01</span>取り置きはどうすればいいですか？<span class="pm"></span></summary><div class="a">LINEまたはWhatsAppで「品種名・グラム数・来店予定時間」をお送りください。確認後にお取り置きします。取り置きは無料です。</div></details>
+      <details><summary><span class="q">Q.02</span>初めてで、どれを選べばいいか分かりません。<span class="pm"></span></summary><div class="a">夜にゆっくりなら Shinma、いつでもバランスよくなら ZK、昼に軽やかに過ごしたいなら Isaac Newton がおすすめです。店頭では日本人スタッフがご案内します。</div></details>
+      <details><summary><span class="q">Q.03</span>支払い方法は？<span class="pm"></span></summary><div class="a">現金（THB）でお支払いいただけます。<span class="todo">［その他の決済方法を記入］</span></div></details>
+      <details><summary><span class="q">Q.04</span>年齢確認はありますか？<span class="pm"></span></summary><div class="a">タイの法令に基づき、20歳以上の方のみご購入いただけます。ご来店時にパスポートなどの身分証明書をご提示ください。</div></details>
+      <details><summary><span class="q">Q.05</span>どこで吸えますか？<span class="pm"></span></summary><div class="a">公共の場所での喫煙は法律で禁止されています。店舗のルールと現地の法令に従ってお楽しみください。</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISIT ============ -->
+<section class="sec" id="visit">
+  <div class="wrap visit-grid">
+    <div class="visit-l rv">
+      <span class="eyebrow"><i>06</i> Visit &amp; Contact</span>
+      <h2 class="h1" style="margin:14px 0 10px">Your Gokuraku is<br><em>one message</em> away.</h2>
+      <p class="jp-sub">ご予約・お問い合わせ</p>
+      <div class="chs">
+        <a class="ch" href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener">
+          <span class="ch-ic" style="background:var(--line-green)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.5-1.6 2-3.2 2-4.8C22 6.6 17.5 3 12 3z"/></svg></span>
+          <span><b>LINE<span class="rec">おすすめ</span></b><small>取り置き・ご質問はこちら（日本語）</small></span><span class="ar">→</span></a>
+        <a class="ch" href="https://wa.me/66825973902" target="_blank" rel="noopener">
+          <span class="ch-ic" style="background:#25D366"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></span>
+          <span><b>WhatsApp</b><small>+66 82 597 3902 · English OK</small></span><span class="ar">→</span></a>
+        <a class="ch" href="https://www.instagram.com/gokuraku_thailand" target="_blank" rel="noopener">
+          <span class="ch-ic" style="background:linear-gradient(45deg,#F09433,#DC2743,#BC1888)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span>
+          <span><b>Instagram</b><small>@gokuraku_thailand · 入荷情報を発信中</small></span><span class="ar">→</span></a>
+      </div>
+    </div>
+    <div class="visit-r rv" style="--d:100ms">
+      <div class="map" role="img" aria-label="地図（店舗住所が決まり次第Googleマップを埋め込み）">
+        <svg viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="640" height="360" fill="#EAE3D6"/>
+          <g stroke="#D7CDBA" stroke-width="14" fill="none" stroke-linecap="round"><path d="M-20 120 H660"/><path d="M-20 260 C200 250 420 280 660 240"/><path d="M180 -20 V380"/><path d="M460 -20 C440 120 480 240 450 380"/></g>
+          <g stroke="#DFD6C5" stroke-width="6" fill="none"><path d="M-20 60 H660"/><path d="M-20 190 H660"/><path d="M80 -20 V380"/><path d="M320 -20 V380"/><path d="M560 -20 V380"/></g>
+          <path d="M-20 330 C120 310 260 340 400 320 C520 304 600 320 660 312 V380 H-20Z" fill="#C9D3C4"/>
+          <rect x="360" y="140" width="70" height="38" fill="#DCE3D4"/>
+        </svg>
+        <div class="map-pin"><span class="seal">極楽</span><span>GOKURAKU</span></div>
+      </div>
+      <dl class="info">
+        <dt>ADDRESS</dt><dd><span class="todo">［店舗住所を記入］</span><br><small class="muted">例：BTS ◯◯駅から徒歩◯分</small></dd>
+        <dt>HOURS</dt><dd>12:00 – 24:00 <span class="todo">［仮・要確認］</span><br><small class="muted">定休日：<span class="todo">［記入］</span></small></dd>
+        <dt>LANGUAGE</dt><dd>日本語 / English / ไทย</dd>
+        <dt>PAYMENT</dt><dd>Cash (THB) <span class="todo">［他の決済方法を記入］</span></dd>
+      </dl>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-big" aria-hidden="true">極楽</div>
+      <div class="f-brand">
+        <a href="#top" class="brand"><span class="seal seal-logo" aria-hidden="true">極楽</span><span class="brand-txt">GOKURAKU<small>LIVING SOIL CRAFT · BANGKOK</small></span></a>
+        <p>土と水だけで育った、自然の恵み。<br>日本人の技術と愛情が生んだ、最高品質の一品を。</p>
+      </div>
+      <div class="f-col"><h4>EXPLORE</h4><ul><li><a href="#menu">お品書き</a></li><li><a href="#soil">土の話</a></li><li><a href="#goods">グッズ</a></li><li><a href="#faq">よくある質問</a></li></ul></div>
+      <div class="f-col"><h4>CONTACT</h4><ul><li><a href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener">LINE</a></li><li><a href="https://wa.me/66825973902" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="https://www.instagram.com/gokuraku_thailand" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+    </div>
+    <div class="legal">
+      <span>20歳未満・妊娠中・授乳中の方への販売はいたしません。公共の場所での喫煙は法律で禁止されています。<br>Sales to persons aged 20+ only. License No. <span style="color:#E08A78">［ライセンス番号を記入］</span></span>
+      <span>© 2026 GOKURAKU. All Rights Reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <a class="btn btn-sec" href="#menu">お品書き</a>
+  <a class="btn btn-line" href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener">LINEで取り置き</a>
+</div>
+
+<script>
+(function(){
+  /* age gate */
+  var gate=document.getElementById('gate');
+  try{ if(localStorage.getItem('gk_age')==='ok') gate.classList.add('hide'); }catch(e){}
+  document.getElementById('gate-yes').addEventListener('click',function(){
+    gate.classList.add('hide'); try{localStorage.setItem('gk_age','ok')}catch(e){}
+  });
+
+  /* header + sticky */
+  var hdr=document.getElementById('hdr'),sticky=document.getElementById('sticky');
+  function onScroll(){var y=window.scrollY;hdr.classList.toggle('scrolled',y>24);sticky.classList.toggle('show',y>window.innerHeight*.8);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  /* drawer */
+  var b=document.getElementById('burger'),d=document.getElementById('drawer');
+  b.addEventListener('click',function(){var o=d.classList.toggle('open');b.setAttribute('aria-expanded',o);hdr.classList.add('scrolled');});
+  d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){d.classList.remove('open');b.setAttribute('aria-expanded',false)})});
+
+  /* open status (Bangkok time, placeholder hours 12–24) */
+  try{
+    var h=Number(new Intl.DateTimeFormat('en-GB',{hour:'numeric',hour12:false,timeZone:'Asia/Bangkok'}).format(new Date()));
+    var open=h>=12&&h<24, st=document.getElementById('status');
+    if(!open){st.classList.add('closed');document.getElementById('status-txt').textContent='本日 12:00 オープン · 取り置き受付中';}
+  }catch(e){}
+
+  /* filter */
+  var chips=document.querySelectorAll('.chip'),items=document.querySelectorAll('#menu [data-t]');
+  function filt(f){
+    chips.forEach(function(c){c.setAttribute('aria-pressed',c.dataset.f===f)});
+    items.forEach(function(el){el.hidden=!(f==='all'||el.dataset.t===f)});
+  }
+  chips.forEach(function(c){c.addEventListener('click',function(){filt(c.dataset.f)})});
+  document.querySelectorAll('[data-jump]').forEach(function(a){a.addEventListener('click',function(){filt(a.dataset.jump)})});
+
+  /* reveal */
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else els.forEach(function(el){el.classList.add('in')});
+})();
+</script>
+</body>
+</html>
