@@ -5,10 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>GOKURAKU 極楽</title>
 <meta name="description" content="土と水だけで育った、自然の恵み。日本人の技術と愛情が生んだ、最高品質の一品を。バンコクのLiving Soilクラフト・ディスペンサリー。">
-<meta name="theme-color" content="#F3EEE4">
+<meta name="theme-color" content="#0B0B0B">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://gokuraku.tech/">
+<meta property="og:url" content="https://gokuraku.tech/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="GOKURAKU 極楽 | Living Soil Craft Cannabis, Bangkok">
+<meta property="og:title" content="GOKURAKU 極楽 | premium roll">
 <meta property="og:description" content="土と水だけで育った、自然の恵み。日本人の技術と愛情が生んだ、最高品質の一品を。">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary">
@@ -17,12 +19,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Shippori+Mincho+B1:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --washi:#F3EEE4; --washi-2:#EAE3D6; --washi-3:#E2D9C8;
-  --sumi:#1A1814; --sumi-2:#24211C; --sumi-3:#2E2A23;
-  --usuzumi:#6B655A; --line:rgba(26,24,20,.14); --line-d:rgba(243,238,228,.14);
-  --shu:#B8432F; --shu-d:#9E3726; --koke:#4F6B3A; --kin:#A8874A; --kin-l:#C9AB72;
+  --washi:#0B0B0B; --washi-2:#131313; --washi-3:#1B1B1B;
+  --sumi:#ECE8E1; --sumi-2:#24211C; --sumi-3:#2E2A23;
+  --usuzumi:#9C978E; --line:rgba(236,232,225,.12); --line-d:rgba(236,232,225,.12);
+  --shu:#E1141E; --shu-d:#B80F17; --koke:#6E9A55; --kin:#C9A35C; --kin-l:#D8B977; --silver:#C9C9C9;
   --line-green:#06C755;
-  --indica:#5B4B8A; --hybrid:#2F6B5E; --sativa:#B9772E; --preroll:#8A6A3B;
+  --indica:#9A87D0; --hybrid:#55A892; --sativa:#DB9B52; --preroll:#C9A35C;
   --f-mincho:"Shippori Mincho B1",serif; --f-goth:"Zen Kaku Gothic New",system-ui,sans-serif; --f-en:"Cormorant Garamond",serif;
   --ease:cubic-bezier(.2,.7,.1,1);
   --max:1240px; --gut:48px;
@@ -32,7 +34,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{background:var(--washi);color:var(--sumi);font-family:var(--f-goth);font-size:15px;line-height:1.9;letter-spacing:.04em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 /* subtle washi fibre texture */
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .35 0 0 0 0 .28 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
 main,header,footer,section{position:relative;z-index:1}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
@@ -43,7 +45,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .eyebrow{font-family:var(--f-en);font-weight:600;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--usuzumi);display:inline-flex;align-items:center;gap:14px}
 .eyebrow i{font-style:normal;color:var(--shu)}
 .h1{font-family:var(--f-en);font-weight:400;font-size:clamp(36px,4.6vw,56px);line-height:1.1;letter-spacing:-.005em}
-.h1 em{font-style:italic;color:var(--shu)}
+.h1 em{font-style:italic;color:var(--kin)}
 .jp-sub{font-family:var(--f-mincho);font-size:15px;letter-spacing:.24em;color:var(--usuzumi)}
 .lead{font-family:var(--f-mincho);font-size:clamp(16px,1.4vw,18px);line-height:2.1;letter-spacing:.08em}
 .muted{color:var(--usuzumi)}
@@ -58,37 +60,43 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .btn-line{background:var(--line-green);color:#fff}
 .btn-line:hover{transform:translateY(-2px);background:#05b14b}
 .btn-sec{border:1px solid var(--sumi);color:var(--sumi)}
-.btn-sec:hover{background:var(--sumi);color:var(--washi)}
+.btn-sec:hover{background:var(--sumi);color:#0B0B0B}
 .btn-sm{height:44px;padding:0 20px;font-size:13px}
 .tlink{border-bottom:1px solid currentColor;padding-bottom:2px;font-weight:500;transition:color .2s}
 .tlink:hover{color:var(--shu)}
 
+/* brand mark */
+.mark{color:var(--shu);display:block}
+.brand .mark{width:30px;height:40px}
+.brand-txt{font-family:var(--f-en)!important}
+.brand-txt small{font-style:italic;text-transform:none;letter-spacing:.34em!important}
+.lockup{display:flex;flex-direction:column;align-items:center;text-align:center}
+.lockup .mark{width:78px;height:106px;margin-bottom:26px;filter:drop-shadow(0 6px 24px rgba(225,20,30,.35))}
+.lockup .lk-name{font-family:var(--f-en);font-weight:500;letter-spacing:.62em;font-size:26px;margin-right:-.62em;color:var(--silver)}
+.lockup .lk-tag{display:flex;align-items:center;gap:16px;font-family:var(--f-en);font-style:italic;letter-spacing:.42em;font-size:16px;color:var(--kin);margin-top:8px}
+.lockup .lk-tag::before,.lockup .lk-tag::after{content:"";width:48px;height:1px;background:linear-gradient(90deg,transparent,var(--kin))}
+.lockup .lk-tag::after{background:linear-gradient(270deg,transparent,var(--kin))}
+.lockup .lk-kanji{font-family:var(--f-mincho);font-size:30px;letter-spacing:.3em;margin-right:-.3em;color:var(--sumi);margin-top:14px}
 /* seal */
 .seal{display:inline-grid;place-items:center;background:var(--shu);color:#fff;border-radius:4px;font-family:var(--f-mincho);font-weight:700;line-height:1;box-shadow:inset 0 0 0 2px rgba(255,255,255,.18)}
 .seal-logo{width:42px;height:42px;font-size:15px;writing-mode:vertical-rl;letter-spacing:.05em}
 
 /* ===== Age gate (noren) ===== */
-#gate{position:fixed;inset:0;z-index:200;background:var(--washi);display:flex;flex-direction:column;align-items:center;overflow:auto;transition:opacity .7s var(--ease),visibility .7s}
+#gate{position:fixed;inset:0;z-index:200;background:radial-gradient(ellipse at 50% 30%,#1a1212 0%,#0B0B0B 60%);display:flex;flex-direction:column;align-items:center;overflow:auto;transition:opacity .7s var(--ease),visibility .7s}
 #gate.hide{opacity:0;visibility:hidden}
-.noren{display:flex;gap:6px;width:min(560px,92vw);margin-top:0}
-.noren div{flex:1;height:min(300px,38vh);background:linear-gradient(180deg,#1f2a3c,#18212f);color:var(--washi);display:flex;align-items:center;justify-content:center;font-family:var(--f-mincho);font-size:clamp(44px,8vw,72px);position:relative;border-radius:0 0 3px 3px;transform-origin:top center;animation:sway 5s ease-in-out infinite}
-.noren div:nth-child(2){animation-delay:.3s}
-.noren div:nth-child(3){animation-delay:.6s}
-.noren div::before{content:"";position:absolute;top:0;left:0;right:0;height:14px;background:rgba(0,0,0,.25)}
-@keyframes sway{0%,100%{transform:skewX(0)}50%{transform:skewX(.6deg)}}
-.noren .seal{width:64px;height:64px;font-size:22px;writing-mode:vertical-rl}
+.gate-lockup{margin-top:min(14vh,120px)}
 .gate-body{text-align:center;padding:48px 24px 60px;max-width:520px}
 .gate-body h1{font-family:var(--f-en);font-weight:500;letter-spacing:.42em;font-size:22px;margin-bottom:24px}
 .gate-q{font-family:var(--f-mincho);font-size:20px;letter-spacing:.1em;margin-bottom:6px}
 .gate-q-en{font-family:var(--f-en);font-style:italic;font-size:18px;color:var(--usuzumi);margin-bottom:32px}
 .gate-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.gate-actions .btn-yes{background:var(--sumi);color:var(--washi)}
-.gate-actions .btn-yes:hover{background:var(--shu)}
+.gate-actions .btn-yes{background:var(--sumi);color:#0B0B0B}
+.gate-actions .btn-yes:hover{background:var(--shu);color:#fff}
 .gate-note{font-size:12px;color:var(--usuzumi);margin-top:28px;line-height:1.8}
 
 /* ===== Header ===== */
 header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,box-shadow .4s}
-header.scrolled{background:rgba(243,238,228,.86);backdrop-filter:saturate(1.2) blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+header.scrolled{background:rgba(11,11,11,.82);backdrop-filter:saturate(1.2) blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:84px;gap:24px}
 .brand{display:flex;align-items:center;gap:14px}
 .brand-txt{font-family:var(--f-en);font-weight:600;letter-spacing:.34em;font-size:17px;line-height:1.15}
@@ -109,11 +117,11 @@ header.scrolled{background:rgba(243,238,228,.86);backdrop-filter:saturate(1.2) b
 .hero{padding:150px 0 0;min-height:100svh;overflow-x:clip}
 .hero-grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:32px;align-items:center}
 .hero-copy{grid-column:1/7;padding-bottom:40px}
-.status{display:inline-flex;align-items:center;gap:10px;font-size:13px;padding:8px 16px 8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.35);margin-bottom:36px}
+.status{display:inline-flex;align-items:center;gap:10px;font-size:13px;padding:8px 16px 8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.03);margin-bottom:36px}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--koke);box-shadow:0 0 0 4px rgba(79,107,58,.18)}
 .status.closed .dot{background:var(--usuzumi);box-shadow:none}
 .display{font-family:var(--f-en);font-weight:400;font-size:clamp(48px,6.6vw,88px);line-height:1;letter-spacing:-.015em;margin-bottom:36px}
-.display em{font-style:italic;color:var(--shu)}
+.display em{font-style:italic;color:var(--kin)}
 .hero .lead{margin-bottom:12px}
 .hero .lead-en{font-family:var(--f-en);font-style:italic;font-size:19px;color:var(--usuzumi);margin-bottom:44px;letter-spacing:.01em;line-height:1.5}
 .cta-row{display:flex;gap:14px;flex-wrap:wrap}
@@ -121,15 +129,16 @@ header.scrolled{background:rgba(243,238,228,.86);backdrop-filter:saturate(1.2) b
 .trust span{display:inline-flex;align-items:center;gap:8px}
 .trust svg{width:16px;height:16px;color:var(--koke)}
 .hero-art{grid-column:8/13;position:relative;display:flex;justify-content:flex-end}
-.arch{width:100%;max-width:440px;aspect-ratio:4/5.4;border-radius:220px 220px 4px 4px;overflow:hidden;position:relative;box-shadow:0 40px 80px -40px rgba(26,24,20,.35)}
-.arch svg{width:100%;height:100%;display:block}
+.bcard{width:100%;max-width:460px;aspect-ratio:4/5.2;border-radius:22px;position:relative;overflow:hidden;display:grid;place-items:center;
+  background:radial-gradient(ellipse at 50% 38%,rgba(225,20,30,.12),transparent 55%),linear-gradient(160deg,#1A1A1A,#0E0E0E 60%,#141414);
+  box-shadow:0 0 0 1px rgba(201,163,92,.22),0 50px 100px -40px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.06)}
+.bcard .swoosh{position:absolute;inset:0;width:100%;height:100%}
+.glint{position:absolute;width:90px;height:2px;background:radial-gradient(closest-side,#FFF3D2,rgba(233,207,148,0));filter:blur(.5px);animation:glint 4s ease-in-out infinite}
+.glint::after{content:"";position:absolute;left:50%;top:50%;width:2px;height:40px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,#FFF3D2,rgba(233,207,148,0))}
+@keyframes glint{0%,100%{opacity:.35}50%{opacity:1}}
+.bcard .lockup{animation:rise 1.6s var(--ease) .2s both}
+@keyframes rise{from{transform:translateY(24px);opacity:0}to{transform:none;opacity:1}}
 .hero-vert{position:absolute;left:-12px;top:6%;font-family:var(--f-mincho);font-size:15px;letter-spacing:.42em;color:var(--usuzumi);writing-mode:vertical-rl}
-.hero-kanji{position:absolute;right:-30px;bottom:-34px;white-space:nowrap;font-family:var(--f-mincho);font-weight:700;font-size:118px;line-height:.95;writing-mode:vertical-rl;color:var(--sumi);mix-blend-mode:multiply}
-.hero-kanji .seal{writing-mode:vertical-rl;width:46px;height:46px;font-size:15px;margin-top:14px}
-@keyframes rise{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
-.sun{animation:rise 1.8s var(--ease) .3s both}
-@keyframes drift{from{transform:translateX(-30px)}to{transform:translateX(30px)}}
-.mist{animation:drift 14s ease-in-out infinite alternate}
 
 /* numbers */
 .numbers{margin-top:110px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -145,14 +154,14 @@ header.scrolled{background:rgba(243,238,228,.86);backdrop-filter:saturate(1.2) b
 .filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
 .chip{height:44px;padding:0 20px;border:1px solid var(--line);border-radius:999px;font-family:var(--f-en);font-weight:600;font-size:13px;letter-spacing:.18em;transition:.25s}
 .chip:hover{border-color:var(--sumi)}
-.chip[aria-pressed="true"]{background:var(--sumi);color:var(--washi);border-color:var(--sumi)}
+.chip[aria-pressed="true"]{background:var(--sumi);color:#0B0B0B;border-color:var(--sumi)}
 .labels{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
 .label{background:var(--washi-2);border:1px solid var(--line);border-radius:2px;display:flex;flex-direction:column;position:relative;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
-.label:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(26,24,20,.35)}
+.label:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(0,0,0,.9),0 0 0 1px rgba(201,163,92,.35)}
 .label[hidden]{display:none}
 .label::before{content:"";height:6px;background:var(--c)}
 .label-top{position:relative;height:330px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);overflow:hidden}
-.enso{position:absolute;width:250px;height:250px;color:var(--c);opacity:.22}
+.enso{position:absolute;width:250px;height:250px;color:var(--c);opacity:.28}
 .label-name{position:relative;font-family:var(--f-mincho);font-weight:700;font-size:68px;line-height:1.05;writing-mode:vertical-rl;letter-spacing:.12em;color:var(--sumi)}
 .label-type{position:absolute;top:22px;left:22px;font-family:var(--f-en);font-weight:600;font-size:11px;letter-spacing:.24em;color:var(--c);writing-mode:vertical-rl;border-left:1px solid var(--c);padding-left:8px}
 .label-no{position:absolute;top:22px;right:22px;font-family:var(--f-en);font-size:13px;letter-spacing:.2em;color:var(--usuzumi)}
@@ -165,7 +174,7 @@ header.scrolled{background:rgba(243,238,228,.86);backdrop-filter:saturate(1.2) b
 .notes span::before{content:"— ";color:var(--c)}
 .pl{list-style:none;margin-top:auto;margin-bottom:24px}
 .pl li{display:flex;align-items:baseline;gap:10px;padding:7px 0;font-size:14px}
-.pl li::after{content:"";order:2;flex:1;border-bottom:1px dotted rgba(26,24,20,.35);transform:translateY(-4px)}
+.pl li::after{content:"";order:2;flex:1;border-bottom:1px dotted rgba(236,232,225,.3);transform:translateY(-4px)}
 .pl li span{order:1}
 .pl li b{order:3;font-family:var(--f-en);font-weight:500;font-size:22px;letter-spacing:.02em}
 .pl li b small{font-size:14px;margin-left:2px;color:var(--usuzumi)}
@@ -201,7 +210,7 @@ header.scrolled{background:rgba(243,238,228,.86);backdrop-filter:saturate(1.2) b
 .g-tile .tlink{align-self:flex-start;margin-top:8px;font-family:var(--f-en);font-size:17px;letter-spacing:.04em}
 
 /* ===== Living Soil (dark) ===== */
-.soil{background:var(--sumi);color:var(--washi)}
+.soil{background:#070707;color:var(--sumi);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .soil .eyebrow,.soil .muted,.soil .jp-sub{color:#A79F90}
 .soil .sec-head .vlabel{border-color:var(--line-d);color:var(--kin-l)}
 .soil .h1 em{color:var(--kin-l)}
@@ -215,7 +224,7 @@ header.scrolled{background:rgba(243,238,228,.86);backdrop-filter:saturate(1.2) b
 .cmp thead th{font-family:var(--f-en);font-weight:600;letter-spacing:.2em;font-size:12px;color:#A79F90}
 .cmp thead th:nth-child(2){color:var(--kin-l)}
 .cmp td:first-child{color:#A79F90;width:28%}
-.cmp td:nth-child(2){background:rgba(168,135,74,.12);color:var(--washi);font-weight:500}
+.cmp td:nth-child(2){background:rgba(201,163,92,.10);color:var(--sumi);font-weight:500}
 .cmp td:nth-child(3){color:#8C8577}
 
 /* ===== Promises ===== */
@@ -232,7 +241,7 @@ header.scrolled{background:rgba(243,238,228,.86);backdrop-filter:saturate(1.2) b
 .gd{background:var(--washi-2);border:1px solid var(--line);display:flex;flex-direction:column}
 .gd:nth-child(1){grid-column:span 6}
 .gd:nth-child(2),.gd:nth-child(3){grid-column:span 3}
-.gd-img{aspect-ratio:4/3;display:grid;place-items:center;border-bottom:1px solid var(--line);position:relative;background:radial-gradient(circle at 50% 55%,rgba(255,255,255,.55),transparent 60%)}
+.gd-img{aspect-ratio:4/3;display:grid;place-items:center;border-bottom:1px solid var(--line);position:relative;background:radial-gradient(circle at 50% 55%,rgba(201,163,92,.10),transparent 60%)}
 .gd:nth-child(1) .gd-img{aspect-ratio:16/9.2}
 .gd-img svg{width:52%;max-height:78%}
 .gd:nth-child(n+2) .gd-img{aspect-ratio:auto;flex:1;min-height:240px}
@@ -281,15 +290,15 @@ details .a{padding:0 36px 26px 52px;color:var(--usuzumi);font-size:14px}
 .map{aspect-ratio:16/9;border:1px solid var(--line);background:var(--washi-2);position:relative;overflow:hidden}
 .map svg{width:100%;height:100%}
 .map-pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center;gap:6px}
-.map-pin .seal{width:44px;height:44px;font-size:14px;writing-mode:vertical-rl}
-.map-pin span:not(.seal){font-size:11px;background:var(--sumi);color:var(--washi);padding:3px 10px;letter-spacing:.08em;white-space:nowrap}
+.map .pin-mark{width:30px;height:40px;filter:drop-shadow(0 4px 12px rgba(225,20,30,.5))}
+.map-pin span:not(.seal){font-size:11px;background:var(--sumi);color:#0B0B0B;padding:3px 10px;letter-spacing:.08em;white-space:nowrap}
 .info{margin-top:28px;display:grid;grid-template-columns:110px 1fr;font-size:14px}
 .info dt,.info dd{padding:14px 0;border-bottom:1px solid var(--line)}
 .info dt{font-family:var(--f-en);font-weight:600;font-size:12px;letter-spacing:.22em;color:var(--usuzumi);padding-top:17px}
 .todo{color:var(--shu);font-size:12px}
 
 /* ===== Footer ===== */
-footer{background:var(--sumi);color:var(--washi);padding:110px 0 130px;overflow:hidden}
+footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92,.25);padding:110px 0 130px;overflow:hidden}
 .f-grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:32px;position:relative}
 .f-brand{grid-column:1/6}
 .f-brand .brand-txt small{color:#A79F90}
@@ -298,7 +307,7 @@ footer{background:var(--sumi);color:var(--washi);padding:110px 0 130px;overflow:
 .f-col:first-of-type{grid-column:7/9}
 .f-col h4{font-family:var(--f-en);font-weight:600;font-size:12px;letter-spacing:.26em;color:var(--kin-l);margin-bottom:18px}
 .f-col ul{list-style:none;display:grid;gap:10px;font-size:14px;color:#CFC7B8}
-.f-col a:hover{color:var(--washi)}
+.f-col a:hover{color:var(--kin-l)}
 .f-big{position:absolute;right:-20px;top:-40px;font-family:var(--f-mincho);font-weight:700;font-size:220px;line-height:.9;writing-mode:vertical-rl;color:rgba(243,238,228,.04);white-space:nowrap;pointer-events:none}
 .legal{margin-top:80px;padding-top:28px;border-top:1px solid var(--line-d);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:12px;color:#968E80;line-height:1.9}
 
@@ -332,7 +341,7 @@ footer{background:var(--sumi);color:var(--washi);padding:110px 0 130px;overflow:
   .hero{padding-top:120px}
   .hero-copy{grid-column:1/-1;order:2;padding-top:40px}
   .hero-art{grid-column:1/-1;order:1;justify-content:center}
-  .arch{max-width:340px}
+  .bcard{max-width:380px}
   .hero-kanji{font-size:84px;right:0}
   .hero-vert{left:0}
   .numbers{margin-top:72px}
@@ -357,7 +366,7 @@ footer{background:var(--sumi);color:var(--washi);padding:110px 0 130px;overflow:
   .sticky{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;gap:8px;padding:6px;background:rgba(26,24,20,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:999px;transform:translateY(140%);transition:transform .45s var(--ease)}
   .sticky.show{transform:none}
   .sticky a{flex:1;height:50px}
-  .sticky .btn-sec{border-color:rgba(243,238,228,.3);color:var(--washi)}
+  .sticky .btn-sec{border-color:rgba(236,232,225,.3);color:var(--sumi)}
 }
 @media (max-width:600px){
   :root{--gut:20px}
@@ -369,10 +378,14 @@ footer{background:var(--sumi);color:var(--washi);padding:110px 0 130px;overflow:
   .brand-txt{font-size:15px}
   .brand-txt small{font-size:8px}
   .hero{padding-top:96px}
-  .arch{max-width:270px}
+  .bcard{max-width:320px}
+  .lockup .mark{width:62px;height:84px}
+  .lockup .lk-name{font-size:20px}
+  .lockup .lk-tag{font-size:14px}
+  .lockup .lk-kanji{font-size:24px}
   .hero-kanji{font-size:64px;right:0;bottom:-24px}
   .hero-kanji .seal{width:36px;height:36px;font-size:12px}
-  .hero-vert{font-size:12px;left:-2px}
+  .hero-vert{display:none}
   .display{margin-bottom:28px}
   .hero .lead-en{font-size:17px;margin-bottom:32px}
   .cta-row{flex-direction:column}
@@ -412,16 +425,13 @@ footer{background:var(--sumi);color:var(--washi);padding:110px 0 130px;overflow:
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="mark" viewBox="80 40 470 640"><path fill="currentColor" d="M315 52 C337 52 350 130 351 230 L351 612 C351 646 336 664 315 664 C294 664 279 646 279 612 L279 230 C280 130 293 52 315 52Z"/><path d="M315 264 C268 292 172 350 124 412 C106 436 120 450 162 452 C226 456 286 464 315 464 C344 464 404 456 468 452 C510 450 524 436 506 412 C458 350 362 292 315 264Z" fill="none" stroke="currentColor" stroke-width="50" stroke-linejoin="round"/></symbol></defs></svg>
 
 <!-- ============ AGE GATE ============ -->
 <div id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
-  <div class="noren" aria-hidden="true">
-    <div>極</div>
-    <div><span class="seal">極楽</span></div>
-    <div>楽</div>
-  </div>
+  <div class="lockup gate-lockup" aria-hidden="true"><svg class="mark" aria-hidden="true"><use href="#mark"/></svg><div class="lk-name">GOKURAKU</div><div class="lk-tag">premium roll</div><div class="lk-kanji">極楽</div></div>
   <div class="gate-body">
-    <h1 id="gate-title">GOKURAKU</h1>
+    <h1 id="gate-title" style="position:absolute;left:-9999px">GOKURAKU</h1>
     <p class="gate-q">あなたは20歳以上ですか？</p>
     <p class="gate-q-en">Are you 20 years of age or older?</p>
     <div class="gate-actions">
@@ -436,8 +446,8 @@ footer{background:var(--sumi);color:var(--washi);padding:110px 0 130px;overflow:
 <header id="hdr">
   <div class="wrap nav">
     <a href="#top" class="brand" aria-label="GOKURAKU トップへ">
-      <span class="seal seal-logo" aria-hidden="true">極楽</span>
-      <span class="brand-txt">GOKURAKU<small>LIVING SOIL CRAFT · BANGKOK</small></span>
+      <svg class="mark" aria-hidden="true"><use href="#mark"/></svg>
+      <span class="brand-txt">GOKURAKU<small>premium roll · 極楽</small></span>
     </a>
     <nav class="menu" aria-label="メイン">
       <a href="#menu">お品書き<span>MENU</span></a>
@@ -488,41 +498,15 @@ footer{background:var(--sumi);color:var(--washi);padding:110px 0 130px;overflow:
     </div>
 
     <div class="hero-art" aria-hidden="true">
-      <div class="arch">
-        <!-- Sumi-e landscape: mist, mountains, vermilion sun -->
-        <svg viewBox="0 0 440 594" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EDE5D5"/><stop offset=".6" stop-color="#E4D9C4"/><stop offset="1" stop-color="#D9CDB5"/></linearGradient>
-            <linearGradient id="mistg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3EEE4" stop-opacity="0"/><stop offset=".5" stop-color="#F3EEE4" stop-opacity=".85"/><stop offset="1" stop-color="#F3EEE4" stop-opacity="0"/></linearGradient>
-            <radialGradient id="sung" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#C24A34"/><stop offset=".85" stop-color="#B8432F"/><stop offset="1" stop-color="#B8432F" stop-opacity="0"/></radialGradient>
-            <filter id="ink" x="-10%" y="-10%" width="120%" height="130%"><feTurbulence type="fractalNoise" baseFrequency=".02 .06" numOctaves="3" seed="4"/><feDisplacementMap in="SourceGraphic" scale="10"/></filter>
-          </defs>
-          <rect width="440" height="594" fill="url(#sky)"/>
-          <circle class="sun" cx="282" cy="196" r="78" fill="url(#sung)"/>
-          <g filter="url(#ink)">
-            <path d="M-20 330 C40 300 70 250 120 262 C160 272 170 300 210 292 C260 282 290 236 340 246 C390 256 420 300 470 296 L470 594 L-20 594Z" fill="#1A1814" opacity=".18"/>
-            <path class="mist" d="M-60 318 H520 V370 H-60Z" fill="url(#mistg)"/>
-            <path d="M-20 392 C30 360 60 300 112 316 C150 328 160 368 196 360 C236 352 254 312 300 322 C350 334 372 380 470 372 L470 594 L-20 594Z" fill="#1A1814" opacity=".38"/>
-            <path class="mist" d="M-60 400 H520 V452 H-60Z" fill="url(#mistg)" style="animation-duration:18s"/>
-            <path d="M-20 470 C40 440 80 396 140 414 C186 428 200 470 250 462 C300 454 330 420 380 430 C420 438 440 460 470 456 L470 594 L-20 594Z" fill="#1A1814" opacity=".72"/>
-            <path d="M-20 540 C60 520 120 500 190 512 C250 522 300 548 360 536 C410 526 440 516 470 520 L470 594 L-20 594Z" fill="#1A1814" opacity=".92"/>
-          </g>
-          <rect x="0" y="560" width="440" height="40" fill="#1A1814"/>
-          <!-- pagoda silhouette -->
-          <g fill="#1A1814" opacity=".78" transform="translate(96 372)">
-            <rect x="12" y="-6" width="2" height="16"/>
-            <path d="M0 12 h26 l-4 5 h-18z"/><rect x="7" y="17" width="12" height="7"/>
-            <path d="M-3 24 h32 l-4 5 h-24z"/><rect x="6" y="29" width="14" height="8"/>
-            <path d="M-6 37 h38 l-5 6 h-28z"/><rect x="5" y="43" width="16" height="12"/>
-          </g>
-          <!-- birds -->
-          <g fill="none" stroke="#1A1814" stroke-width="1.4" opacity=".55" stroke-linecap="round">
-            <path d="M150 150 q6 -6 12 0 q6 -6 12 0"/><path d="M182 132 q4 -4 8 0 q4 -4 8 0"/>
-          </g>
+      <div class="bcard">
+        <svg class="swoosh" viewBox="0 0 440 594" preserveAspectRatio="none"><defs><linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#C9A35C" stop-opacity="0"/><stop offset=".5" stop-color="#E9CF94"/><stop offset="1" stop-color="#C9A35C" stop-opacity="0"/></linearGradient></defs>
+          <path d="M-10 250 C40 90 180 20 360 6" fill="none" stroke="url(#gl)" stroke-width="1.6"/><path d="M-10 280 C50 110 200 40 400 22" fill="none" stroke="url(#gl)" stroke-width=".8" opacity=".7"/>
+          <path d="M450 330 C420 470 300 560 90 590" fill="none" stroke="url(#gl)" stroke-width="1.6"/><path d="M450 360 C410 490 290 575 120 600" fill="none" stroke="url(#gl)" stroke-width=".8" opacity=".7"/>
         </svg>
+        <span class="glint" style="left:12%;top:20%"></span><span class="glint" style="right:6%;bottom:30%"></span>
+        <div class="lockup"><svg class="mark" aria-hidden="true"><use href="#mark"/></svg><div class="lk-name">GOKURAKU</div><div class="lk-tag">premium roll</div><div class="lk-kanji">極楽</div></div>
       </div>
       <span class="hero-vert">土と水だけで育った、自然の恵み</span>
-      <div class="hero-kanji">極楽<span class="seal">極楽</span></div>
     </div>
   </div>
 
@@ -762,10 +746,9 @@ footer{background:var(--sumi);color:var(--washi);padding:110px 0 130px;overflow:
         <div class="gd-img">
           <span class="gd-tag">APPAREL</span>
           <svg viewBox="0 0 120 110" aria-label="GOKURAKU Tシャツのイラスト" role="img">
-            <path d="M40 8 L22 14 L4 32 L18 46 L28 38 L28 104 L92 104 L92 38 L102 46 L116 32 L98 14 L80 8 C76 16 68 20 60 20 C52 20 44 16 40 8Z" fill="#1A1814"/>
+            <path d="M40 8 L22 14 L4 32 L18 46 L28 38 L28 104 L92 104 L92 38 L102 46 L116 32 L98 14 L80 8 C76 16 68 20 60 20 C52 20 44 16 40 8Z" fill="#1E1E1E" stroke="#C9A35C" stroke-width="1.2"/>
             <path d="M40 8 C44 16 52 20 60 20 C68 20 76 16 80 8" fill="none" stroke="#3a352d" stroke-width="2"/>
-            <rect x="51" y="44" width="18" height="18" rx="2" fill="#B8432F"/>
-            <text x="60" y="57" text-anchor="middle" font-family="Shippori Mincho B1" font-size="8" fill="#fff" font-weight="700">極楽</text>
+            <use href="#mark" x="52" y="40" width="16" height="22" style="color:#E1141E"/>
           </svg>
         </div>
         <div class="gd-b">
@@ -789,7 +772,7 @@ footer{background:var(--sumi);color:var(--washi);padding:110px 0 130px;overflow:
       <article class="gd rv" style="--d:160ms">
         <div class="gd-img">
           <span class="gd-tag soon">COMING SOON</span>
-          <svg viewBox="0 0 80 80" aria-hidden="true"><ellipse cx="40" cy="18" rx="20" ry="6" fill="#2E2A23"/><path d="M20 18 V62 A20 6 0 0 0 60 62 V18 A20 6 0 0 1 20 18Z" fill="#1A1814"/><rect x="34" y="32" width="12" height="12" rx="1" fill="#B8432F"/></svg>
+          <svg viewBox="0 0 80 80" aria-hidden="true"><ellipse cx="40" cy="18" rx="20" ry="6" fill="#2A2A2A" stroke="#C9A35C" stroke-width=".8"/><path d="M20 18 V62 A20 6 0 0 0 60 62 V18 A20 6 0 0 1 20 18Z" fill="#161616" stroke="#C9A35C" stroke-width=".8"/><use href="#mark" x="34" y="30" width="12" height="16" style="color:#E1141E"/></svg>
         </div>
         <div class="gd-b">
           <h3>Premium 7g Box</h3>
@@ -843,13 +826,13 @@ footer{background:var(--sumi);color:var(--washi);padding:110px 0 130px;overflow:
     <div class="visit-r rv" style="--d:100ms">
       <div class="map" role="img" aria-label="地図（店舗住所が決まり次第Googleマップを埋め込み）">
         <svg viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <rect width="640" height="360" fill="#EAE3D6"/>
-          <g stroke="#D7CDBA" stroke-width="14" fill="none" stroke-linecap="round"><path d="M-20 120 H660"/><path d="M-20 260 C200 250 420 280 660 240"/><path d="M180 -20 V380"/><path d="M460 -20 C440 120 480 240 450 380"/></g>
-          <g stroke="#DFD6C5" stroke-width="6" fill="none"><path d="M-20 60 H660"/><path d="M-20 190 H660"/><path d="M80 -20 V380"/><path d="M320 -20 V380"/><path d="M560 -20 V380"/></g>
-          <path d="M-20 330 C120 310 260 340 400 320 C520 304 600 320 660 312 V380 H-20Z" fill="#C9D3C4"/>
-          <rect x="360" y="140" width="70" height="38" fill="#DCE3D4"/>
+          <rect width="640" height="360" fill="#131313"/>
+          <g stroke="#262626" stroke-width="14" fill="none" stroke-linecap="round"><path d="M-20 120 H660"/><path d="M-20 260 C200 250 420 280 660 240"/><path d="M180 -20 V380"/><path d="M460 -20 C440 120 480 240 450 380"/></g>
+          <g stroke="#1D1D1D" stroke-width="6" fill="none"><path d="M-20 60 H660"/><path d="M-20 190 H660"/><path d="M80 -20 V380"/><path d="M320 -20 V380"/><path d="M560 -20 V380"/></g>
+          <path d="M-20 330 C120 310 260 340 400 320 C520 304 600 320 660 312 V380 H-20Z" fill="#15201A"/>
+          <rect x="360" y="140" width="70" height="38" fill="#17221B"/>
         </svg>
-        <div class="map-pin"><span class="seal">極楽</span><span>GOKURAKU</span></div>
+        <div class="map-pin"><svg class="mark pin-mark" aria-hidden="true"><use href="#mark"/></svg><span>GOKURAKU</span></div>
       </div>
       <dl class="info">
         <dt>ADDRESS</dt><dd><span class="todo">［店舗住所を記入］</span><br><small class="muted">例：BTS ◯◯駅から徒歩◯分</small></dd>
@@ -868,7 +851,7 @@ footer{background:var(--sumi);color:var(--washi);padding:110px 0 130px;overflow:
     <div class="f-grid">
       <div class="f-big" aria-hidden="true">極楽</div>
       <div class="f-brand">
-        <a href="#top" class="brand"><span class="seal seal-logo" aria-hidden="true">極楽</span><span class="brand-txt">GOKURAKU<small>LIVING SOIL CRAFT · BANGKOK</small></span></a>
+        <a href="#top" class="brand"><svg class="mark" aria-hidden="true"><use href="#mark"/></svg><span class="brand-txt">GOKURAKU<small>premium roll · 極楽</small></span></a>
         <p>土と水だけで育った、自然の恵み。<br>日本人の技術と愛情が生んだ、最高品質の一品を。</p>
       </div>
       <div class="f-col"><h4>EXPLORE</h4><ul><li><a href="#menu">お品書き</a></li><li><a href="#soil">土の話</a></li><li><a href="#goods">グッズ</a></li><li><a href="#faq">よくある質問</a></li></ul></div>
