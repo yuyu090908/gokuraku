@@ -95,6 +95,12 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .gate-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .gate-actions .btn-yes{background:var(--sumi);color:#0B0B0B}
 .gate-actions .btn-yes:hover{background:var(--shu);color:#fff}
+.gate-langs{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;margin-top:30px;font-size:12px}
+.gate-langs button{background:none;border:0;color:var(--usuzumi);font:inherit;font-family:system-ui,sans-serif;cursor:pointer;padding:4px 2px;border-bottom:1px solid transparent}
+.gate-langs button:hover,.gate-langs button[aria-current="true"]{color:var(--kin-l);border-bottom-color:var(--kin)}
+.gate-langs button{font-family:var(--f-gothic)}
+:is(.gate-langs,.lang-list) [lang="my"]{font-family:"Noto Sans Myanmar","Myanmar Text","Myanmar Sangam MN","Padauk",sans-serif}
+:is(.gate-langs,.lang-list) [lang="th"]{font-family:"Noto Sans Thai","Leelawadee UI","Thonburi",sans-serif}
 .gate-note{font-size:12px;color:var(--usuzumi);margin-top:28px;line-height:1.8}
 
 /* ===== Header ===== */
@@ -385,6 +391,39 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
 }
 @media (prefers-reduced-motion:reduce){.vbg video,.reel video{display:none}}
 
+
+/* ===== Language selector ===== */
+.langsel{position:relative}
+.lang-btn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px;border:1px solid var(--line);border-radius:999px;font-family:var(--f-en);font-weight:600;font-size:13px;letter-spacing:.14em;color:var(--sumi);transition:border-color .2s}
+.lang-btn:hover,.lang-btn[aria-expanded="true"]{border-color:var(--kin)}
+.lang-btn svg{width:16px;height:16px;color:var(--kin)}
+.lang-btn .chev{width:10px;height:6px;color:var(--usuzumi);transition:transform .25s}
+.lang-btn[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.lang-list{list-style:none;position:absolute;right:0;top:calc(100% + 10px);min-width:220px;padding:8px;background:rgba(19,19,19,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(201,163,92,.28);border-radius:14px;box-shadow:0 30px 60px -20px rgba(0,0,0,.8);opacity:0;visibility:hidden;transform:translateY(-6px);transition:.25s var(--ease);z-index:80;max-height:70vh;overflow:auto}
+.langsel.open .lang-list{opacity:1;visibility:visible;transform:none}
+.lang-list button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 12px;border-radius:8px;font-size:14px;letter-spacing:.02em;text-align:left;color:var(--sumi);min-height:44px}
+.lang-list button small{font-family:var(--f-en);font-size:11px;letter-spacing:.18em;color:var(--usuzumi)}
+.lang-list button:hover{background:rgba(236,232,225,.06)}
+.lang-list button[aria-selected="true"]{background:rgba(201,163,92,.12);color:var(--kin-l)}
+.lang-list button[aria-selected="true"] small{color:var(--kin)}
+.lang-list button[lang="th"] span{font-family:"Noto Sans Thai",var(--f-goth)}
+.lang-list button[lang="my"] span{font-family:"Noto Sans Myanmar",var(--f-goth)}
+html:not([lang="ja"]) .ja-only{display:none}
+/* per-language type */
+html[lang="en"],html[lang="es"],html[lang="pt"],html[lang="ru"],html[lang="vi"]{--f-goth:"Noto Sans",system-ui,sans-serif;--f-mincho:"Noto Serif",Georgia,serif}
+html[lang="th"]{--f-goth:"Noto Sans Thai","Noto Sans",system-ui,sans-serif;--f-mincho:"Noto Serif Thai","Noto Serif",serif}
+html[lang="my"]{--f-goth:"Noto Sans Myanmar","Noto Sans",system-ui,sans-serif;--f-mincho:"Noto Serif Myanmar","Noto Serif",serif}
+html[lang="zh"]{--f-goth:"Noto Sans SC",system-ui,sans-serif;--f-mincho:"Noto Serif SC",serif}
+html[lang="ko"]{--f-goth:"Noto Sans KR",system-ui,sans-serif;--f-mincho:"Noto Serif KR",serif}
+html:not([lang="ja"]):not([lang="zh"]) :is(.jp-sub,.band-ja,.lead,.gate-q,.g-tile h3,.pr-row h4,summary,.label-body .scene,.reel figcaption b,.f-brand p,.drawer a.dl){letter-spacing:.02em}
+html:not([lang="ja"]):not([lang="zh"]):not([lang="ko"]) .menu{font-size:12px;letter-spacing:.06em}
+html[lang="th"] body,html[lang="my"] body{line-height:2}
+html[lang="my"] :is(.lead,.band-ja,summary,.g-tile h3,.gate-q){line-height:2.2}
+html[lang="th"] :is(.menu,.cta-row .btn,.btn),html[lang="my"] :is(.menu,.btn){letter-spacing:0}
+@media (max-width:1240px){html:not([lang="ja"]):not([lang="zh"]):not([lang="ko"]) .menu{gap:20px}}
+@media (max-width:900px){.lang-btn{height:40px;padding:0 12px}.lang-list{position:fixed;right:12px;left:12px;top:76px;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:4px}}
+@media (max-width:600px){.lang-list{top:68px}}
+
 /* sticky (SP) */
 .sticky{display:none}
 
@@ -396,7 +435,6 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
 @media (max-width:1100px){
   :root{--gut:32px}
   .menu{gap:24px}
-  .lang{display:none}
   .promises{grid-template-columns:repeat(3,1fr)}
   .pr:nth-child(4){border-left:0;padding-left:0}
   .pr{padding-bottom:36px}
@@ -506,12 +544,13 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
   <div class="gate-body">
     <h1 id="gate-title" style="position:absolute;left:-9999px">GOKURAKU</h1>
     <p class="gate-q">あなたは20歳以上ですか？</p>
-    <p class="gate-q-en">Are you 20 years of age or older?</p>
+    <p class="gate-q-en ja-only">Are you 20 years of age or older?</p>
     <div class="gate-actions">
       <button class="btn btn-yes" id="gate-yes">はい、20歳以上です</button>
       <a class="btn btn-sec" href="https://www.google.com" rel="noopener">いいえ</a>
     </div>
-    <p class="gate-note">タイの法令に基づき、20歳未満・妊娠中・授乳中の方はご利用いただけません。<br>Not for persons under 20, pregnant or breastfeeding.</p>
+    <div class="gate-langs" data-no-i18n aria-label="Language"><button type="button" data-lang="ja" lang="ja">日本語</button><button type="button" data-lang="en" lang="en">English</button><button type="button" data-lang="th" lang="th">ไทย</button><button type="button" data-lang="zh" lang="zh">中文</button><button type="button" data-lang="ko" lang="ko">한국어</button><button type="button" data-lang="es" lang="es">Español</button><button type="button" data-lang="pt" lang="pt">Português</button><button type="button" data-lang="ru" lang="ru">Русский</button><button type="button" data-lang="vi" lang="vi">Tiếng Việt</button><button type="button" data-lang="my" lang="my">မြန်မာ</button></div>
+    <p class="gate-note">タイの法令に基づき、20歳未満・妊娠中・授乳中の方はご利用いただけません。<span class="ja-only"><br>Not for persons under 20, pregnant or breastfeeding.</span></p>
   </div>
 </div>
 
@@ -530,7 +569,7 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
       <a href="#visit">アクセス<span>ACCESS</span></a>
     </nav>
     <div class="nav-r">
-      <span class="lang" aria-label="言語"><b>JP</b> &nbsp;EN&nbsp; TH</span>
+      <div class="langsel" id="langsel"><button type="button" class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-controls="langList"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></svg><span id="langCur">JP</span><svg class="chev" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button><ul class="lang-list" id="langList" role="listbox" aria-label="Language"><li><button type="button" role="option" data-lang="ja" lang="ja" aria-selected="false"><span>日本語</span><small>JP</small></button></li><li><button type="button" role="option" data-lang="en" lang="en" aria-selected="false"><span>English</span><small>EN</small></button></li><li><button type="button" role="option" data-lang="th" lang="th" aria-selected="false"><span>ไทย</span><small>TH</small></button></li><li><button type="button" role="option" data-lang="zh" lang="zh" aria-selected="false"><span>简体中文</span><small>中文</small></button></li><li><button type="button" role="option" data-lang="ko" lang="ko" aria-selected="false"><span>한국어</span><small>KO</small></button></li><li><button type="button" role="option" data-lang="es" lang="es" aria-selected="false"><span>Español</span><small>ES</small></button></li><li><button type="button" role="option" data-lang="pt" lang="pt" aria-selected="false"><span>Português</span><small>PT</small></button></li><li><button type="button" role="option" data-lang="ru" lang="ru" aria-selected="false"><span>Русский</span><small>RU</small></button></li><li><button type="button" role="option" data-lang="vi" lang="vi" aria-selected="false"><span>Tiếng Việt</span><small>VI</small></button></li><li><button type="button" role="option" data-lang="my" lang="my" aria-selected="false"><span>မြန်မာ</span><small>MY</small></button></li></ul></div>
       <a class="btn btn-line btn-sm" href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.5-1.6 2-3.2 2-4.8C22 6.6 17.5 3 12 3z"/></svg>LINEで取り置き</a>
       <button class="burger" id="burger" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer">
@@ -582,7 +621,7 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
         <span class="glint" style="left:12%;top:20%"></span><span class="glint" style="right:6%;bottom:30%"></span>
         <div class="lockup"><svg class="mark" aria-hidden="true"><use href="#mark"/></svg><div class="lk-name">GOKURAKU</div><div class="lk-tag">premium roll</div><div class="lk-kanji">極楽</div></div>
       </div>
-      <span class="hero-vert">土と水だけで育った、自然の恵み</span>
+      <span class="hero-vert" data-no-i18n>土と水だけで育った、自然の恵み</span>
     </div>
   </div>
 
@@ -599,7 +638,7 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
 <section class="sec" id="menu">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="vlabel vert">お品書き</div>
+      <div class="vlabel vert" data-no-i18n>お品書き</div>
       <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap">
         <div>
           <span class="eyebrow"><i>01</i> The Menu</span>
@@ -743,7 +782,7 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
 <section class="sec soil" id="soil">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="vlabel vert">土の話</div>
+      <div class="vlabel vert" data-no-i18n>土の話</div>
       <div>
         <span class="eyebrow"><i>02</i> Living Soil</span>
         <h2 class="h1" style="margin:14px 0 10px">Living soil<br>changes <em>everything.</em></h2>
@@ -815,7 +854,7 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
 <section class="sec" id="quality">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="vlabel vert">五つの約束</div>
+      <div class="vlabel vert" data-no-i18n>五つの約束</div>
       <div>
         <span class="eyebrow"><i>03</i> Gokuraku Quality</span>
         <h2 class="h1" style="margin:14px 0 10px">Five promises,<br>kept by <em>hand.</em></h2>
@@ -836,7 +875,7 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
 <section class="sec" id="goods" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="vlabel vert">品々</div>
+      <div class="vlabel vert" data-no-i18n>品々</div>
       <div>
         <span class="eyebrow"><i>04</i> Goods</span>
         <h2 class="h1" style="margin:14px 0 10px">Take a piece<br>of <em>Gokuraku</em> home.</h2>
@@ -1039,6 +1078,50 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
         vids.forEach(function(v){if(userPaused)v.pause();else if(v._vis)play(v);});
       });
     });
+  })();
+
+
+  /* ===== i18n ===== */
+  (function(){
+    var K=["あなたは20歳以上ですか？", "はい、20歳以上です", "いいえ", "タイの法令に基づき、20歳未満・妊娠中・授乳中の方はご利用いただけません。", "お品書き", "土の話", "グッズ", "よくある質問", "アクセス", "LINEで取り置き", "本日営業中 · 12:00–24:00", "本日 12:00 オープン · 取り置き受付中", "土と水だけで育った、自然の恵み。", "日本人の技術と愛情が生んだ、最高品質の一品を。", "お品書きを見る", "日本人スタッフ常駐", "取り置き無料", "生きた土で栽培", "化学肥料・農薬", "手作業トリミング", "本日のラインナップ", "夜、深くくつろぐ時間に", "Shinma を取り置き", "いつでも、心地よいバランスで", "ZK を取り置き", "昼、軽やかに冴える時間に", "Isaac Newton を取り置き", "ケース・フィルター付きの1gプレロール。すぐに楽しめる、手巻きの一本。", "1g ジョイント", "単品 · Case & Tip 付き", "20本セット", "まとめ買いで 1本あたり 300฿", "セットを取り置き", "価格はタイバーツ（THB）・税込です。在庫は日々変わるため、最新情報はLINEでお問い合わせください。", "テイスティングノートは目安です。", "夜、ゆっくり", "くつろぎたい", "一日の終わりに、深く落ち着いた時間を。", "いつでも", "バランスよく", "初めての方にもおすすめの、穏やかな一本。", "昼、軽やかに", "過ごしたい", "すっきりと冴える、柑橘の香り。", "土と水と、人の手と。毎日、一株ずつ見て回ります。", "生きた土が、すべてを変える", "落ち葉は小さな生き物に分解され、微生物と菌類が植物の栄養へと変える。", "植物は必要なものだけを自ら選び、吸い上げる。", "この循環が、濃厚な香りとまろやかな吸い心地を生みます。", "項目", "一般的な栽培", "栽培方法", "Living Soil（生きた土）", "液体肥料・水耕", "与えるもの", "土と水のみ", "化学肥料・添加剤", "香り", "圧倒的に濃厚", "控えめ", "吸い心地", "まろやか・スムース", "刺激が出やすい", "仕上げ", "すべて手作業", "機械トリミング", "栽培ルームから", "Instagram で毎日更新 →", "一本の花穂", "光の下で", "毎日の手入れ", "極楽が守り続ける、五つのこと", "微生物が息づく、生きた土でじっくりと育てます。", "肥料も化学物質も使わない。与えるのは土と水だけ。", "トリミングはすべて、熟練の手作業で。", "一つひとつを、作品として扱います。", "日本の技術と、妥協のない品質管理。", "オリジナルグッズ", "Black / White · 背面に「SU」シンボル", "店頭・LINEで購入 →", "詳細・価格は近日公開。", "入荷をLINEで受け取る →", "7g専用の円筒ボックス。贈り物にも。", "今日の一本を、LINEで取り置き。", "よくあるご質問", "ここにない質問も、日本語でお気軽にどうぞ。", "LINEで質問する", "取り置きはどうすればいいですか？", "LINEまたはWhatsAppで「品種名・グラム数・来店予定時間」をお送りください。確認後にお取り置きします。取り置きは無料です。", "初めてで、どれを選べばいいか分かりません。", "夜にゆっくりなら Shinma、いつでもバランスよくなら ZK、昼に軽やかに過ごしたいなら Isaac Newton がおすすめです。店頭では日本人スタッフがご案内します。", "支払い方法は？", "現金（THB）でお支払いいただけます。", "年齢確認はありますか？", "タイの法令に基づき、20歳以上の方のみご購入いただけます。ご来店時にパスポートなどの身分証明書をご提示ください。", "どこで吸えますか？", "公共の場所での喫煙は法律で禁止されています。店舗のルールと現地の法令に従ってお楽しみください。", "ご予約・お問い合わせ", "おすすめ", "取り置き・ご質問はこちら（日本語）", "@gokuraku_thailand · 入荷情報を発信中", "定休日：", "20歳未満・妊娠中・授乳中の方への販売はいたしません。公共の場所での喫煙は法律で禁止されています。", "Shinma（インディカ）の花穂。オレンジのピスティルと白いトライコームに覆われたバッズ", "ZK（インディカ・ハイブリッド）の花穂。紫がかった葉とトライコームに覆われたバッズ", "Isaac Newton（サティバ）の花穂。霜のようなトライコームに覆われた長いバッズ", "言語"];
+    var IDX={};K.forEach(function(k,i){IDX[k]=i});
+    var SUP=['ja','en','th','zh','ko','es','pt','ru','vi','my'];
+    var ABBR={ja:'JP',en:'EN',th:'TH',zh:'中文',ko:'KO',es:'ES',pt:'PT',ru:'RU',vi:'VI',my:'MY'};
+    var FONTS={th:'Noto+Sans+Thai:wght@400;500;700&family=Noto+Serif+Thai:wght@500;700',my:'Noto+Sans+Myanmar:wght@400;500;700&family=Noto+Serif+Myanmar:wght@500;700',zh:'Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;700',ko:'Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;700',latin:'Noto+Sans:wght@400;500;700&family=Noto+Serif:wght@500;700'};
+    var nodes=[],alts=[];
+    var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
+      var p=n.parentElement;if(!p||p.closest('script,style,svg,[data-no-i18n]'))return NodeFilter.FILTER_REJECT;
+      return (n.nodeValue.trim() in IDX)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_SKIP;}});
+    var n;while((n=w.nextNode())){var v=n.nodeValue,t=v.trim();nodes.push({n:n,i:IDX[t],pre:v.slice(0,v.indexOf(t)),post:v.slice(v.indexOf(t)+t.length)});}
+    document.querySelectorAll('img[alt]').forEach(function(im){if(im.alt in IDX)alts.push({el:im,i:IDX[im.alt]})});
+    var stTxt=document.getElementById('status-txt');
+    var loaded={},fontsLoaded={};
+    function font(l){var f=FONTS[l]||(['en','es','pt','ru','vi'].indexOf(l)>-1?FONTS.latin:null);if(!f||fontsLoaded[f])return;fontsLoaded[f]=1;var ln=document.createElement('link');ln.rel='stylesheet';ln.href='https://fonts.googleapis.com/css2?family='+f+'&display=swap';document.head.appendChild(ln);}
+    function load(l,cb){if(l==='ja'||(window.GK_I18N&&GK_I18N[l]))return cb();var sc=document.createElement('script');sc.src='lang/'+l+'.js';sc.onload=cb;sc.onerror=function(){cb(true)};document.head.appendChild(sc);}
+    function apply(l){
+      var T=l==='ja'?K:(window.GK_I18N&&GK_I18N[l]);if(!T){l='ja';T=K;}
+      nodes.forEach(function(o){var txt=T[IDX[o.n.parentElement===stTxt?stTxt.dataset.k||K[o.i]:K[o.i]]]||K[o.i];o.n.nodeValue=o.pre+txt+o.post;});
+      alts.forEach(function(o){o.el.alt=T[o.i]});
+      document.documentElement.lang=l;
+      document.getElementById('langCur').textContent=ABBR[l];
+      document.querySelectorAll('#langList [data-lang]').forEach(function(b){b.setAttribute('aria-selected',b.dataset.lang===l)});document.querySelectorAll('.gate-langs [data-lang]').forEach(function(b){b.setAttribute('aria-current',b.dataset.lang===l)});
+      try{localStorage.setItem('gk_lang',l)}catch(e){}
+    }
+    function setLang(l){if(SUP.indexOf(l)<0)l='en';font(l);load(l,function(){apply(l)});}
+    if(stTxt){stTxt.dataset.k=stTxt.textContent.trim();}
+    var pick=null;
+    try{pick=new URLSearchParams(location.search).get('lang')}catch(e){}
+    if(!pick){try{pick=localStorage.getItem('gk_lang')}catch(e){}}
+    if(!pick){var bl=(navigator.languages||[navigator.language||'ja']);for(var j=0;j<bl.length&&!pick;j++){var c=(bl[j]||'').toLowerCase().split('-')[0];if(SUP.indexOf(c)>-1)pick=c;}pick=pick||'en';}
+    if(pick!=='ja')setLang(pick);else{document.documentElement.lang='ja';document.querySelectorAll('#langList [data-lang="ja"]').forEach(function(b){b.setAttribute('aria-selected','true')});document.querySelectorAll('.gate-langs [data-lang="ja"]').forEach(function(b){b.setAttribute('aria-current','true')});}
+    /* menu */
+    var sel=document.getElementById('langsel'),btn=document.getElementById('langBtn');
+    function close(){sel.classList.remove('open');btn.setAttribute('aria-expanded','false')}
+    btn.addEventListener('click',function(e){e.stopPropagation();var o=sel.classList.toggle('open');btn.setAttribute('aria-expanded',o);if(o){var cur=sel.querySelector('[aria-selected="true"]');cur&&cur.focus();}});
+    document.addEventListener('click',function(e){if(!sel.contains(e.target))close()});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&sel.classList.contains('open')){close();btn.focus();}});
+    document.querySelectorAll('.gate-langs [data-lang]').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang)})});
+    sel.querySelectorAll('[data-lang]').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang);close();btn.focus();})});
   })();
 
   /* reveal */
