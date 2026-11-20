@@ -994,6 +994,13 @@ details .a p+p{margin-top:8px}
 .about-org{margin-top:22px;font-family:var(--f-mincho);font-size:clamp(17px,1.6vw,20px);line-height:1.8;color:var(--kin-l);letter-spacing:.04em}
 .pc-org{position:absolute;top:12px;right:12px;z-index:1;font-family:var(--f-cap);font-size:10.5px;letter-spacing:.16em;color:#0B0A08;background:var(--gold-grad);border-radius:999px;padding:4px 10px}
 @media (max-width:767px){.seal-org{width:112px;margin:0 auto 18px}.about-copy{text-align:left}}
+.about{overflow:hidden}
+.about>.wrap{position:relative;z-index:2}
+.about .vbg video,.about .vposter{object-position:center 40%;background-position:center 40%}
+.about .vshade{background:linear-gradient(90deg,rgba(8,8,8,.9) 0%,rgba(8,8,8,.7) 45%,rgba(8,8,8,.5) 100%),linear-gradient(180deg,#080808 0%,rgba(8,8,8,0) 18%,rgba(8,8,8,0) 82%,#080808 100%)}
+.about .op{background:rgba(16,16,16,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.about .h1,.about .about-org,.about .about-lead{text-shadow:0 2px 18px rgba(0,0,0,.7)}
+@media (max-width:767px){.about .vshade{background:rgba(8,8,8,.72)}}
 </style>
 </head>
 <body>
@@ -1231,6 +1238,8 @@ details .a p+p{margin-top:8px}
 
 <!-- ============ ABOUT / PHILOSOPHY ============ -->
 <section class="sec about" id="about">
+  <div class="vbg wide" aria-hidden="true"><div class="vposter" style="background-image:url(videos/lights.webp)"></div><video class="" muted loop playsinline preload="none" poster="videos/lights.webp" data-src="videos/lights.mp4" aria-hidden="true" tabindex="-1"></video></div>
+  <div class="vshade" aria-hidden="true"></div>
   <div class="wrap about-grid">
     <div class="about-copy rv"><div class="seal-org" aria-hidden="true"><svg viewBox="0 0 200 200"><defs><path id="sc" d="M100 100 m-74 0 a74 74 0 1 1 148 0 a74 74 0 1 1 -148 0"/><linearGradient id="sgd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F0D49A"/><stop offset="1" stop-color="#92703C"/></linearGradient></defs><circle cx="100" cy="100" r="96" fill="none" stroke="url(#sgd)" stroke-width="1.4"/><circle cx="100" cy="100" r="62" fill="none" stroke="url(#sgd)" stroke-width=".8"/><text font-family="Cinzel,serif" font-size="12" fill="#D6B675"><textPath href="#sc" textLength="452" lengthAdjust="spacing">LIVING SOIL · HAND TRIMMED · SOIL &amp; WATER · </textPath></text><text x="100" y="96" text-anchor="middle" font-family="Cinzel,serif" font-size="34" fill="url(#sgd)">100%</text><text x="100" y="122" text-anchor="middle" font-family="Cinzel,serif" font-size="14" letter-spacing="4" fill="#F0D49A">ORGANIC</text><path d="M100 152 v-8 M100 148 c-6-1-9-5-9-9 c5 0 9 4 9 9z M100 146 c5-2 8-6 8-10 c-5 1-8 5-8 10z" fill="none" stroke="#D6B675" stroke-width="1"/></svg></div>
       <span class="eyebrow"><i>—</i> 100% Organic · Our Philosophy</span>
