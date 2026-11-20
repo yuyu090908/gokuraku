@@ -318,6 +318,73 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
 .f-big{position:absolute;right:-20px;top:-40px;font-family:var(--f-mincho);font-weight:700;font-size:220px;line-height:.9;writing-mode:vertical-rl;color:rgba(243,238,228,.04);white-space:nowrap;pointer-events:none}
 .legal{margin-top:80px;padding-top:28px;border-top:1px solid var(--line-d);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:12px;color:#968E80;line-height:1.9}
 
+
+/* ===== Background video system ===== */
+.vbg{position:absolute;inset:0;overflow:hidden;z-index:0;background:#0B0B0B}
+.vbg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s var(--ease)}
+.vbg video.on{opacity:1}
+.vbg .vposter{position:absolute;inset:0;background-size:cover;background-position:inherit}
+.vbg.wide video,.vbg.wide .vposter{filter:blur(1.5px) saturate(.85) brightness(.75);transform:scale(1.04)}
+.vbg::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23g)'/%3E%3C/svg%3E")}
+.vshade{position:absolute;inset:0;z-index:1;pointer-events:none}
+.hero{position:relative}
+.hero>.wrap,.hero>.numbers{position:relative;z-index:2}
+.hero .vbg video,.hero .vposter{object-position:center 40%;background-position:center 40%}
+.hero .vshade{background:
+  linear-gradient(180deg,rgba(11,11,11,.85) 0,rgba(11,11,11,0) 160px),
+  linear-gradient(90deg,rgba(11,11,11,.93) 0%,rgba(11,11,11,.8) 42%,rgba(11,11,11,.55) 100%),
+  linear-gradient(0deg,#0B0B0B 0%,rgba(11,11,11,0) 32%)}
+.hero .display,.hero .lead{text-shadow:0 2px 24px rgba(0,0,0,.6)}
+.numbers{background:rgba(11,11,11,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.vtoggle{position:absolute;right:24px;bottom:24px;z-index:3;width:40px;height:40px;border-radius:50%;border:1px solid rgba(236,232,225,.3);display:grid;place-items:center;color:var(--sumi);background:rgba(11,11,11,.4);backdrop-filter:blur(6px);transition:border-color .2s}
+.vtoggle:hover{border-color:var(--kin)}
+.vtoggle svg{width:14px;height:14px}
+.vtoggle .i-play{display:none}
+.paused .vtoggle .i-play{display:block}
+.paused .vtoggle .i-pause{display:none}
+/* interlude & cta bands */
+.band{position:relative;min-height:72vh;display:grid;place-items:center;text-align:center;padding:120px 0;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.band>.wrap{position:relative;z-index:2}
+.band .vshade{background:radial-gradient(ellipse at center,rgba(11,11,11,.35) 0%,rgba(11,11,11,.8) 75%),rgba(11,11,11,.42)}
+.band-q{font-family:var(--f-en);font-weight:400;font-size:clamp(34px,5.4vw,72px);line-height:1.08;letter-spacing:-.01em;text-shadow:0 2px 30px rgba(0,0,0,.7)}
+.band-q em{font-style:italic;color:var(--kin)}
+.band-ja{font-family:var(--f-mincho);font-size:clamp(15px,1.5vw,18px);letter-spacing:.18em;margin-top:24px;color:#E6E1D8;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.band .eyebrow{color:#CFC9BE;justify-content:center;margin-bottom:26px}
+#interlude .vbg video,#interlude .vposter{object-position:center 45%;background-position:center 45%}
+#cta-band{min-height:60vh}
+#cta-band .vbg video,#cta-band .vposter{object-position:center 55%;background-position:center 55%}
+#cta-band .btn{margin-top:36px}
+/* reels */
+.reels-sec{padding:130px 0 120px}
+.reels-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px;flex-wrap:wrap}
+.reels{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;position:relative;max-width:1040px;margin:0 auto}
+.reel{margin:0}
+.reel .frame{position:relative;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#111;box-shadow:0 0 0 1px rgba(201,163,92,.25),0 40px 80px -40px rgba(0,0,0,.9)}
+.reel .frame video,.reel .frame .vposter{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background-size:cover;background-position:center}
+.reel .frame video{opacity:0;transition:opacity .8s var(--ease)}
+.reel .frame video.on{opacity:1}
+.reel .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,11,11,.85),transparent 40%);pointer-events:none}
+.reel figcaption{position:absolute;left:22px;right:22px;bottom:20px;z-index:1}
+.reel figcaption span{display:block;font-family:var(--f-en);font-weight:600;font-size:11px;letter-spacing:.3em;color:var(--kin)}
+.reel figcaption b{display:block;font-family:var(--f-mincho);font-weight:500;font-size:18px;letter-spacing:.14em;margin-top:4px}
+.reel-no{position:absolute;top:16px;left:18px;z-index:1;font-family:var(--f-en);font-size:12px;letter-spacing:.2em;color:rgba(255,255,255,.8)}
+.reels-wrap{position:relative}
+.reels-wrap .vtoggle{position:static}
+.reels-ig{font-size:13px}
+@media (max-width:900px){
+  .reels{max-width:none;grid-template-columns:repeat(3,72%);overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;margin:0 calc(var(--gut)*-1);padding:0 var(--gut) 8px;scrollbar-width:none}
+  .reels::-webkit-scrollbar{display:none}
+  .reel{scroll-snap-align:center}
+  .band{min-height:64vh;padding:96px 0}
+  .vtoggle{right:16px;bottom:16px}
+}
+@media (max-width:600px){
+  .reels{grid-template-columns:repeat(3,80%)}
+  .hero .vshade{background:linear-gradient(180deg,rgba(11,11,11,.8) 0,rgba(11,11,11,.55) 30%,rgba(11,11,11,.82) 62%,#0B0B0B 100%)}
+}
+@media (prefers-reduced-motion:reduce){.vbg video,.reel video{display:none}}
+
 /* sticky (SP) */
 .sticky{display:none}
 
@@ -485,6 +552,9 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
 
 <!-- ============ HERO ============ -->
 <section class="hero">
+  <div class="vbg wide" aria-hidden="true"><div class="vposter" style="background-image:url(videos/hero-canopy.webp)"></div><video class="" muted loop playsinline preload="none" poster="videos/hero-canopy.webp" data-src="videos/hero-canopy.mp4" data-eager aria-hidden="true" tabindex="-1"></video></div>
+  <div class="vshade" aria-hidden="true"></div>
+  <button class="vtoggle" type="button" data-vtoggle aria-label="背景動画を一時停止"><svg class="i-pause" viewBox="0 0 14 14" fill="currentColor"><rect x="2" y="1" width="3.5" height="12" rx="1"/><rect x="8.5" y="1" width="3.5" height="12" rx="1"/></svg><svg class="i-play" viewBox="0 0 14 14" fill="currentColor"><path d="M3 1.5v11l9.5-5.5z"/></svg></button>
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <div class="status" id="status"><span class="dot"></span><span id="status-txt">本日営業中 · 12:00–24:00</span></div>
@@ -658,6 +728,17 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
   </div>
 </section>
 
+<!-- ============ INTERLUDE (video) ============ -->
+<section class="band" id="interlude" aria-label="手仕事について">
+  <div class="vbg wide" aria-hidden="true"><div class="vposter" style="background-image:url(videos/handcraft.webp)"></div><video class="" muted loop playsinline preload="none" poster="videos/handcraft.webp" data-src="videos/handcraft.mp4" aria-hidden="true" tabindex="-1"></video></div>
+  <div class="vshade" aria-hidden="true"></div>
+  <div class="wrap rv">
+    <span class="eyebrow"><i>—</i> Handcrafted Daily</span>
+    <p class="band-q">Soil, water,<br>and a pair of <em>hands.</em></p>
+    <p class="band-ja">土と水と、人の手と。毎日、一株ずつ見て回ります。</p>
+  </div>
+</section>
+
 <!-- ============ LIVING SOIL ============ -->
 <section class="sec soil" id="soil">
   <div class="wrap">
@@ -704,6 +785,28 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
           </tbody>
         </table>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GROW ROOM REELS ============ -->
+<section class="reels-sec" id="growroom" aria-labelledby="reels-t">
+  <div class="wrap">
+    <div class="reels-head rv">
+      <div>
+        <span class="eyebrow"><i>—</i> Grow Room</span>
+        <h2 class="h1" id="reels-t" style="margin:14px 0 10px">Inside the <em>grow room.</em></h2>
+        <p class="jp-sub">栽培ルームから</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px">
+        <a class="tlink reels-ig" href="https://www.instagram.com/gokuraku_thailand" target="_blank" rel="noopener">Instagram で毎日更新 →</a>
+        <button class="vtoggle" type="button" data-vtoggle aria-label="背景動画を一時停止"><svg class="i-pause" viewBox="0 0 14 14" fill="currentColor"><rect x="2" y="1" width="3.5" height="12" rx="1"/><rect x="8.5" y="1" width="3.5" height="12" rx="1"/></svg><svg class="i-play" viewBox="0 0 14 14" fill="currentColor"><path d="M3 1.5v11l9.5-5.5z"/></svg></button>
+      </div>
+    </div>
+    <div class="reels">
+      <figure class="reel rv"><div class="frame"><div class="vposter" style="background-image:url(videos/macro.webp)"></div><video class="" muted loop playsinline preload="none" poster="videos/macro.webp" data-src="videos/macro.mp4" aria-hidden="true" tabindex="-1"></video><span class="reel-no">01</span><figcaption><span>MACRO</span><b>一本の花穂</b></figcaption></div></figure>
+      <figure class="reel rv" style="--d:80ms"><div class="frame"><div class="vposter" style="background-image:url(videos/lights.webp)"></div><video class="" muted loop playsinline preload="none" poster="videos/lights.webp" data-src="videos/lights.mp4" aria-hidden="true" tabindex="-1"></video><span class="reel-no">02</span><figcaption><span>UNDER THE LIGHTS</span><b>光の下で</b></figcaption></div></figure>
+      <figure class="reel rv" style="--d:160ms"><div class="frame"><div class="vposter" style="background-image:url(videos/daily-care.webp)"></div><video class="" muted loop playsinline preload="none" poster="videos/daily-care.webp" data-src="videos/daily-care.mp4" aria-hidden="true" tabindex="-1"></video><span class="reel-no">03</span><figcaption><span>DAILY CARE</span><b>毎日の手入れ</b></figcaption></div></figure>
     </div>
   </div>
 </section>
@@ -780,6 +883,18 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
         </div>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND (video) ============ -->
+<section class="band" id="cta-band" aria-label="取り置きのご案内">
+  <div class="vbg wide" aria-hidden="true"><div class="vposter" style="background-image:url(videos/harvest-color.webp)"></div><video class="" muted loop playsinline preload="none" poster="videos/harvest-color.webp" data-src="videos/harvest-color.mp4" aria-hidden="true" tabindex="-1"></video></div>
+  <div class="vshade" aria-hidden="true"></div>
+  <div class="wrap rv">
+    <span class="eyebrow"><i>—</i> Reserve</span>
+    <p class="band-q">Reserve today's <em>harvest.</em></p>
+    <p class="band-ja">今日の一本を、LINEで取り置き。</p>
+    <a class="btn btn-line" href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.5-1.6 2-3.2 2-4.8C22 6.6 17.5 3 12 3z"/></svg>LINEで取り置き</a>
   </div>
 </section>
 
@@ -902,6 +1017,29 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
   }
   chips.forEach(function(c){c.addEventListener('click',function(){filt(c.dataset.f)})});
   document.querySelectorAll('[data-jump]').forEach(function(a){a.addEventListener('click',function(){filt(a.dataset.jump)})});
+
+
+  /* background videos: lazy load, play in view, pause out of view */
+  (function(){
+    var vids=[].slice.call(document.querySelectorAll('video[data-src]'));
+    var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var save=navigator.connection&&navigator.connection.saveData;
+    var userPaused=false;
+    if(reduce||save){document.querySelectorAll('[data-vtoggle]').forEach(function(b){b.hidden=true});return;}
+    function load(v){if(!v.src){v.src=v.dataset.src;v.load();v.addEventListener('playing',function(){v.classList.add('on')},{once:true});}}
+    function play(v){load(v);if(!userPaused){var p=v.play();if(p&&p.catch)p.catch(function(){});}}
+    if(!('IntersectionObserver' in window)){vids.forEach(play);return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;v._vis=e.isIntersecting;if(e.isIntersecting)play(v);else if(v.src)v.pause();})},{rootMargin:'300px 0px'});
+    vids.forEach(function(v){io.observe(v)});
+    document.querySelectorAll('[data-vtoggle]').forEach(function(b){
+      b.addEventListener('click',function(){
+        userPaused=!userPaused;
+        document.body.classList.toggle('paused',userPaused);
+        document.querySelectorAll('[data-vtoggle]').forEach(function(x){x.setAttribute('aria-label',userPaused?'背景動画を再生':'背景動画を一時停止')});
+        vids.forEach(function(v){if(userPaused)v.pause();else if(v._vis)play(v);});
+      });
+    });
+  })();
 
   /* reveal */
   var els=document.querySelectorAll('.rv');
