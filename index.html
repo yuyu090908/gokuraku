@@ -13,7 +13,10 @@
 <meta property="og:title" content="GOKURAKU 極楽 | premium roll">
 <meta property="og:description" content="土と水だけで育った、自然の恵み。日本人の技術と愛情が生んだ、最高品質の一品を。">
 <meta property="og:locale" content="ja_JP">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://gokuraku.tech/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Shippori+Mincho+B1:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
@@ -160,11 +163,15 @@ header.scrolled{background:rgba(11,11,11,.82);backdrop-filter:saturate(1.2) blur
 .label:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(0,0,0,.9),0 0 0 1px rgba(201,163,92,.35)}
 .label[hidden]{display:none}
 .label::before{content:"";height:6px;background:var(--c)}
-.label-top{position:relative;height:330px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);overflow:hidden}
+.label-top{position:relative;aspect-ratio:1/1;border-bottom:1px solid var(--line);overflow:hidden;background:#111}
+.label-top img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease),filter .6s;filter:saturate(.92) contrast(1.04)}
+.label:hover .label-top img{transform:scale(1.05);filter:saturate(1) contrast(1.06)}
+.label-top::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45),transparent 28%,transparent 62%,rgba(11,11,11,.75));pointer-events:none}
+.label-top .label-type,.label-top .label-no{z-index:1}
 .enso{position:absolute;width:250px;height:250px;color:var(--c);opacity:.28}
 .label-name{position:relative;font-family:var(--f-mincho);font-weight:700;font-size:68px;line-height:1.05;writing-mode:vertical-rl;letter-spacing:.12em;color:var(--sumi)}
-.label-type{position:absolute;top:22px;left:22px;font-family:var(--f-en);font-weight:600;font-size:11px;letter-spacing:.24em;color:var(--c);writing-mode:vertical-rl;border-left:1px solid var(--c);padding-left:8px}
-.label-no{position:absolute;top:22px;right:22px;font-family:var(--f-en);font-size:13px;letter-spacing:.2em;color:var(--usuzumi)}
+.label-type{position:absolute;top:18px;left:18px;font-family:var(--f-en);font-weight:600;font-size:11px;letter-spacing:.24em;color:#fff;background:rgba(11,11,11,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid var(--c);padding:5px 12px;border-radius:999px;line-height:1.4}
+.label-no{position:absolute;top:22px;right:22px;font-family:var(--f-en);font-size:13px;letter-spacing:.2em;color:rgba(255,255,255,.85)}
 .label-seal{position:absolute;right:22px;bottom:22px;width:40px;height:40px;font-size:11px;writing-mode:vertical-rl}
 .label-photo{position:absolute;left:22px;bottom:18px;font-size:10px;color:var(--usuzumi);letter-spacing:.1em;opacity:.7}
 .label-body{padding:28px 28px 30px;display:flex;flex-direction:column;flex:1}
@@ -396,7 +403,6 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
   .num:first-child{border-top:0}
   .num b{font-size:52px;min-width:120px}
   .labels{grid-template-columns:1fr}
-  .label-top{height:280px}
   .pr-l,.pr-r{padding:30px 24px}
   .pr-price b{font-size:26px}
   .save{display:block;margin:6px 0 0 auto;width:max-content}
@@ -543,12 +549,9 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
     <div class="labels">
       <article class="label rv" data-t="indica" style="--c:var(--indica)">
         <div class="label-top">
-          <svg class="enso" viewBox="0 0 100 100" aria-hidden="true"><path d="M78 22 A38 38 0 1 0 86 48" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg>
+          <img src="images/shinma.webp" alt="Shinma（インディカ）の花穂。オレンジのピスティルと白いトライコームに覆われたバッズ" width="900" height="900" loading="lazy" decoding="async">
           <span class="label-type">INDICA</span>
           <span class="label-no">No.01</span>
-          <span class="label-name">神魔</span>
-          <span class="seal label-seal">人気</span>
-          <span class="label-photo">※写真差し替え予定</span>
         </div>
         <div class="label-body">
           <h3>Shinma</h3>
@@ -565,11 +568,9 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
 
       <article class="label rv" data-t="hybrid" style="--c:var(--hybrid);--d:80ms">
         <div class="label-top">
-          <svg class="enso" viewBox="0 0 100 100" aria-hidden="true"><path d="M78 22 A38 38 0 1 0 86 48" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg>
+          <img src="images/zk.webp" alt="ZK（インディカ・ハイブリッド）の花穂。紫がかった葉とトライコームに覆われたバッズ" width="900" height="900" loading="lazy" decoding="async">
           <span class="label-type">INDICA HYBRID</span>
           <span class="label-no">No.02</span>
-          <span class="label-name">禅</span>
-          <span class="label-photo">※写真差し替え予定</span>
         </div>
         <div class="label-body">
           <h3>ZK</h3>
@@ -586,11 +587,9 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
 
       <article class="label rv" data-t="sativa" style="--c:var(--sativa);--d:160ms">
         <div class="label-top">
-          <svg class="enso" viewBox="0 0 100 100" aria-hidden="true"><path d="M78 22 A38 38 0 1 0 86 48" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg>
+          <img src="images/isaac-newton.webp" alt="Isaac Newton（サティバ）の花穂。霜のようなトライコームに覆われた長いバッズ" width="900" height="900" loading="lazy" decoding="async">
           <span class="label-type">SATIVA</span>
           <span class="label-no">No.03</span>
-          <span class="label-name">閃</span>
-          <span class="label-photo">※写真差し替え予定</span>
         </div>
         <div class="label-body">
           <h3>Isaac Newton</h3>
@@ -626,7 +625,7 @@ footer{background:#060606;color:var(--sumi);border-top:1px solid rgba(201,163,92
       </div>
     </div>
 
-    <p class="menu-note">価格はタイバーツ（THB）・税込です。在庫は日々変わるため、最新情報はLINEでお問い合わせください。<br>漢字名・テイスティングノートはデザイン上の仮表記です。</p>
+    <p class="menu-note">価格はタイバーツ（THB）・税込です。在庫は日々変わるため、最新情報はLINEでお問い合わせください。<br>テイスティングノートは目安です。</p>
   </div>
 </section>
 
