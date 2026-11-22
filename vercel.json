@@ -1,6 +1,16 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "node tools/build.mjs",
+  "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/", "has": [{ "type": "query", "key": "lang", "value": "en" }], "destination": "/en/", "permanent": true },
+    { "source": "/", "has": [{ "type": "query", "key": "lang", "value": "th" }], "destination": "/th/", "permanent": true },
+    { "source": "/", "has": [{ "type": "query", "key": "lang", "value": "(zh|ko|es|pt|ru|vi|my)" }], "destination": "/en/", "permanent": false },
+    { "source": "/favicon.svg", "destination": "/brand/favicon-48.png", "permanent": true },
+    { "source": "/favicon.ico", "destination": "/brand/favicon-48.png", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -9,6 +19,14 @@
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
       ]
+    },
+    {
+      "source": "/(img|brand|videos)/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000, stale-while-revalidate=86400" }]
+    },
+    {
+      "source": "/app.js",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
     }
   ]
 }

@@ -1,0 +1,13 @@
+{
+  "_doc": "お品書きのデータ。価格・品種を変更するときはこのファイルだけを編集します。desc はi18nのキー。",
+  "currency": "฿",
+  "strains": [
+    { "id": "shinma", "name": "Shinma", "no": "01", "type": "INDICA", "tags": ["indica"], "desc": "s.shinma.d", "image": "shinma",
+      "prices": [["s.unit.g1", 300], ["s.unit.g35", 900], ["s.unit.joint", 350]] },
+    { "id": "zk", "name": "ZK", "no": "02", "type": "INDICA HYBRID", "tags": ["indica", "hybrid"], "desc": "s.zk.d", "image": "zk",
+      "prices": [["s.unit.g1", 300], ["s.unit.g35", 900], ["s.unit.joint", 350]] },
+    { "id": "isaac", "name": "Isaac Newton", "no": "03", "type": "SATIVA", "tags": ["sativa"], "desc": "s.isaac.d", "image": "isaac-newton",
+      "prices": [["s.unit.g1", 300], ["s.unit.g35", 900], ["s.unit.joint", 350]] }
+  ],
+  "preroll": { "title": "joint.t", "desc": "joint.d", "price": 350 }
+}

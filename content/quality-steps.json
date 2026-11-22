@@ -1,0 +1,11 @@
+{
+  "_doc": "品質管理の工程。confirmed:false の工程はサイトに出力されません。実際に行っていることをオーナーが確認したら、説明文（i18n の c.*.d）と写真を入れて true にしてください。",
+  "steps": [
+    { "id": "env",     "title": "c.env.t",     "desc": "c.env.d",     "photo": "daily-care", "confirmed": true },
+    { "id": "harvest", "title": "c.harvest.t", "desc": "c.harvest.d", "photo": "macro",      "confirmed": true },
+    { "id": "trim",    "title": "c.trim.t",    "desc": "c.trim.d",    "photo": null,         "confirmed": true },
+    { "id": "cure",    "title": "c.cure.t",    "desc": "c.cure.d",    "photo": null,         "confirmed": false },
+    { "id": "inspect", "title": "c.inspect.t", "desc": "c.inspect.d", "photo": null,         "confirmed": false },
+    { "id": "store",   "title": "c.store.t",   "desc": "c.store.d",   "photo": null,         "confirmed": false }
+  ]
+}
