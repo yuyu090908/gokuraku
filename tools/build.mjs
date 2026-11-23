@@ -141,9 +141,12 @@ function partials(L, page) {
   const faq = Array.from({ length: 11 }, (_, i) => i + 1).map((n) => `
         <details><summary><span data-i="faq.${n}.q">${esc(T(`faq.${n}.q`))}</span><svg class="ic" aria-hidden="true"><use href="#i-chev"/></svg></summary><p class="a" data-i="faq.${n}.a">${esc(T(`faq.${n}.a`))}</p></details>`).join('');
 
-  const gallery = ['hero-canopy', 'lights', 'daily-care', 'handcraft', 'harvest-color', 'macro'].map((v, i) => `
-        <li><button type="button" data-video="/videos/${v}.mp4" data-poster="/img/${v}-480.webp" data-title-key="gal.${i + 1}" aria-haspopup="dialog">
-          ${pic(v, 240, 320, '', null, '(min-width:1100px) 190px, (min-width:700px) 31vw, 46vw', [240, 480])}<span class="cap" data-i="gal.${i + 1}">${esc(T(`gal.${i + 1}`))}</span><span class="play"><svg aria-hidden="true"><use href="#i-play"/></svg></span></button></li>`).join('');
+  // [video name, caption key]; the first and the seventh tile are shown larger (see .gal in app.css)
+  const GAL = [['bud-closeup', 7], ['color-leaves', 8], ['led-canopy', 10], ['green-canopy', 11], ['hero-canopy', 1], ['lights', 2],
+    ['aisle-walk', 9], ['daily-care', 3], ['handcraft', 4], ['harvest-color', 5], ['macro', 6]];
+  const gallery = GAL.map(([v, n]) => `
+        <li><button type="button" data-video="/videos/${v}.mp4" data-poster="/img/${v}-480.webp" data-title-key="gal.${n}" aria-haspopup="dialog">
+          ${pic(v, 240, 320, '', null, '(min-width:1100px) 190px, (min-width:700px) 31vw, 46vw', [240, 480])}<span class="cap" data-i="gal.${n}">${esc(T(`gal.${n}`))}</span><span class="play"><svg aria-hidden="true"><use href="#i-play"/></svg></span></button></li>`).join('');
 
   const dash = DASH.map((d) => {
     const href = page.id === 'home' ? (d.home.startsWith('#') ? d.home : home + d.home) : home + d.sub;
@@ -196,6 +199,7 @@ for (const page of PAGES) {
     out = out
       .replace(/<!--@pic:([\w-]+):(\d+):(\d+):([\w.]+)-->/g, (_, n, w, h, k) => picP(n, w, h, k))
       // decorative background photo for a card (real grow-room photo, empty alt)
+      .replace(/<!--@band:([\w-]+)-->/g, (_, n) => pic(n, 960, 540, '', null, '100vw', [640, 960]).replace('<picture>', '<picture class="band-bg" aria-hidden="true">'))
       .replace(/<!--@bg:([\w-]+)-->/g, (_, n) => pic(n, 480, 640, '', null, '(min-width:768px) 300px, 60vw', [240, 480]).replace('<picture>', '<picture class="card-bg" aria-hidden="true">'))
       .replace(/<!--@(\w+)-->/g, (_, k) => (k in P ? P[k] : fail(`unknown partial ${k} (${page.id})`)))
       .replace(/\{\{\{([\w.]+)\}\}\}/g, (_, k) => (k in dicts[L] ? html(dicts[L][k]) : fail(`missing key ${k}`)))
