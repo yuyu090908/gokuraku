@@ -41,18 +41,26 @@ def crop_ratio(im, rw, rh, y_bias=0.5):
 
 def strains():
     for name in ["shinma", "zk", "isaac-newton"]:
-        im = Image.open(SRC_IMG / f"{name}.webp").convert("RGB")
+        # *-hq.webp: the same product photos at ~970px, cropped from the owner's menu screenshots (Nov 2026)
+        src = SRC_IMG / f"{name}-hq.webp"
+        im = Image.open(src if src.exists() else SRC_IMG / f"{name}.webp").convert("RGB")
         im = crop_ratio(im, 4, 3)
         for w in (320, 640):
             save_pair(im.resize((w, w * 3 // 4), Image.LANCZOS), PUB / "img" / f"{name}-{w}")
 
 
 def posters():
-    for name in ["hero-canopy", "lights", "daily-care", "handcraft", "harvest-color", "macro"]:
+    for name in ["hero-canopy", "lights", "daily-care", "handcraft", "harvest-color", "macro",
+                 "bud-closeup", "color-leaves", "aisle-walk", "led-canopy", "green-canopy"]:
         im = Image.open(SRC_VID / f"{name}.webp").convert("RGB")
         c = crop_ratio(im, 3, 4, 0.45)
         for w in (240, 480):
             save_pair(c.resize((w, w * 4 // 3), Image.LANCZOS), PUB / "img" / f"{name}-{w}")
+    # 16:9 posters for the background video bands
+    for name in ["aisle-band", "leaves-band", "led-band"]:
+        im = crop_ratio(Image.open(SRC_VID / f"{name}.webp").convert("RGB"), 16, 9)
+        for w in (640, 960):
+            save_pair(im.resize((w, w * 9 // 16), Image.LANCZOS), PUB / "img" / f"{name}-{w}", q_webp=64, q_avif=42)
     # hero background (portrait source, kept portrait; CSS covers)
     im = Image.open(SRC_VID / "hero-canopy.webp").convert("RGB")
     save_pair(im.resize((540, 960), Image.LANCZOS), PUB / "img" / "hero-540", q_webp=60, q_avif=40)
