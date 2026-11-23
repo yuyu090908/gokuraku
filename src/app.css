@@ -538,3 +538,33 @@ html.modal{overflow:hidden}
 .sec-brushed::after{bottom:28px;right:6%;width:min(480px,45%);background:linear-gradient(90deg,rgba(186,1,45,0),var(--red) 70%,transparent)}
 @media (max-width:699px){.step-card .step-media{aspect-ratio:16/9}}
 .steps4+.btn{margin-top:32px}
+
+/* ===== language switchers: header pill, drawer tiles, footer/age-gate chips ===== */
+.lang{min-height:44px;padding-left:6px;border-radius:999px;border-color:var(--line-hi);background:linear-gradient(180deg,#232323,#171717);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 4px 14px rgba(0,0,0,.35);transition:border-color var(--t),box-shadow var(--t),background-color var(--t)}
+.lang>.ic:first-child{box-sizing:content-box;width:16px;height:16px;padding:7px;border-radius:50%;background:rgba(186,1,45,.16);box-shadow:inset 0 0 0 1px rgba(186,1,45,.5);color:#fff}
+.lang select{padding:0 36px 0 10px;font-weight:600;letter-spacing:.01em}
+.lang .lang-chev{right:12px;width:14px;height:14px;color:var(--muted);transition:transform var(--t) var(--ease),color var(--t)}
+@media (hover:hover){.lang:hover{border-color:#5A5A5A;box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 6px 18px rgba(0,0,0,.45)}.lang:hover .lang-chev{color:var(--text);transform:translateY(1px)}}
+.lang:focus-within{border-color:var(--red);box-shadow:0 0 0 3px rgba(186,1,45,.3),0 6px 18px rgba(0,0,0,.45)}
+.lang:active{transform:scale(.98)}
+
+/* language tiles (drawer): name on the left, code on the right, check on the current one */
+.dlabel{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-top:10px}
+.dlabel::after{content:"";flex:1;height:1px;background:var(--line-soft)}
+.dlang{gap:8px}
+.dlang a{position:relative;justify-content:space-between;gap:8px;min-height:50px;padding:0 12px 0 14px;border-radius:12px;background:linear-gradient(180deg,#1F1F1F,#181818);border-color:var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.04);font-weight:500;transition:border-color var(--t),background-color var(--t),transform var(--t-fast) var(--ease)}
+.dlang a::after{content:attr(data-lang);flex:none;min-width:28px;padding:3px 6px;border-radius:6px;border:1px solid var(--line-hi);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-align:center;color:var(--muted);line-height:1.2}
+@media (hover:hover){.dlang a:hover{border-color:var(--line-hi);background:var(--bg-3)}}
+.dlang a:active{transform:scale(.97)}
+.dlang a[aria-current=page]{background:linear-gradient(180deg,rgba(186,1,45,.26),rgba(186,1,45,.1));border-color:var(--red);box-shadow:0 0 0 1px var(--red),0 0 18px rgba(186,1,45,.25);color:#fff;font-weight:700}
+.dlang a[aria-current=page]::after{content:"";width:20px;min-width:20px;height:20px;padding:0;border:0;border-radius:50%;background:var(--red) no-repeat center/12px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+
+/* language chips (footer, age gate) */
+.foot-lang,.gate-lang{gap:8px;margin-left:0}
+.foot-lang a,.gate-lang a{min-height:44px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.02);font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;transition:color var(--t),border-color var(--t),background-color var(--t),transform var(--t-fast) var(--ease)}
+.foot-lang a:hover,.gate-lang a:hover{color:var(--text);border-color:var(--line-hi);background:var(--bg-2)}
+.foot-lang a:active,.gate-lang a:active{transform:scale(.96)}
+.foot-lang a[aria-current=page],.gate-lang a[aria-current=page]{color:#fff;font-weight:600;text-decoration:none;border-color:var(--red);background:linear-gradient(180deg,rgba(186,1,45,.24),rgba(186,1,45,.08));box-shadow:0 0 0 1px var(--red)}
+.gate-lang{max-width:420px}
+@media (max-width:420px){.lang{padding-left:4px}.lang>.ic:first-child{padding:5px}.lang select{padding:0 28px 0 6px;font-size:14px;max-width:6.5em}.lang .lang-chev{right:9px}}
+.tlink{min-height:46px}
