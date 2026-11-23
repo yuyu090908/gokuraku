@@ -195,6 +195,8 @@ for (const page of PAGES) {
     if (page.id !== 'home') out = out.replace(new RegExp(`data-nav="${page.id}"`, 'g'), `data-nav="${page.id}" aria-current="page"`);
     out = out
       .replace(/<!--@pic:([\w-]+):(\d+):(\d+):([\w.]+)-->/g, (_, n, w, h, k) => picP(n, w, h, k))
+      // decorative background photo for a card (real grow-room photo, empty alt)
+      .replace(/<!--@bg:([\w-]+)-->/g, (_, n) => pic(n, 480, 640, '', null, '(min-width:768px) 300px, 60vw', [240, 480]).replace('<picture>', '<picture class="card-bg" aria-hidden="true">'))
       .replace(/<!--@(\w+)-->/g, (_, k) => (k in P ? P[k] : fail(`unknown partial ${k} (${page.id})`)))
       .replace(/\{\{\{([\w.]+)\}\}\}/g, (_, k) => (k in dicts[L] ? html(dicts[L][k]) : fail(`missing key ${k}`)))
       .replace(/\{\{@(\w+)\}\}/g, (_, k) => (k in V ? esc(V[k]) : fail(`unknown var ${k}`)))
