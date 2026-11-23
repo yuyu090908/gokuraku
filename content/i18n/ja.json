@@ -8,7 +8,6 @@
   "meta.soil.desc": "Living Soilとは何か。土の中の有機物・微生物・菌類と植物の根の関係を図解し、GOKURAKUの栽培の流れをご紹介します。",
   "meta.quality.title": "品質管理と透明性｜日本のものづくり | GOKURAKU",
   "meta.quality.desc": "土づくり・日々の観察・収穫と手作業・品質確認の4ステップと、栽培方針の根拠の確認状況を公開しています。",
-
   "skip": "本文へスキップ",
   "nav.label": "メインナビゲーション",
   "nav.quick": "クイックナビゲーション",
@@ -28,19 +27,18 @@
   "back": "トップへ戻る",
   "cta.line": "LINEで取り置き",
   "more": "詳しく見る",
-
   "gate.title": "20歳以上の方ですか？",
   "gate.yes": "はい、20歳以上です",
   "gate.no": "いいえ",
   "gate.note": "タイの法令に基づき、20歳未満・妊娠中・授乳中の方はご利用いただけません。",
-
   "hero.concept": "Japanese Craftsmanship & Living Soil",
   "hero.title": "土と水、そして<br>日々の手仕事。",
   "hero.lead": "生きた土で育て、一つひとつ手作業で仕上げる。GOKURAKUの品質は、土から始まります。",
   "hero.about": "極楽について",
   "hero.quality": "品質へのこだわり",
   "hero.menu": "お品書きを見る",
-
+  "hero.pause": "背景の動画を一時停止",
+  "hero.play": "背景の動画を再生",
   "ph.kicker": "Our Philosophy",
   "ph.title": "大切にしている、三つのこと。",
   "ph.1.t": "Living Soil",
@@ -72,7 +70,6 @@
   "g.box.d": "7g専用の円筒ボックス。",
   "g.soon": "近日公開",
   "g.notify": "入荷をLINEで受け取る",
-
   "ls.kicker": "Living Soil",
   "ls.title": "土づくりから始まる、極楽のものづくり。",
   "ls.short": "Living Soilとは、微生物や菌類、有機物などが関わり合う、生物学的に活動のある土壌環境を活用する栽培方法です。",
@@ -101,7 +98,6 @@
   "gal.4": "手作業の様子",
   "gal.5": "収穫前の色づき",
   "gal.6": "花穂のクローズアップ",
-
   "cr.kicker": "Craftsmanship",
   "cr.title": "日本のものづくり。その丁寧さを、一つひとつの工程に。",
   "cr.p1": "栽培環境の確認から、収穫後の仕上げまで。",
@@ -129,7 +125,6 @@
   "cap.daily": "栽培ルームでの日々の確認",
   "cap.macro": "収穫前の花穂",
   "cap.lights": "LEDの下の栽培ルーム",
-
   "tr.kicker": "Quality & Transparency",
   "tr.title": "栽培方針と、その根拠",
   "tr.lead": "宣伝的な断定よりも、確認できることを優先して掲載しています。根拠となる記録や書類は、確認でき次第この表を更新します。",
@@ -147,7 +142,6 @@
   "ev.cert": "第三者認証の書類は掲載していません",
   "ev.lab": "検査結果は掲載していません。数値は記録が確認できたものだけを掲載します。",
   "tr.note": "健康上の効果や安全性を保証するものではありません。",
-
   "menu.kicker": "Menu",
   "menu.title": "本日のラインナップ",
   "menu.filter": "品種タイプで絞り込む",
@@ -169,7 +163,6 @@
   "joint.t": "1g プレロール",
   "joint.d": "ケース・フィルター付きの手巻きの一本。",
   "menu.note": "価格はタイバーツ（THB）・税込です。在庫は日々変わるため、最新情報はLINEでお問い合わせください。香りや成分の情報は、確認でき次第掲載します。",
-
   "ct.kicker": "Contact & Information",
   "ct.title": "お問い合わせ・ご案内",
   "ct.flow": "ご注文の流れ",
@@ -196,7 +189,6 @@
   "lg.2": "20歳未満・妊娠中・授乳中の方への販売はいたしません。",
   "lg.3": "公共の場所での喫煙は法律で禁止されています。",
   "lg.4": "タイの法令は変更されることがあります。最新の規則をご確認のうえ、ご利用ください。",
-
   "faq.title": "よくある質問",
   "faq.search": "質問を検索",
   "faq.searchPh": "例：取り置き、支払い、年齢",
@@ -224,10 +216,8 @@
   "faq.10.a": "成分値や検査結果は、確認できたものから順に掲載する予定です。現在掲載しているのは、栽培方法と仕上げ方法です。",
   "faq.11.q": "どこで吸えますか？",
   "faq.11.a": "公共の場所での喫煙は法律で禁止されています。店舗のルールと現地の法令に従ってお楽しみください。",
-
   "foot.tag": "Japanese Craftsmanship & Living Soil",
   "foot.copy": "© 2026 GOKURAKU. All Rights Reserved.",
-
   "camp.label": "キャンペーン",
   "camp.until": "{date}まで"
 }
