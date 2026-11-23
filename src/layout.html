@@ -54,6 +54,7 @@
         <svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg>
         <span class="sr" data-i="nav.lang">{{nav.lang}}</span>
         <select data-lang-select><!--@langopts--></select>
+        <svg class="ic lang-chev" aria-hidden="true"><use href="#i-chev"/></svg>
       </label>
       <button type="button" class="menu-btn" data-open="drawer" aria-haspopup="dialog" aria-controls="drawer">
         <svg aria-hidden="true"><use href="#i-menu"/></svg><span class="sr" data-i="nav.open">{{nav.open}}</span>
@@ -68,24 +69,32 @@
 
 <footer class="foot">
   <div class="wrap foot-in">
-    <div class="foot-brand">
-      <img src="/brand/mark-64.png" srcset="/brand/mark-64.png 1x, /brand/mark-128.png 2x" width="22" height="36" alt="" loading="lazy" class="logo-mark">
-      <div><p class="foot-name">GOKURAKU 極楽</p><p class="muted small" data-i="foot.tag">{{foot.tag}}</p></div>
+    <div class="foot-col foot-brand-col">
+      <div class="foot-brand">
+        <img src="/brand/mark-64.png" srcset="/brand/mark-64.png 1x, /brand/mark-128.png 2x" width="22" height="36" alt="" loading="lazy" class="logo-mark">
+        <div><p class="foot-name">GOKURAKU 極楽</p><p class="muted small" data-i="foot.tag">{{foot.tag}}</p></div>
+      </div>
+      <ul class="foot-legal" role="list">
+        <li data-i="lg.2">{{lg.2}}</li>
+        <li data-i="lg.3">{{lg.3}}</li>
+      </ul>
     </div>
-    <nav class="foot-nav" aria-label="Footer">
-      <a href="{{@home}}#about" data-i="nav.about">{{nav.about}}</a>
-      <a href="{{@home}}living-soil/" data-i="nav.soil">{{nav.soil}}</a>
-      <a href="{{@home}}quality/" data-i="nav.quality">{{nav.quality}}</a>
-      <a href="{{@home}}#menu" data-i="nav.lineup">{{nav.lineup}}</a>
-      <a href="{{@home}}#faq" data-i="nav.faq">{{nav.faq}}</a>
-      <a href="{{@home}}#contact" data-i="nav.contact">{{nav.contact}}</a>
-    </nav>
-    <nav class="foot-lang" aria-label="Language"><!--@langlinks--></nav>
-    <ul class="foot-legal" role="list">
-      <li data-i="lg.2">{{lg.2}}</li>
-      <li data-i="lg.3">{{lg.3}}</li>
-    </ul>
-    <p class="small muted" data-i="foot.copy">{{foot.copy}}</p>
+    <div class="foot-col">
+      <p class="foot-h" data-i="nav.title">{{nav.title}}</p>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="{{@home}}#about" data-i="nav.about">{{nav.about}}</a>
+        <a href="{{@home}}living-soil/" data-i="nav.soil">{{nav.soil}}</a>
+        <a href="{{@home}}quality/" data-i="nav.quality">{{nav.quality}}</a>
+        <a href="{{@home}}#menu" data-i="nav.lineup">{{nav.lineup}}</a>
+        <a href="{{@home}}#faq" data-i="nav.faq">{{nav.faq}}</a>
+        <a href="{{@home}}#contact" data-i="nav.contact">{{nav.contact}}</a>
+      </nav>
+    </div>
+    <div class="foot-col">
+      <p class="foot-h" data-i="nav.lang">{{nav.lang}}</p>
+      <nav class="foot-lang" aria-label="Language"><!--@langlinks--></nav>
+    </div>
+    <p class="small muted foot-copy" data-i="foot.copy">{{foot.copy}}</p>
   </div>
 </footer>
 
@@ -104,13 +113,13 @@
   </div>
   <div class="drawer-b">
     <ul class="dlist" role="list">
-      <li><a href="{{@home}}#home" data-close-go data-nav="home"><svg aria-hidden="true"><use href="#i-home"/></svg><span data-i="nav.home">{{nav.home}}</span></a></li>
-      <li><a href="{{@home}}#about" data-close-go data-nav="about"><svg aria-hidden="true"><use href="#i-brand"/></svg><span data-i="nav.about">{{nav.about}}</span></a></li>
-      <li><a href="{{@home}}living-soil/" data-close-go data-nav="living-soil"><svg aria-hidden="true"><use href="#i-soil"/></svg><span data-i="nav.soil">{{nav.soil}}</span></a></li>
-      <li><a href="{{@home}}quality/" data-close-go data-nav="quality"><svg aria-hidden="true"><use href="#i-quality"/></svg><span data-i="nav.quality">{{nav.quality}}</span></a></li>
-      <li><a href="{{@home}}#menu" data-close-go><svg aria-hidden="true"><use href="#i-leaf"/></svg><span data-i="nav.lineup">{{nav.lineup}}</span></a></li>
-      <li><a href="{{@home}}#faq" data-close-go><svg aria-hidden="true"><use href="#i-faq"/></svg><span data-i="nav.faq">{{nav.faq}}</span></a></li>
-      <li><a href="{{@home}}#contact" data-close-go data-nav="contact"><svg aria-hidden="true"><use href="#i-mail"/></svg><span data-i="nav.contact">{{nav.contact}}</span></a></li>
+      <li><a href="{{@home}}#home" data-close-go data-nav="home"><svg aria-hidden="true"><use href="#i-home"/></svg><span data-i="nav.home">{{nav.home}}</span><svg class="ic dl-go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a href="{{@home}}#about" data-close-go data-nav="about"><svg aria-hidden="true"><use href="#i-brand"/></svg><span data-i="nav.about">{{nav.about}}</span><svg class="ic dl-go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a href="{{@home}}living-soil/" data-close-go data-nav="living-soil"><svg aria-hidden="true"><use href="#i-soil"/></svg><span data-i="nav.soil">{{nav.soil}}</span><svg class="ic dl-go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a href="{{@home}}quality/" data-close-go data-nav="quality"><svg aria-hidden="true"><use href="#i-quality"/></svg><span data-i="nav.quality">{{nav.quality}}</span><svg class="ic dl-go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a href="{{@home}}#menu" data-close-go><svg aria-hidden="true"><use href="#i-leaf"/></svg><span data-i="nav.lineup">{{nav.lineup}}</span><svg class="ic dl-go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a href="{{@home}}#faq" data-close-go><svg aria-hidden="true"><use href="#i-faq"/></svg><span data-i="nav.faq">{{nav.faq}}</span><svg class="ic dl-go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a href="{{@home}}#contact" data-close-go data-nav="contact"><svg aria-hidden="true"><use href="#i-mail"/></svg><span data-i="nav.contact">{{nav.contact}}</span><svg class="ic dl-go" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
     </ul>
     <p class="dlabel" data-i="nav.lang">{{nav.lang}}</p>
     <div class="dlang"><!--@langlinks--></div>

@@ -137,6 +137,19 @@
     $$('main > section[id]').forEach(function (s) { io.observe(s); });
   }
 
+  /* ---------- reveal on scroll: groups below the first screen fade up once ---------- */
+  if (!reduce && 'IntersectionObserver' in window) {
+    var rvEls = $$('main .sec-h, main .cards3, main .acc, main .split-media, main .split-txt, main .steps4, main .photos2, main .strains, main .contact-grid, main .faq-wrap, main .flowgraph, main .steps-detail, main .table-wrap, main .prose')
+      .filter(function (el) { return el.getBoundingClientRect().top > window.innerHeight; });
+    if (rvEls.length) {
+      var rv = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); rv.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -8% 0px' });
+      rvEls.forEach(function (el) { el.setAttribute('data-rv', ''); rv.observe(el); });
+      d.documentElement.classList.add('rv-on');
+    }
+  }
+
   /* ---------- hero background video ----------
      Starts after the page has loaded (the still image stays the first paint), only when the visitor
      has not asked for reduced motion or data saving. Pauses off-screen; the button pauses it for good. */
