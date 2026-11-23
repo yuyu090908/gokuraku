@@ -1,0 +1,13 @@
+{
+  "_doc": "品質に関する表示と、その根拠の確認状況。status: verified（記録・書類を確認済み）/ self_declared（自社の説明のみ）/ hidden（根拠と表示規制の確認が済むまで表示しない）。evidence は表示する説明文の i18n キー。根拠を確認したら evidence の文言と status を更新してください。",
+  "claims": [
+    { "id": "living-soil",    "label": "tr.c.soil",  "status": "self_declared", "evidence": "ev.self" },
+    { "id": "no-chem-fert",   "label": "tr.c.fert",  "status": "self_declared", "evidence": "ev.self" },
+    { "id": "no-pesticide",   "label": "tr.c.pest",  "status": "self_declared", "evidence": "ev.pestSplit" },
+    { "id": "hand-trimmed",   "label": "tr.c.hand",  "status": "self_declared", "evidence": "ev.self" },
+    { "id": "daily-check",    "label": "tr.c.daily", "status": "self_declared", "evidence": "ev.self" },
+    { "id": "organic-cert",   "label": "tr.c.cert",  "status": "self_declared", "evidence": "ev.cert" },
+    { "id": "lab-tests",      "label": "tr.c.lab",   "status": "self_declared", "evidence": "ev.lab" },
+    { "id": "organic-100",    "label": null,         "status": "hidden", "note": "旧サイトの「100% ORGANIC」。根拠（記録・認証）とタイの表示規制の確認が済むまで表示しない。" }
+  ]
+}
