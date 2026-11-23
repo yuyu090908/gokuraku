@@ -1,4 +1,5 @@
-<div class="page-h">
+<div class="page-h page-h-photo">
+  <!--@bg:lights-->
   <div class="wrap">
     <a class="tlink back" href="{{@home}}"><svg class="ic flip" aria-hidden="true"><use href="#i-arrow"/></svg><span data-i="back">{{back}}</span></a>
     <p class="eyebrow" data-i="ls.kicker">{{ls.kicker}}</p>
@@ -15,14 +16,19 @@
       <p data-i="ls.p3">{{ls.p3}}</p>
     </div>
     <figure class="split-media">
-      <div class="ph ph-4x3" role="img" aria-label="{{ls.soilPhoto}}" data-ia="aria-label:ls.soilPhoto"><svg aria-hidden="true"><use href="#i-soil"/></svg><span data-i="ls.soilPhoto">{{ls.soilPhoto}}</span></div>
+      <div class="vid-frame">
+        <!--@pic:hero-canopy:480:640:gal.1-->
+        <video class="amb-video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-src="/videos/canopy-loop.mp4" data-start="view"></video>
+        <button type="button" class="vid-pause" hidden aria-pressed="false" aria-label="{{hero.pause}}" data-ia="aria-label:hero.pause"><svg class="ic-pause" aria-hidden="true"><use href="#i-pause"/></svg><svg class="ic-play" aria-hidden="true"><use href="#i-play"/></svg></button>
+      </div>
+      <figcaption class="small muted" data-i="gal.1">{{gal.1}}</figcaption>
     </figure>
   </div>
 </section>
 
 <section class="sec sec-alt" id="diagram" aria-labelledby="dia-t">
   <div class="wrap">
-    <h2 id="dia-t" class="h2" data-i="ls.dia.title">{{ls.dia.title}}</h2>
+    <div class="sec-h"><p class="eyebrow">Living Soil</p><h2 id="dia-t" class="h2" data-i="ls.dia.title">{{ls.dia.title}}</h2></div>
     <ol class="flowgraph">
       <li><span class="fg-n">1</span><svg class="fg-ic" aria-hidden="true"><use href="#i-leaf"/></svg><b data-i="ls.dia.1.t">{{ls.dia.1.t}}</b><span data-i="ls.dia.1.d">{{ls.dia.1.d}}</span></li>
       <li><span class="fg-n">2</span><svg class="fg-ic" aria-hidden="true"><use href="#i-microbe"/></svg><b data-i="ls.dia.2.t">{{ls.dia.2.t}}</b><span data-i="ls.dia.2.d">{{ls.dia.2.d}}</span></li>

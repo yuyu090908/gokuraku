@@ -150,30 +150,40 @@
     }
   }
 
-  /* ---------- hero background video ----------
-     Starts after the page has loaded (the still image stays the first paint), only when the visitor
-     has not asked for reduced motion or data saving. Pauses off-screen; the button pauses it for good. */
-  var hv = $('#hero-video'), hp = $('#hero-pause');
+  /* ---------- ambient videos (hero background, grow-room clip) ----------
+     The still image stays the first paint. A video starts after page load (data-start="load") or when it
+     first comes near the viewport (data-start="view"), never with reduced motion or data saving. Each pauses
+     off-screen and has its own pause button (WCAG 2.2.2); a press keeps it paused. */
   var saveData = navigator.connection && navigator.connection.saveData;
-  if (hv && hp && !reduce && !saveData && typeof hv.play === 'function') {
-    var userPaused = false, visible = true;
-    var playHV = function () { if (!userPaused && visible && !d.hidden) { var pr = hv.play(); if (pr && pr.catch) pr.catch(function () {}); } };
-    var startHV = function () {
-      hv.src = hv.getAttribute('data-src');
-      hv.addEventListener('playing', function () { hv.classList.add('on'); hp.hidden = false; }, { once: true });
-      playHV();
-      if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; if (visible) playHV(); else hv.pause(); }).observe(hv);
-      d.addEventListener('visibilitychange', function () { if (d.hidden) hv.pause(); else playHV(); });
+  function ambient(v, btn) {
+    if (!v || !btn || typeof v.play !== 'function') return;
+    var userPaused = false, visible = false, started = false;
+    var play = function () { if (started && !userPaused && visible && !d.hidden) { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } };
+    var start = function () {
+      if (started) return; started = true;
+      v.src = v.getAttribute('data-src');
+      v.addEventListener('playing', function () { v.classList.add('on'); btn.hidden = false; }, { once: true });
+      play();
     };
-    hp.addEventListener('click', function () {
+    btn.addEventListener('click', function () {
       userPaused = !userPaused;
-      hp.setAttribute('aria-pressed', String(userPaused));
-      hp.setAttribute('data-ia', 'aria-label:' + (userPaused ? 'hero.play' : 'hero.pause'));
-      hp.setAttribute('aria-label', t(userPaused ? 'hero.play' : 'hero.pause'));
-      if (userPaused) hv.pause(); else playHV();
+      btn.setAttribute('aria-pressed', String(userPaused));
+      btn.setAttribute('data-ia', 'aria-label:' + (userPaused ? 'hero.play' : 'hero.pause'));
+      btn.setAttribute('aria-label', t(userPaused ? 'hero.play' : 'hero.pause'));
+      if (userPaused) v.pause(); else play();
     });
-    if (d.readyState === 'complete') setTimeout(startHV, 0); else window.addEventListener('load', function () { setTimeout(startHV, 0); });
+    d.addEventListener('visibilitychange', function () { if (d.hidden) v.pause(); else play(); });
+    var onLoad = v.getAttribute('data-start') !== 'view';
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        visible = es[0].isIntersecting;
+        if (visible && !onLoad) start();
+        if (visible) play(); else if (started) v.pause();
+      }, { rootMargin: onLoad ? '0px' : '200px 0px' }).observe(v);
+    } else visible = true;
+    if (onLoad) { if (d.readyState === 'complete') setTimeout(start, 0); else window.addEventListener('load', function () { setTimeout(start, 0); }); }
   }
+  if (!reduce && !saveData) $$('video.amb-video').forEach(function (v) { ambient(v, v.parentNode.querySelector('.vid-pause')); });
 
   /* ---------- menu filter ---------- */
   var chips = $$('.chip[data-filter]'), strains = $$('.strain[data-tags]');
