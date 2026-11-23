@@ -507,3 +507,34 @@ html.modal{overflow:hidden}
 .page-h-band::after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(0deg,var(--bg),transparent 55%);pointer-events:none}
 .vid-pause-top{top:12px;bottom:auto;right:max(12px,env(safe-area-inset-right))}
 @media (min-width:768px){.page-h-band .band-bg,.page-h-band .band-video{width:58%}}
+
+/* ===== step cards with a photo on top (Craftsmanship, Quality) ===== */
+.step-card{padding:0;gap:0;overflow:hidden}
+.steps4 .step-card::before{z-index:2}
+.step-media{position:relative;overflow:hidden;aspect-ratio:3/2;background:var(--bg-3);border-bottom:1px solid rgba(186,1,45,.5)}
+.step-media picture,.step-media img{display:block;width:100%;height:100%}
+.step-media img{object-fit:cover;object-position:center 45%;transition:transform .6s var(--ease)}
+.step-media::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(13,13,13,.55),transparent 45%)}
+@media (hover:hover){.step-card:hover .step-media img,.steps-detail li:hover .step-media img{transform:scale(1.04)}}
+.sc-b{display:grid;gap:8px;padding:20px 22px 24px;align-content:start}
+.sc-b::before,.steps-detail .sb::before{content:"";width:32px;height:3px;border-radius:2px;background:var(--red);margin-bottom:4px}
+.sc-b p{color:var(--muted);font-size:15px;line-height:1.7}
+.illus-tag{position:absolute;z-index:1;left:10px;top:10px;padding:4px 9px;border-radius:999px;background:rgba(13,13,13,.72);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);color:#fff;font-size:11px;font-weight:600;line-height:1.2;letter-spacing:.04em}
+.steps-detail .step-media{aspect-ratio:16/9;border-bottom:1px solid rgba(186,1,45,.5)}
+.steps-detail .step-media img{aspect-ratio:auto;border:0}
+.steps-detail .step-media .step-panel{height:100%;aspect-ratio:auto;border:0}
+
+/* pill call-to-action (dark, red-edged, arrow chip) */
+.btn-pill{min-height:56px;padding:10px 12px 10px 28px;gap:18px;border-radius:999px;background:linear-gradient(180deg,#2A2A2A,#161616);border-color:rgba(186,1,45,.65);color:var(--text);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 10px 28px rgba(0,0,0,.45),0 0 0 1px rgba(186,1,45,.15)}
+.btn-pill>.ic:last-child:not(:first-child){width:34px;height:34px;padding:8px;margin:0;background:rgba(186,1,45,.18);color:#fff;box-shadow:inset 0 0 0 1px rgba(186,1,45,.5)}
+@media (hover:hover){.btn-pill:hover{border-color:var(--red);transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 12px 32px rgba(0,0,0,.5),0 0 22px rgba(186,1,45,.3)}.btn-pill:hover>.ic:last-child:not(:first-child){background:var(--red)}}
+.btn-pill:active{transform:scale(.98)}
+@media (max-width:420px){.btn-pill{width:100%;justify-content:space-between}}
+
+/* brushed dark section with thin red rules */
+.sec-brushed{position:relative;isolation:isolate;background:repeating-linear-gradient(115deg,rgba(255,255,255,.014) 0 1px,transparent 1px 3px),linear-gradient(135deg,#151515 0%,#0B0B0B 60%,#121212 100%)}
+.sec-brushed::before,.sec-brushed::after{content:"";position:absolute;z-index:-1;height:1px;pointer-events:none}
+.sec-brushed::before{top:28px;left:6%;width:min(420px,40%);background:linear-gradient(90deg,transparent,var(--red) 30%,rgba(186,1,45,0))}
+.sec-brushed::after{bottom:28px;right:6%;width:min(480px,45%);background:linear-gradient(90deg,rgba(186,1,45,0),var(--red) 70%,transparent)}
+@media (max-width:699px){.step-card .step-media{aspect-ratio:16/9}}
+.steps4+.btn{margin-top:32px}

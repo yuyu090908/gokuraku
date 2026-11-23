@@ -129,11 +129,17 @@ function partials(L, page) {
         </div>
       </li>`;
 
+  // photo on top; illustrative images always carry a visible "image" label (never shown as a record)
+  const stepMedia = (s, sizes) => `<div class="step-media">${s.photo
+    ? pic(s.photo, 480, 640, T(s.caption || s.title), s.caption || s.title, sizes, [240, 480]) + (s.illustrative ? `<span class="illus-tag">${ti('img.illus')}</span>` : '')
+    : `<div class="step-panel" aria-hidden="true"><span class="step-num">${String(steps.indexOf(s) + 1).padStart(2, '0')}</span><svg><use href="#i-${s.icon || 'leaf'}"/></svg></div>`}</div>`;
   const stepsHtml = steps.map((s) => `
       <li id="step-${s.id}">
-        ${s.photo ? pic(s.photo, 480, 640, T(s.caption || s.title), s.caption || s.title, '(min-width:900px) 560px, 92vw', [240, 480]) : `<div class="step-panel" aria-hidden="true"><span class="step-num">${String(steps.indexOf(s) + 1).padStart(2, '0')}</span><svg><use href="#i-${s.icon || 'leaf'}"/></svg></div>`}
+        ${stepMedia(s, '(min-width:900px) 560px, 92vw')}
         <div class="sb"><span class="step-k" data-i="${s.k}">${esc(T(s.k))}</span><h3 class="h4" data-i="${s.title}">${esc(T(s.title))}</h3><p data-i="${s.desc}">${esc(T(s.desc))}</p><p class="more" data-i="${s.more}">${esc(T(s.more))}</p></div>
       </li>`).join('');
+  const steps4 = steps.map((s) => `
+      <li class="card step-card">${stepMedia(s, '(min-width:1100px) 280px, (min-width:700px) 46vw, 92vw')}<div class="sc-b"><span class="step-k" data-i="${s.k}">${esc(T(s.k))}</span><h3 class="h4" data-i="${s.title}">${esc(T(s.title))}</h3><p data-i="${s.desc}">${esc(T(s.desc))}</p></div></li>`).join('');
 
   const claimsHtml = claims.filter((c) => c.status !== 'hidden').map((c) => `
         <tr data-claim="${c.id}" data-status="${c.status}"><th scope="row" data-i="${c.label}">${esc(T(c.label))}</th><td data-i="${c.evidence}">${esc(T(c.evidence))}</td></tr>`).join('');
@@ -178,7 +184,7 @@ function partials(L, page) {
   const fonts = `<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>`;
 
   return {
-    P: { strains, steps: stepsHtml, claims: claimsHtml, faq, gallery, dashlinks: dash, langopts, langlinks, hreflang, oglocales, jsonld, campaigns: campaignsHtml, gk, preload, fonts, sprite, css },
+    P: { strains, steps: stepsHtml, steps4, claims: claimsHtml, faq, gallery, dashlinks: dash, langopts, langlinks, hreflang, oglocales, jsonld, campaigns: campaignsHtml, gk, preload, fonts, sprite, css },
     V: { htmlLang: hl(L), page: page.id, titleKey: `${page.meta}.title`, title: T(`${page.meta}.title`), descKey: `${page.meta}.desc`, desc: T(`${page.meta}.desc`), canonical: SITE + url(L), home, ver: VER },
     pic: (name, w, h, altKey) => pic(name, +w, +h, T(altKey), altKey, '(min-width:900px) 480px, 92vw', [240, 480]),
   };

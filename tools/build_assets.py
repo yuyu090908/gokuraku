@@ -49,6 +49,15 @@ def strains():
             save_pair(im.resize((w, w * 3 // 4), Image.LANCZOS), PUB / "img" / f"{name}-{w}")
 
 
+def illustrations():
+    # Illustrative images cut from the owner's design mockups (AI-generated, Nov 2026).
+    # The site always shows them with an "image" label, never as a record of real work.
+    for name in ["illus-soil", "illus-check"]:
+        im = Image.open(SRC_IMG / f"{name}.png").convert("RGB")
+        for w in (240, 480):
+            save_pair(im.resize((w, round(w * im.height / im.width)), Image.LANCZOS), PUB / "img" / f"{name}-{w}")
+
+
 def posters():
     for name in ["hero-canopy", "lights", "daily-care", "handcraft", "harvest-color", "macro",
                  "bud-closeup", "color-leaves", "aisle-walk", "led-canopy", "green-canopy"]:
@@ -157,5 +166,6 @@ def brand():
 
 if __name__ == "__main__":
     strains()
+    illustrations()
     posters()
     brand()
