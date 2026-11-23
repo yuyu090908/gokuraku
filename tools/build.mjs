@@ -131,7 +131,7 @@ function partials(L, page) {
 
   const stepsHtml = steps.map((s) => `
       <li id="step-${s.id}">
-        ${s.photo ? pic(s.photo, 480, 640, T(s.caption || s.title), s.caption || s.title, '(min-width:900px) 560px, 92vw', [240, 480]) : `<div class="ph"><svg aria-hidden="true"><use href="#i-leaf"/></svg>${ti('photo.pending')}</div>`}
+        ${s.photo ? pic(s.photo, 480, 640, T(s.caption || s.title), s.caption || s.title, '(min-width:900px) 560px, 92vw', [240, 480]) : `<div class="step-panel" aria-hidden="true"><span class="step-num">${String(steps.indexOf(s) + 1).padStart(2, '0')}</span><svg><use href="#i-${s.icon || 'leaf'}"/></svg></div>`}
         <div class="sb"><span class="step-k" data-i="${s.k}">${esc(T(s.k))}</span><h3 class="h4" data-i="${s.title}">${esc(T(s.title))}</h3><p data-i="${s.desc}">${esc(T(s.desc))}</p><p class="more" data-i="${s.more}">${esc(T(s.more))}</p></div>
       </li>`).join('');
 
