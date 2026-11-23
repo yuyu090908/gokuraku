@@ -1,0 +1,40 @@
+<div class="page-h">
+  <div class="wrap">
+    <a class="tlink back" href="{{@home}}"><svg class="ic flip" aria-hidden="true"><use href="#i-arrow"/></svg><span data-i="back">{{back}}</span></a>
+    <p class="eyebrow" data-i="cr.kicker">{{cr.kicker}}</p>
+    <h1 class="h1 h1-page" data-i="cr.title">{{cr.title}}</h1>
+  </div>
+</div>
+
+<section class="sec sec-top" aria-labelledby="q-intro">
+  <div class="wrap prose narrow">
+    <h2 id="q-intro" class="sr" data-i="cr.kicker">{{cr.kicker}}</h2>
+    <p class="lead" data-i="cr.p1">{{cr.p1}}</p>
+    <p data-i="cr.p2">{{cr.p2}}</p>
+    <p data-i="cr.p3">{{cr.p3}}</p>
+  </div>
+</section>
+
+<section class="sec sec-alt" id="steps" aria-labelledby="steps-t">
+  <div class="wrap">
+    <h2 id="steps-t" class="h2" data-i="st.label">{{st.label}}</h2>
+    <ol class="steps-detail"><!--@steps--></ol>
+  </div>
+</section>
+
+<section class="sec" id="transparency" aria-labelledby="tr-t">
+  <div class="wrap narrow">
+    <p class="eyebrow" data-i="tr.kicker">{{tr.kicker}}</p>
+    <h2 id="tr-t" class="h2" data-i="tr.title">{{tr.title}}</h2>
+    <p class="muted" data-i="tr.lead">{{tr.lead}}</p>
+    <div class="table-wrap"><table class="tr">
+      <thead><tr><th scope="col" data-i="tr.h.claim">{{tr.h.claim}}</th><th scope="col" data-i="tr.h.evidence">{{tr.h.evidence}}</th></tr></thead>
+      <tbody><!--@claims--></tbody>
+    </table></div>
+    <p class="small muted note" data-i="tr.note">{{tr.note}}</p>
+    <div class="row next">
+      <a class="btn btn-secondary" href="{{@home}}living-soil/"><span data-i="ls.more">{{ls.more}}</span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn-primary" href="{{@home}}#contact" data-i="nav.contact">{{nav.contact}}</a>
+    </div>
+  </div>
+</section>

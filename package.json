@@ -5,7 +5,11 @@
   "scripts": {
     "build": "node tools/build.mjs",
     "assets": "python3 tools/build_assets.py",
-    "preview": "node tools/build.mjs && python3 -m http.server 8080 -d dist"
+    "preview": "node tools/build.mjs && python3 -m http.server 8080 -d dist",
+    "check": "node tools/build.mjs && node tools/check.mjs",
+    "smoke": "node tools/smoke.cjs"
   },
-  "engines": { "node": ">=18" }
+  "engines": {
+    "node": ">=18"
+  }
 }

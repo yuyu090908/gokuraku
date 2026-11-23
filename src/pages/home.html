@@ -1,0 +1,190 @@
+<section class="hero" id="home" aria-labelledby="hero-t">
+  <picture class="hero-bg">
+    <source srcset="/img/hero-540.avif" type="image/avif">
+    <img src="/img/hero-540.webp" alt="" width="540" height="960" fetchpriority="high" decoding="async">
+  </picture>
+  <div class="wrap hero-in">
+    <picture class="hero-logo"><source type="image/webp" srcset="/brand/logo-full-reverse-240.webp 1x, /brand/logo-full-reverse-480.webp 2x"><img src="/brand/logo-full-reverse-240.png" width="223" height="240" alt="GOKURAKU 極楽 Goku-Raku" decoding="async" fetchpriority="high"></picture>
+    <div class="hero-txt">
+      <p class="eyebrow" data-i="hero.concept">{{hero.concept}}</p>
+      <h1 id="hero-t" class="h1" data-ih="hero.title">{{{hero.title}}}</h1>
+      <p class="lead" data-i="hero.lead">{{hero.lead}}</p>
+      <div class="row">
+        <a class="btn btn-primary" href="#about" data-i="hero.about">{{hero.about}}</a>
+        <a class="btn btn-secondary" href="{{@home}}quality/" data-i="hero.quality">{{hero.quality}}</a>
+      </div>
+      <a class="tlink" href="#menu"><span data-i="hero.menu">{{hero.menu}}</span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<nav class="dash" aria-label="{{nav.quick}}" data-ia="aria-label:nav.quick">
+  <div class="wrap"><!--@dashlinks--></div>
+</nav>
+
+<section class="sec" id="about" aria-labelledby="about-t">
+  <div class="wrap">
+    <div class="sec-h">
+      <p class="eyebrow" data-i="ph.kicker">{{ph.kicker}}</p>
+      <h2 id="about-t" class="h2" data-i="ph.title">{{ph.title}}</h2>
+    </div>
+    <ul class="cards3" role="list">
+      <li class="card"><svg class="card-ic" aria-hidden="true"><use href="#i-soil"/></svg><h3 class="h4" data-i="ph.1.t">{{ph.1.t}}</h3><p data-i="ph.1.d">{{ph.1.d}}</p><a class="tlink" href="{{@home}}living-soil/"><span data-i="more">{{more}}</span><span class="sr"> — <span data-i="ph.1.t">{{ph.1.t}}</span></span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li class="card"><svg class="card-ic" aria-hidden="true"><use href="#i-hand"/></svg><h3 class="h4" data-i="ph.2.t">{{ph.2.t}}</h3><p data-i="ph.2.d">{{ph.2.d}}</p><a class="tlink" href="#craftsmanship"><span data-i="more">{{more}}</span><span class="sr"> — <span data-i="ph.2.t">{{ph.2.t}}</span></span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li class="card"><svg class="card-ic" aria-hidden="true"><use href="#i-eye"/></svg><h3 class="h4" data-i="ph.3.t">{{ph.3.t}}</h3><p data-i="ph.3.d">{{ph.3.d}}</p><a class="tlink" href="{{@home}}quality/#transparency"><span data-i="more">{{more}}</span><span class="sr"> — <span data-i="ph.3.t">{{ph.3.t}}</span></span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+    </ul>
+    <div class="acc">
+      <details id="story">
+        <summary><span data-i="ph.story">{{ph.story}}</span><svg class="ic" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="acc-b">
+          <p data-i="ph.story.p">{{ph.story.p}}</p>
+          <h3 class="h5" data-i="ph.promises">{{ph.promises}}</h3>
+          <ol class="promises">
+            <li><b data-i="pr.1.t">{{pr.1.t}}</b><span data-i="pr.1.d">{{pr.1.d}}</span></li>
+            <li><b data-i="pr.2.t">{{pr.2.t}}</b><span data-i="pr.2.d">{{pr.2.d}}</span></li>
+            <li><b data-i="pr.3.t">{{pr.3.t}}</b><span data-i="pr.3.d">{{pr.3.d}}</span></li>
+            <li><b data-i="pr.4.t">{{pr.4.t}}</b><span data-i="pr.4.d">{{pr.4.d}}</span></li>
+            <li><b data-i="pr.5.t">{{pr.5.t}}</b><span data-i="pr.5.d">{{pr.5.d}}</span></li>
+          </ol>
+        </div>
+      </details>
+      <details id="goods">
+        <summary><span data-i="ph.goods">{{ph.goods}}</span><svg class="ic" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="acc-b">
+          <ul class="goods" role="list">
+            <li><b data-i="g.tee.t">{{g.tee.t}}</b><span data-i="g.tee.d">{{g.tee.d}}</span><a class="tlink" href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener" data-i="g.tee.b">{{g.tee.b}}</a></li>
+            <li><em class="tag" data-i="g.soon">{{g.soon}}</em><b data-i="g.resin.t">{{g.resin.t}}</b><span data-i="g.resin.d">{{g.resin.d}}</span><a class="tlink" href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener" data-i="g.notify">{{g.notify}}</a></li>
+            <li><em class="tag" data-i="g.soon">{{g.soon}}</em><b data-i="g.box.t">{{g.box.t}}</b><span data-i="g.box.d">{{g.box.d}}</span><a class="tlink" href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener" data-i="g.notify">{{g.notify}}</a></li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-alt" id="soil" aria-labelledby="soil-t">
+  <div class="wrap split">
+    <figure class="split-media">
+      <!--@pic:lights:480:640:cap.lights-->
+      <figcaption class="small muted" data-i="cap.lights">{{cap.lights}}</figcaption>
+    </figure>
+    <div class="split-txt">
+      <p class="eyebrow" data-i="ls.kicker">{{ls.kicker}}</p>
+      <h2 id="soil-t" class="h2" data-i="ls.title">{{ls.title}}</h2>
+      <p data-i="ls.short">{{ls.short}}</p>
+      <ol class="mini-flow" aria-label="{{ls.dia.title}}" data-ia="aria-label:ls.dia.title">
+        <li><svg aria-hidden="true"><use href="#i-leaf"/></svg><span data-i="ls.dia.1.t">{{ls.dia.1.t}}</span></li>
+        <li><svg aria-hidden="true"><use href="#i-microbe"/></svg><span data-i="ls.dia.2.t">{{ls.dia.2.t}}</span></li>
+        <li><svg aria-hidden="true"><use href="#i-drop"/></svg><span data-i="ls.dia.3.t">{{ls.dia.3.t}}</span></li>
+        <li><svg aria-hidden="true"><use href="#i-root"/></svg><span data-i="ls.dia.4.t">{{ls.dia.4.t}}</span></li>
+      </ol>
+      <a class="btn btn-secondary" href="{{@home}}living-soil/"><span data-i="ls.more">{{ls.more}}</span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="craftsmanship" aria-labelledby="craft-t">
+  <div class="wrap">
+    <div class="sec-h">
+      <p class="eyebrow" data-i="cr.kicker">{{cr.kicker}}</p>
+      <h2 id="craft-t" class="h2" data-i="cr.title">{{cr.title}}</h2>
+      <p class="lead-s"><span data-i="cr.p1">{{cr.p1}}</span> <span data-i="cr.p2">{{cr.p2}}</span></p>
+    </div>
+    <ol class="steps4" aria-label="{{st.label}}" data-ia="aria-label:st.label">
+      <li class="card"><span class="step-k" data-i="st.1.k">{{st.1.k}}</span><h3 class="h4" data-i="st.1.t">{{st.1.t}}</h3><p data-i="st.1.d">{{st.1.d}}</p></li>
+      <li class="card"><span class="step-k" data-i="st.2.k">{{st.2.k}}</span><h3 class="h4" data-i="st.2.t">{{st.2.t}}</h3><p data-i="st.2.d">{{st.2.d}}</p></li>
+      <li class="card"><span class="step-k" data-i="st.3.k">{{st.3.k}}</span><h3 class="h4" data-i="st.3.t">{{st.3.t}}</h3><p data-i="st.3.d">{{st.3.d}}</p></li>
+      <li class="card"><span class="step-k" data-i="st.4.k">{{st.4.k}}</span><h3 class="h4" data-i="st.4.t">{{st.4.t}}</h3><p data-i="st.4.d">{{st.4.d}}</p></li>
+    </ol>
+    <div class="photos2">
+      <figure><!--@pic:daily-care:480:640:cap.daily--><figcaption class="small muted" data-i="cap.daily">{{cap.daily}}</figcaption></figure>
+      <figure><!--@pic:macro:480:640:cap.macro--><figcaption class="small muted" data-i="cap.macro">{{cap.macro}}</figcaption></figure>
+    </div>
+    <a class="btn btn-secondary" href="{{@home}}quality/"><span data-i="cr.more">{{cr.more}}</span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </div>
+</section>
+
+<section class="sec sec-alt" id="menu" aria-labelledby="menu-t">
+  <div class="wrap">
+    <div class="sec-h sec-h-row">
+      <div>
+        <p class="eyebrow" data-i="menu.kicker">{{menu.kicker}}</p>
+        <h2 id="menu-t" class="h2" data-i="menu.title">{{menu.title}}</h2>
+      </div>
+      <div class="chips" role="group" aria-label="{{menu.filter}}" data-ia="aria-label:menu.filter">
+        <button type="button" class="chip" data-filter="all" aria-pressed="true" data-i="menu.all">{{menu.all}}</button>
+        <button type="button" class="chip" data-filter="indica" aria-pressed="false" data-i="menu.indica">{{menu.indica}}</button>
+        <button type="button" class="chip" data-filter="sativa" aria-pressed="false" data-i="menu.sativa">{{menu.sativa}}</button>
+        <button type="button" class="chip" data-filter="hybrid" aria-pressed="false" data-i="menu.hybrid">{{menu.hybrid}}</button>
+      </div>
+    </div>
+    <!--@campaigns-->
+    <ul class="strains" role="list"><!--@strains--></ul>
+    <p class="empty" id="menu-empty" hidden data-i="menu.empty">{{menu.empty}}</p>
+    <p class="small muted note" data-i="menu.note">{{menu.note}}</p>
+  </div>
+</section>
+
+<section class="sec" id="contact" aria-labelledby="contact-t">
+  <div class="wrap">
+    <div class="sec-h">
+      <p class="eyebrow" data-i="ct.kicker">{{ct.kicker}}</p>
+      <h2 id="contact-t" class="h2" data-i="ct.title">{{ct.title}}</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="stack">
+        <ul class="contacts" role="list" id="visit">
+          <li><a class="contact contact-line" href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener">
+            <svg class="cic" aria-hidden="true"><use href="#i-line"/></svg>
+            <span><b>LINE</b> <em class="tag" data-i="ct.rec">{{ct.rec}}</em><small data-i="ct.line.d">{{ct.line.d}}</small></span>
+            <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+          <li><a class="contact" href="https://wa.me/66825973902" target="_blank" rel="noopener">
+            <svg class="cic" aria-hidden="true"><use href="#i-wa"/></svg>
+            <span><b>WhatsApp</b><small>+66 82 597 3902 · <span data-i="ct.wa.d">{{ct.wa.d}}</span></small></span>
+            <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+          <li><a class="contact" href="https://www.instagram.com/gokuraku_thailand" target="_blank" rel="noopener">
+            <svg class="cic" aria-hidden="true"><use href="#i-ig"/></svg>
+            <span><b>Instagram</b><small>@gokuraku_thailand · <span data-i="ct.ig.d">{{ct.ig.d}}</span></small></span>
+            <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+        </ul>
+        <div id="order">
+          <h3 class="h4" data-i="ct.flow">{{ct.flow}}</h3>
+          <ol class="steps3">
+            <li><b data-i="ct.s1.t">{{ct.s1.t}}</b><span data-i="ct.s1.d">{{ct.s1.d}}</span></li>
+            <li><b data-i="ct.s2.t">{{ct.s2.t}}</b><span data-i="ct.s2.d">{{ct.s2.d}}</span></li>
+            <li><b data-i="ct.s3.t">{{ct.s3.t}}</b><span data-i="ct.s3.d">{{ct.s3.d}}</span></li>
+          </ol>
+        </div>
+      </div>
+      <div class="stack">
+        <div>
+          <h3 class="h4" data-i="ct.info">{{ct.info}}</h3>
+          <dl class="kv">
+            <div><dt data-i="ct.i.brand">{{ct.i.brand}}</dt><dd>GOKURAKU 極楽</dd></div>
+            <div><dt data-i="ct.i.place">{{ct.i.place}}</dt><dd data-i="ct.i.place.v">{{ct.i.place.v}}</dd></div>
+            <div><dt data-i="ct.i.lang">{{ct.i.lang}}</dt><dd data-i="ct.i.lang.v">{{ct.i.lang.v}}</dd></div>
+            <div><dt data-i="ct.i.license">{{ct.i.license}}</dt><dd data-i="ct.i.license.v">{{ct.i.license.v}}</dd></div>
+          </dl>
+        </div>
+        <div>
+          <h3 class="h4" data-i="ct.legal">{{ct.legal}}</h3>
+          <ul class="legal" role="list">
+            <li data-i="lg.1">{{lg.1}}</li><li data-i="lg.2">{{lg.2}}</li><li data-i="lg.3">{{lg.3}}</li><li data-i="lg.4">{{lg.4}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-wrap" id="faq">
+      <h3 class="h3" data-i="faq.title">{{faq.title}}</h3>
+      <div class="search" role="search">
+        <svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>
+        <label class="sr" for="faq-q" data-i="faq.search">{{faq.search}}</label>
+        <input id="faq-q" type="search" autocomplete="off" enterkeyhint="search" placeholder="{{faq.searchPh}}" data-ia="placeholder:faq.searchPh">
+      </div>
+      <p class="sr" id="faq-status" role="status" aria-live="polite"></p>
+      <div class="acc" id="faq-list"><!--@faq--></div>
+      <p class="empty" id="faq-none" hidden><span data-i="faq.none">{{faq.none}}</span> <a class="tlink" href="https://lin.ee/s3uRTBS" target="_blank" rel="noopener" data-i="cta.line">{{cta.line}}</a></p>
+    </div>
+  </div>
+</section>

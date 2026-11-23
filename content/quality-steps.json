@@ -1,11 +1,9 @@
 {
-  "_doc": "品質管理の工程。confirmed:false の工程はサイトに出力されません。実際に行っていることをオーナーが確認したら、説明文（i18n の c.*.d）と写真を入れて true にしてください。",
+  "_doc": "品質管理の4ステップ。photo は public/img の画像名（null = 写真準備中を表示）。実写の作業写真が届いたら media/ に置き、tools/build_assets.py に追加して photo を差し替えてください。",
   "steps": [
-    { "id": "env",     "title": "c.env.t",     "desc": "c.env.d",     "photo": "daily-care", "confirmed": true },
-    { "id": "harvest", "title": "c.harvest.t", "desc": "c.harvest.d", "photo": "macro",      "confirmed": true },
-    { "id": "trim",    "title": "c.trim.t",    "desc": "c.trim.d",    "photo": null,         "confirmed": true },
-    { "id": "cure",    "title": "c.cure.t",    "desc": "c.cure.d",    "photo": null,         "confirmed": false },
-    { "id": "inspect", "title": "c.inspect.t", "desc": "c.inspect.d", "photo": null,         "confirmed": false },
-    { "id": "store",   "title": "c.store.t",   "desc": "c.store.d",   "photo": null,         "confirmed": false }
+    { "id": "soil",    "k": "st.1.k", "title": "st.1.t", "desc": "st.1.d", "more": "st.1.more", "photo": null,         "photoNeeded": "土づくり・土壌の写真" },
+    { "id": "daily",   "k": "st.2.k", "title": "st.2.t", "desc": "st.2.d", "more": "st.2.more", "photo": "daily-care", "caption": "cap.daily" },
+    { "id": "harvest", "k": "st.3.k", "title": "st.3.t", "desc": "st.3.d", "more": "st.3.more", "photo": "macro",      "caption": "cap.macro", "photoNeeded": "収穫・トリミング作業の手元の写真" },
+    { "id": "check",   "k": "st.4.k", "title": "st.4.t", "desc": "st.4.d", "more": "st.4.more", "photo": null,         "photoNeeded": "品質確認の工程の写真" }
   ]
 }
