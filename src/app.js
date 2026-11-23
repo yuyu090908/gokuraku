@@ -137,6 +137,31 @@
     $$('main > section[id]').forEach(function (s) { io.observe(s); });
   }
 
+  /* ---------- hero background video ----------
+     Starts after the page has loaded (the still image stays the first paint), only when the visitor
+     has not asked for reduced motion or data saving. Pauses off-screen; the button pauses it for good. */
+  var hv = $('#hero-video'), hp = $('#hero-pause');
+  var saveData = navigator.connection && navigator.connection.saveData;
+  if (hv && hp && !reduce && !saveData && typeof hv.play === 'function') {
+    var userPaused = false, visible = true;
+    var playHV = function () { if (!userPaused && visible && !d.hidden) { var pr = hv.play(); if (pr && pr.catch) pr.catch(function () {}); } };
+    var startHV = function () {
+      hv.src = hv.getAttribute('data-src');
+      hv.addEventListener('playing', function () { hv.classList.add('on'); hp.hidden = false; }, { once: true });
+      playHV();
+      if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; if (visible) playHV(); else hv.pause(); }).observe(hv);
+      d.addEventListener('visibilitychange', function () { if (d.hidden) hv.pause(); else playHV(); });
+    };
+    hp.addEventListener('click', function () {
+      userPaused = !userPaused;
+      hp.setAttribute('aria-pressed', String(userPaused));
+      hp.setAttribute('data-ia', 'aria-label:' + (userPaused ? 'hero.play' : 'hero.pause'));
+      hp.setAttribute('aria-label', t(userPaused ? 'hero.play' : 'hero.pause'));
+      if (userPaused) hv.pause(); else playHV();
+    });
+    if (d.readyState === 'complete') setTimeout(startHV, 0); else window.addEventListener('load', function () { setTimeout(startHV, 0); });
+  }
+
   /* ---------- menu filter ---------- */
   var chips = $$('.chip[data-filter]'), strains = $$('.strain[data-tags]');
   chips.forEach(function (c) {

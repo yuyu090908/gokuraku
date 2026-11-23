@@ -3,6 +3,8 @@
     <source srcset="/img/hero-540.avif" type="image/avif">
     <img src="/img/hero-540.webp" alt="" width="540" height="960" fetchpriority="high" decoding="async">
   </picture>
+  <video class="hero-bg hero-video" id="hero-video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-src="/videos/hero-bg.mp4"></video>
+  <button type="button" class="hero-pause" id="hero-pause" hidden aria-pressed="false" aria-label="{{hero.pause}}" data-ia="aria-label:hero.pause"><svg class="ic-pause" aria-hidden="true"><use href="#i-pause"/></svg><svg class="ic-play" aria-hidden="true"><use href="#i-play"/></svg></button>
   <div class="wrap hero-in">
     <picture class="hero-logo"><source type="image/webp" srcset="/brand/logo-full-reverse-240.webp 1x, /brand/logo-full-reverse-480.webp 2x"><img src="/brand/logo-full-reverse-240.png" width="223" height="240" alt="GOKURAKU 極楽 Goku-Raku" decoding="async" fetchpriority="high"></picture>
     <div class="hero-txt">
