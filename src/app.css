@@ -568,6 +568,10 @@ html.modal{overflow:hidden}
 @media (max-width:420px){.lang{padding-left:4px}.lang>.ic:first-child{padding:5px}.lang select{padding:0 28px 0 6px;font-size:14px;max-width:6.5em}.lang .lang-chev{right:9px}}
 .tlink{min-height:46px}
 
+/* ===== bulk orders for shops & businesses (message-only, no store) ===== */
+.bulk{gap:10px;border-color:var(--line-hi);background:linear-gradient(160deg,var(--red-tint),transparent 60%),var(--bg-2)}
+.bulk .btn{align-self:flex-start;margin-top:6px}
+@media (max-width:520px){.bulk .btn{align-self:stretch}}
 /* ===== Living Soil flow panels with the owner's artwork ===== */
 .mini-flow-img li{flex-direction:column;align-items:stretch;gap:0;padding:0;overflow:hidden;border-radius:var(--r-card);box-shadow:var(--sh-1);border-top:2px solid var(--red)}
 .mini-flow-img .fl-img img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
