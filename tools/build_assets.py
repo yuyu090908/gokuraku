@@ -40,10 +40,14 @@ def crop_ratio(im, rw, rh, y_bias=0.5):
 
 
 def strains():
-    for name in ["shinma", "zk", "isaac-newton"]:
+    for name in ["shinma", "zk", "isaac-newton", "preroll"]:
         # *-hq.webp: the same product photos at ~970px, cropped from the owner's menu screenshots (Nov 2026)
         src = SRC_IMG / f"{name}-hq.webp"
-        im = Image.open(src if src.exists() else SRC_IMG / f"{name}.webp").convert("RGB")
+        if not src.exists():
+            src = SRC_IMG / f"{name}.webp"
+        if not src.exists():
+            src = SRC_IMG / f"{name}.png"  # preroll.png: product photo supplied by the owner (Nov 2026)
+        im = Image.open(src).convert("RGB")
         im = crop_ratio(im, 4, 3)
         for w in (320, 640):
             save_pair(im.resize((w, w * 3 // 4), Image.LANCZOS), PUB / "img" / f"{name}-{w}")
@@ -51,7 +55,7 @@ def strains():
 
 def illustrations():
     # Illustrative images cut from the owner's design mockups (AI-generated, Nov 2026).
-    # The site always shows them with an "image" label, never as a record of real work.
+    # Shown without a visible label at the owner's request (Nov 2026); alt text still describes them as illustrations.
     for name in ["illus-soil", "illus-check"]:
         im = Image.open(SRC_IMG / f"{name}.png").convert("RGB")
         for w in (240, 480):

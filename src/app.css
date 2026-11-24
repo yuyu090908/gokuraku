@@ -519,7 +519,6 @@ html.modal{overflow:hidden}
 .sc-b{display:grid;gap:8px;padding:20px 22px 24px;align-content:start}
 .sc-b::before,.steps-detail .sb::before{content:"";width:32px;height:3px;border-radius:2px;background:var(--red);margin-bottom:4px}
 .sc-b p{color:var(--muted);font-size:15px;line-height:1.7}
-.illus-tag{position:absolute;z-index:1;left:10px;top:10px;padding:4px 9px;border-radius:999px;background:rgba(13,13,13,.72);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);color:#fff;font-size:11px;font-weight:600;line-height:1.2;letter-spacing:.04em}
 .steps-detail .step-media{aspect-ratio:16/9;border-bottom:1px solid rgba(186,1,45,.5)}
 .steps-detail .step-media img{aspect-ratio:auto;border:0}
 .steps-detail .step-media .step-panel{height:100%;aspect-ratio:auto;border:0}

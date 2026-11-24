@@ -120,7 +120,7 @@ function partials(L, page) {
         </div>
       </li>`).join('') + `
       <li class="strain" data-tags="preroll">
-        <div class="ph" aria-hidden="true"><svg><use href="#i-leaf"/></svg></div>
+        ${pic('preroll', 320, 240, T(products.preroll.title), products.preroll.title, '(min-width:1100px) 270px, 112px', [320, 640])}
         <div class="strain-b">
           <div class="strain-n"><h3 data-i="${products.preroll.title}">${esc(T(products.preroll.title))}</h3><span class="strain-type">PRE-ROLL</span></div>
           <p class="strain-d" data-i="${products.preroll.desc}">${esc(T(products.preroll.desc))}</p>
@@ -129,9 +129,9 @@ function partials(L, page) {
         </div>
       </li>`;
 
-  // photo on top; illustrative images always carry a visible "image" label (never shown as a record)
+  // photo on top (illustrative images are no longer labelled on screen, at the owner's request)
   const stepMedia = (s, sizes) => `<div class="step-media">${s.photo
-    ? pic(s.photo, 480, 640, T(s.caption || s.title), s.caption || s.title, sizes, [240, 480]) + (s.illustrative ? `<span class="illus-tag">${ti('img.illus')}</span>` : '')
+    ? pic(s.photo, 480, 640, T(s.caption || s.title), s.caption || s.title, sizes, [240, 480])
     : `<div class="step-panel" aria-hidden="true"><span class="step-num">${String(steps.indexOf(s) + 1).padStart(2, '0')}</span><svg><use href="#i-${s.icon || 'leaf'}"/></svg></div>`}</div>`;
   const stepsHtml = steps.map((s) => `
       <li id="step-${s.id}">
