@@ -26,9 +26,16 @@
 
 <section class="sec" id="about" aria-labelledby="about-t">
   <div class="wrap">
-    <div class="sec-h">
-      <p class="eyebrow" data-i="ph.kicker">{{ph.kicker}}</p>
-      <h2 id="about-t" class="h2" data-i="ph.title">{{ph.title}}</h2>
+    <div class="brand-h">
+      <div class="sec-h">
+        <p class="eyebrow" data-i="ph.kicker">{{ph.kicker}}</p>
+        <h2 id="about-t" class="h2" data-i="ph.title">{{ph.title}}</h2>
+      </div>
+      <figure class="logo-rv">
+        <picture><source type="image/avif" srcset="/img/logo-reveal-240.avif 240w, /img/logo-reveal-480.avif 480w" sizes="(min-width:768px) 300px, 240px"><source type="image/webp" srcset="/img/logo-reveal-240.webp 240w, /img/logo-reveal-480.webp 480w" sizes="(min-width:768px) 300px, 240px"><img src="/img/logo-reveal-480.webp" width="480" height="480" alt="GOKURAKU 極楽" loading="lazy" decoding="async"></picture>
+        <video class="amb-video" muted playsinline preload="none" aria-hidden="true" tabindex="-1" data-src="/videos/logo-reveal.mp4" data-start="view" data-once></video>
+        <button type="button" class="vid-pause" hidden aria-pressed="false" aria-label="{{hero.pause}}" data-ia="aria-label:hero.pause"><svg class="ic-pause" aria-hidden="true"><use href="#i-pause"/></svg><svg class="ic-play" aria-hidden="true"><use href="#i-play"/></svg></button>
+      </figure>
     </div>
     <ul class="cards3" role="list">
       <li class="card card-photo"><!--@bg:green-canopy--><video class="card-bg amb-video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-src="/videos/green-canopy-loop.mp4" data-start="view"></video><button type="button" class="vid-pause" hidden aria-pressed="false" aria-label="{{hero.pause}}" data-ia="aria-label:hero.pause"><svg class="ic-pause" aria-hidden="true"><use href="#i-pause"/></svg><svg class="ic-play" aria-hidden="true"><use href="#i-play"/></svg></button><svg class="card-ic" aria-hidden="true"><use href="#i-soil"/></svg><h3 class="h4" data-i="ph.1.t">{{ph.1.t}}</h3><p data-i="ph.1.d">{{ph.1.d}}</p><a class="tlink" href="{{@home}}living-soil/"><span data-i="more">{{more}}</span><span class="sr"> — <span data-i="ph.1.t">{{ph.1.t}}</span></span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>

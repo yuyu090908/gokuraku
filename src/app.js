@@ -173,6 +173,8 @@
       if (userPaused) v.pause(); else play();
     });
     d.addEventListener('visibilitychange', function () { if (d.hidden) v.pause(); else play(); });
+    // play-once clips (logo reveal): rest on the last frame; the button then replays from the start
+    if (v.hasAttribute('data-once')) v.addEventListener('ended', function () { if (!userPaused) btn.click(); });
     var onLoad = v.getAttribute('data-start') !== 'view';
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (es) {

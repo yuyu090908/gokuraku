@@ -69,6 +69,10 @@ def posters():
         c = crop_ratio(im, 3, 4, 0.45)
         for w in (240, 480):
             save_pair(c.resize((w, w * 4 // 3), Image.LANCZOS), PUB / "img" / f"{name}-{w}")
+    # square poster for the brand logo reveal: its final frame (the finished logo)
+    im = Image.open(SRC_VID / "logo-reveal.webp").convert("RGB")
+    for w in (240, 480):
+        save_pair(im.resize((w, w), Image.LANCZOS), PUB / "img" / f"logo-reveal-{w}")
     # 16:9 posters for the background video bands
     for name in ["aisle-band", "leaves-band", "led-band"]:
         im = crop_ratio(Image.open(SRC_VID / f"{name}.webp").convert("RGB"), 16, 9)

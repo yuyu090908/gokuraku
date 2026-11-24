@@ -567,3 +567,13 @@ html.modal{overflow:hidden}
 .gate-lang{max-width:420px}
 @media (max-width:420px){.lang{padding-left:4px}.lang>.ic:first-child{padding:5px}.lang select{padding:0 28px 0 6px;font-size:14px;max-width:6.5em}.lang .lang-chev{right:9px}}
 .tlink{min-height:46px}
+
+/* ===== brand logo reveal (owner-supplied clip, shown as delivered on a white "paper" panel) ===== */
+.brand-h{display:grid;gap:8px 32px;align-items:center;margin-bottom:24px}
+.brand-h .sec-h{margin-bottom:0}
+.logo-rv{position:relative;isolation:isolate;overflow:hidden;margin:16px auto 0;width:min(260px,70vw);aspect-ratio:1;border-radius:var(--r-card);background:#fff;border:1px solid var(--line-hi);box-shadow:var(--sh-2)}
+.logo-rv picture,.logo-rv img,.logo-rv video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.logo-rv video{opacity:0;transition:opacity .4s ease}
+.logo-rv video.on{opacity:1}
+.logo-rv .vid-pause{top:auto;bottom:8px;right:8px}
+@media (min-width:768px){.brand-h{grid-template-columns:1fr auto}.logo-rv{width:clamp(220px,26vw,300px);margin:0}}

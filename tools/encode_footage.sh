@@ -26,4 +26,8 @@ ffmpeg -v error -y -i "$S/color-leaves.mov" -vf "fps=24,crop=540:304:0:300,scale
 ffmpeg -v error -y -ss 1 -i "$S/color-leaves.mov" -vf "crop=540:304:0:300" -frames:v 1 -q:v 85 "$V/leaves-band.webp"
 ffmpeg -v error -y -i "$S/led-canopy.mov" -vf "fps=24,crop=540:304:0:180,scale=960:540" $X -crf 32 "$V/led-band.mp4"
 ffmpeg -v error -y -ss 1 -i "$S/led-canopy.mov" -vf "crop=540:304:0:180" -frames:v 1 -q:v 85 "$V/led-band.webp"
+
+# brand logo reveal supplied by the owner (Nov 2026): kept exactly as delivered, only re-encoded (square, silent, plays once)
+ffmpeg -v error -y -i "$S/logo-reveal.mp4" -vf "scale=480:480" $X -crf 28 "$V/logo-reveal.mp4"
+ffmpeg -v error -y -sseof -0.2 -i "$S/logo-reveal.mp4" -frames:v 1 -q:v 90 "$V/logo-reveal.webp"
 ls -la "$V"
