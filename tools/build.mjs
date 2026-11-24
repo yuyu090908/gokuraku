@@ -177,7 +177,7 @@ function partials(L, page) {
   const campaignsHtml = `<div id="camp-slot" aria-live="polite"></div><script type="application/json" id="camp-data">${jsonScript(publicCampaigns)}</script>`;
   const gk = `<script>window.GK=${jsonScript({ langs: LANGS, htmlLang: HTML_LANG, page: page.id, path: page.path, ver: VER, str: Object.fromEntries(['faq.count', 'camp.label', 'camp.until', 'hero.pause', 'hero.play'].map((k) => [k, T(k)])) })}</script>`;
   const preload = page.id === 'home'
-    ? `<link rel="preload" as="image" href="/img/hero-540.avif" type="image/avif" fetchpriority="high">\n<link rel="preload" as="image" href="/brand/logo-full-reverse-240.webp" imagesrcset="/brand/logo-full-reverse-240.webp 1x, /brand/logo-full-reverse-480.webp 2x" type="image/webp" fetchpriority="high">`
+    ? `<link rel="preload" as="image" href="/img/hero-540.avif" type="image/avif" fetchpriority="high">\n<link rel="preload" as="image" href="/brand/mark-256.webp" imagesrcset="/brand/mark-256.webp 1x, /brand/mark-512.webp 2x" type="image/webp" fetchpriority="high">`
     : '';
   // Inter is self-hosted (public/fonts). Japanese/Thai/CJK/Myanmar text uses the fonts installed on the device
   // (Noto Sans JP/CJK on Android, Hiragino on Apple, Yu Gothic on Windows); see --ff in app.css.
