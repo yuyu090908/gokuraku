@@ -62,6 +62,17 @@ def illustrations():
             save_pair(im.resize((w, round(w * im.height / im.width)), Image.LANCZOS), PUB / "img" / f"{name}-{w}")
 
 
+def soil_flow():
+    # Living Soil diagram panels supplied by the owner (Nov 2026). The source images carry a mock card frame;
+    # crop inside it (the site draws its own card) and keep the artwork at 4:3.
+    boxes = {1: (150, 170, 1300, 900), 2: (120, 175, 1330, 905), 3: (120, 160, 1330, 905), 4: (140, 135, 1310, 955)}
+    for n, box in boxes.items():
+        im = Image.open(SRC_IMG / f"ls-flow-{n}.png").convert("RGB").crop(box)
+        im = crop_ratio(im, 4, 3)
+        for w in (320, 640):
+            save_pair(im.resize((w, w * 3 // 4), Image.LANCZOS), PUB / "img" / f"ls-flow-{n}-{w}")
+
+
 def posters():
     for name in ["hero-canopy", "lights", "daily-care", "handcraft", "harvest-color", "macro",
                  "bud-closeup", "color-leaves", "aisle-walk", "led-canopy", "green-canopy"]:
@@ -171,5 +182,6 @@ def brand():
 if __name__ == "__main__":
     strains()
     illustrations()
+    soil_flow()
     posters()
     brand()
